@@ -139,10 +139,14 @@
 #shopify-section-{{ section.id }} .wa-ugc-track::-webkit-scrollbar{display:none}
 #shopify-section-{{ section.id }} .wa-ugc-item{flex:0 0 auto;width:30%;margin:0;scroll-snap-align:start}
 #shopify-section-{{ section.id }} .wa-ugc-slide{width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:var(--dark)}
-#shopify-section-{{ section.id }} .wa-ugc-cap{margin:10px 2px 0;font-size:.86rem;line-height:1.3;color:var(--muted);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#shopify-section-{{ section.id }} .wa-ugc-cap b{color:var(--ink);font-weight:600}
-#shopify-section-{{ section.id }} .wa-ugc-cap span{color:#2e7d5b;font-weight:600}
-#shopify-section-{{ section.id }} .wa-ugc-cap em{font-style:normal}
+#shopify-section-{{ section.id }} .wa-ugc-slide{position:relative;box-shadow:0 14px 34px rgba(28,43,40,.14);transition:transform .5s cubic-bezier(.16,.8,.26,1),box-shadow .5s}
+#shopify-section-{{ section.id }} .wa-ugc-item:hover .wa-ugc-slide{transform:translateY(-4px);box-shadow:0 22px 44px rgba(28,43,40,.2)}
+#shopify-section-{{ section.id }} .wa-ugc-slide::after{content:"";position:absolute;inset:auto 0 0 0;height:42%;background:linear-gradient(to top,rgba(0,0,0,.42),rgba(0,0,0,0));pointer-events:none}
+#shopify-section-{{ section.id }} .wa-ugc-cap{position:absolute;z-index:2;left:12px;right:12px;bottom:12px;margin:0;padding:10px 13px;border-radius:14px;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%);border:1px solid rgba(255,255,255,.28);color:#fff;text-align:left;line-height:1.2}
+#shopify-section-{{ section.id }} .wa-ugc-cap b{display:block;font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:#fff}
+#shopify-section-{{ section.id }} .wa-ugc-ver{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:.74rem;font-weight:500;letter-spacing:.01em;color:rgba(255,255,255,.88)}
+#shopify-section-{{ section.id }} .wa-ugc-ver i{flex:0 0 auto;position:relative;width:14px;height:14px;border-radius:50%;background:#34c759}
+#shopify-section-{{ section.id }} .wa-ugc-ver i::after{content:"";position:absolute;left:4.6px;top:2.6px;width:3.4px;height:6.6px;border:solid #fff;border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
 #shopify-section-{{ section.id }} .wa-ugc-slide img,#shopify-section-{{ section.id }} .wa-ugc-slide video{display:block;width:100%;height:100%!important;object-fit:cover}
 #shopify-section-{{ section.id }} /* reveal (attivo solo se JS gira) */
 .wa-paths{margin-top:28px;display:grid;gap:10px}
@@ -159,8 +163,12 @@
 #shopify-section-{{ section.id }} .wa-js .wa-reveal{opacity:1;transform:none;filter:none;transition:none}
 }
 @media (max-width:860px){
-#shopify-section-{{ section.id }} .wa-ugc-cap{font-size:.78rem}
-#shopify-section-{{ section.id }} .wa-ugc-cap em{display:none}
+#shopify-section-{{ section.id }} .wa-ugc-slide{border-radius:14px}
+#shopify-section-{{ section.id }} .wa-ugc-cap{left:6px;right:6px;bottom:6px;padding:6px 7px;border-radius:10px}
+#shopify-section-{{ section.id }} .wa-ugc-cap b{font-size:.72rem}
+#shopify-section-{{ section.id }} .wa-ugc-ver{gap:4px;margin-top:2px;font-size:.56rem;line-height:1.15}
+#shopify-section-{{ section.id }} .wa-ugc-ver i{width:10px;height:10px}
+#shopify-section-{{ section.id }} .wa-ugc-ver i::after{left:3.3px;top:1.8px;width:2.4px;height:4.8px;border-width:0 1.3px 1.3px 0}
 #shopify-section-{{ section.id }} .wa-sect{padding:min(var(--pt,120px),78px) 20px min(var(--pb,120px),78px)}
 #shopify-section-{{ section.id }} .wa-feat{grid-template-columns:1fr}
 #shopify-section-{{ section.id }} .wa-feat.wa-rev .wa-feat-media{order:0}
@@ -204,9 +212,9 @@
   {%- for i in (1..8) -%}
     {%- assign vk = 'video_' | append: i -%}{%- assign uk = 'video_url_' | append: i -%}
     {%- assign v = block.settings[vk] -%}{%- assign vu = block.settings[uk] -%}{%- assign ck = 'caption_' | append: i -%}{%- assign cap = block.settings[ck] -%}
-    {%- capture capt -%}{%- if cap != blank -%}<figcaption class="wa-ugc-cap"><b>{{ cap }}</b>{% if block.settings.verified_label != blank %} <span>✓<em> {{ block.settings.verified_label }}</em></span>{% endif %}</figcaption>{%- endif -%}{%- endcapture -%}
-    {%- if v != blank -%}<figure class="wa-ugc-item"><div class="wa-ugc-slide">{{ v | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata' }}</div>{{ capt }}</figure>
-    {%- elsif vu != blank -%}<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="{{ vu }}" autoplay muted loop playsinline preload="metadata"></video></div>{{ capt }}</figure>{%- endif -%}
+    {%- capture capt -%}{%- if cap != blank -%}<figcaption class="wa-ugc-cap"><b>{{ cap }}</b>{% if block.settings.verified_label != blank %}<span class="wa-ugc-ver"><i></i>{{ block.settings.verified_label }}</span>{% endif %}</figcaption>{%- endif -%}{%- endcapture -%}
+    {%- if v != blank -%}<figure class="wa-ugc-item"><div class="wa-ugc-slide">{{ v | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata' }}{{ capt }}</div></figure>
+    {%- elsif vu != blank -%}<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="{{ vu }}" autoplay muted loop playsinline preload="metadata"></video>{{ capt }}</div></figure>{%- endif -%}
   {%- endfor -%}
   </div>
 </section>
@@ -561,7 +569,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
         {
           "type": "text",
           "id": "verified_label",
-          "label": "Etichetta verificato (su mobile resta solo ✓)",
+          "label": "Etichetta verificato",
           "default": "Acquisto verificato"
         },
         {
