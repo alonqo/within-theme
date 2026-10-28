@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Within — anteprima product page</title><style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}</style></head><body>
+<style>
+.wa-root{--bg:#ffffff;--bg-2:#f7f3ec;--ink:#1d1d1f;--muted:#6e6a64;--line:#ddd6cb;--line-soft:#ebe5db;--dark:#1C2B28;--on-dark:#f7f3ec;--on-dark-mut:#b5c2bd;--accent:#A8432E;--btn:#CC5B3E;--btn-hi:#A8432E;--accent-hi:#F2C05C;--gold:#F2C05C;--r:18px;--r-lg:28px;--r-pill:980px;--maxw:1024px;--wide:1280px;font-family:inherit;color:var(--ink);line-height:1.45;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+.wa-root *{box-sizing:border-box}
+.wa-root img{display:block;max-width:100%;height:auto}
+.wa-root h1,.wa-root h2,.wa-root h3,.wa-root p,.wa-root blockquote,.wa-root figure{font-family:inherit}
+.wa-sect{padding:120px 22px}
+.wa-inner{max-width:var(--maxw);margin:0 auto}
+.wa-wide{max-width:var(--wide);margin:0 auto}
+.wa-center{text-align:center}
+.wa-dark{background:var(--dark);color:var(--on-dark)}
+.wa-tint{background:var(--bg-2)}
+.wa-eyebrow{font-size:.84rem;font-weight:600;letter-spacing:.02em;color:var(--accent);margin:0 0 14px}
+.wa-dark .wa-eyebrow{color:var(--accent-hi)}
+.wa-display{font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:650;line-height:1.03;letter-spacing:-.026em;margin:0 0 18px;color:inherit}
+.wa-h2{font-size:clamp(1.9rem,4.4vw,3.1rem);font-weight:650;line-height:1.07;letter-spacing:-.022em;margin:0 0 16px;color:inherit}
+.wa-sub{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:450;color:var(--muted);max-width:34ch;margin:0 auto}
+.wa-dark .wa-sub{color:var(--on-dark-mut)}
+.wa-sub.wa-left{margin:0}
+.wa-narrow{max-width:40ch}
+.wa-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--btn);color:#fff!important;font-size:1.05rem;font-weight:600;border:0;cursor:pointer;padding:14px 28px;border-radius:var(--r-pill);text-decoration:none;min-height:48px;transition:background .2s,transform .2s}
+.wa-btn:hover{background:var(--btn-hi);transform:translateY(-1px)}
+.wa-link{color:var(--accent);font-weight:600;font-size:1.05rem;text-decoration:none;cursor:pointer}
+.wa-link:hover{text-decoration:underline}
+.wa-btn-row{display:flex;justify-content:center;margin-top:44px}
+/* opening */
+.wa-opening .wa-display{max-width:15ch;margin:0 auto 18px}
+.wa-hero-img{margin-top:58px;border-radius:var(--r-lg);overflow:hidden}
+/* cinematic */
+.wa-cine{position:relative;overflow:hidden;min-height:88vh;background:var(--dark)}
+.wa-cine-img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover;will-change:transform}
+.wa-cine-copy{position:relative;z-index:2;text-align:center;padding:9vh 22px 0}
+.wa-cine-copy .wa-h2{color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.55)}
+.wa-cine-copy .wa-sub{color:rgba(255,255,255,.88)}
+.wa-cine-copy .wa-eyebrow{color:var(--accent-hi)}
+/* feature */
+.wa-feat{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--bg);border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 18px 50px rgba(28,43,40,.07)}
+.wa-feat.wa-rev .wa-feat-media{order:2}
+.wa-feat-copy{padding:clamp(36px,5vw,72px);display:flex;flex-direction:column;justify-content:center}
+.wa-feat-media{overflow:hidden;position:relative;min-height:480px;background:var(--bg-2)}
+.wa-feat-media img{position:absolute;left:0;top:-40px;width:100%;height:calc(100% + 80px)!important;object-fit:cover;will-change:transform}
+.wa-bignum{font-size:clamp(4.4rem,11vw,8.4rem);font-weight:650;letter-spacing:-.045em;line-height:.86;color:var(--accent);margin:0 0 14px}
+.wa-bignum small{font-size:.32em;letter-spacing:-.01em;margin-left:6px}
+/* feature row */
+.wa-frow{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.wa-fcard{text-align:center}
+.wa-fcard .wa-fimg{border-radius:var(--r);overflow:hidden;margin-bottom:18px;transition:transform .5s cubic-bezier(.16,.8,.26,1)}
+.wa-fcard:hover .wa-fimg{transform:translateY(-6px) scale(1.02)}
+.wa-fcard h3{font-size:1.2rem;font-weight:600;margin:0 0 6px;letter-spacing:-.01em;color:var(--ink)}
+.wa-fcard p{margin:0;color:var(--muted);font-size:1rem}
+/* steps */
+.wa-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;text-align:left}
+.wa-step img{border-radius:var(--r-lg);margin-bottom:22px;width:100%;aspect-ratio:4/5;object-fit:cover}
+.wa-step .wa-n{display:block;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-hi)}
+.wa-step h3{font-size:1.45rem;font-weight:600;margin:8px 0;letter-spacing:-.015em;color:#fff}
+.wa-step p{margin:0;color:var(--on-dark-mut);font-size:1.05rem}
+/* closeup */
+.wa-cl{position:relative;--pt:120px;--pb:120px;padding-top:var(--pt);padding-bottom:var(--pb)}
+.wa-cl-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;max-width:min(1500px,94vw);margin:0 auto}
+.wa-cl-sticky{position:sticky;top:14vh;align-self:start}
+.wa-cl-media{display:flex;flex-direction:column;gap:26px}
+.wa-cl-media img{width:100%;border-radius:var(--r-lg)}
+.wa-cl.wa-horiz{height:300vh;--pt:0px;--pb:0px}
+.wa-cl.wa-horiz .wa-wide{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:0 20px;max-width:none}
+.wa-cl.wa-horiz .wa-cl-grid{display:flex;flex-direction:column;gap:20px;align-items:flex-start;max-width:100%;width:100%;margin:0}
+.wa-cl.wa-horiz .wa-cl-sticky{position:static;width:100%;max-width:100%}.wa-cl.wa-horiz{padding-left:0!important;padding-right:0!important}
+.wa-cl.wa-horiz .wa-cl-media{flex-direction:row;flex-wrap:nowrap;gap:14px;width:max-content;will-change:transform}
+.wa-cl.wa-horiz .wa-cl-media > div{flex:0 0 auto;width:78vw;opacity:1!important;transform:none!important;filter:none!important}
+.wa-cl.wa-horiz .wa-cl-media img{height:54vh!important;width:100%;object-fit:cover}
+/* gallery + spec */
+.wa-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.wa-gal figure{margin:0}
+.wa-gal .wa-gimg{overflow:hidden;border-radius:var(--r-lg)}
+.wa-gal img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s cubic-bezier(.16,.8,.26,1)}
+.wa-gal figure:hover img{transform:scale(1.04)}
+.wa-gal figcaption{margin-top:12px;color:var(--muted);font-size:.98rem;text-align:center}
+.wa-spec{max-width:820px;margin:72px auto 0;border-top:1px solid var(--line)}
+.wa-spec-row{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+.wa-spec-tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.wa-spec-name{font-weight:600;font-size:1.08rem}
+.wa-spec-name span{display:block;font-weight:400;color:var(--muted);font-size:.95rem;margin-top:3px}
+.wa-spec-dose{font-weight:650;font-size:1.08rem;white-space:nowrap}
+/* objections */
+.wa-ob{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:var(--r-lg);overflow:hidden}
+.wa-ob-cell{background:var(--bg);padding:38px}
+.wa-ob-q{font-weight:600;font-size:1.16rem;margin:0 0 10px;letter-spacing:-.01em}
+.wa-ob-a{margin:0;color:var(--muted);font-size:1.03rem}
+/* social proof */
+.wa-stats{display:flex;justify-content:center;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden;background:var(--bg);margin:0 auto 18px;width:max-content;max-width:100%}
+.wa-stats .wa-s{padding:13px 40px;text-align:center;border-right:1px solid var(--line);display:flex;align-items:baseline;gap:7px;justify-content:center}
+.wa-stats .wa-s:last-child{border-right:0}
+.wa-stats .wa-sn{font-size:1.12rem;font-weight:650;color:var(--ink)}
+.wa-stats .wa-sl{color:var(--muted);font-size:.82rem}
+.wa-src{text-align:center;color:var(--muted);font-size:.78rem;margin:0 auto 48px;max-width:60ch}
+.wa-revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.wa-rev{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.wa-rev img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.wa-rev-b{padding:26px}
+.wa-stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+.wa-rev p{margin:12px 0 18px;font-size:1.06rem;line-height:1.42}
+.wa-who{font-size:.92rem;color:var(--muted)}
+.wa-who b{color:var(--ink);font-weight:600}
+.wa-ver{display:inline-block;margin-top:6px;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2e7d5b}
+.wa-quote{max-width:24ch;margin:64px auto 0;text-align:center;font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:550;line-height:1.22;letter-spacing:-.018em}
+.wa-quote cite{display:block;margin-top:20px;font-size:1rem;font-weight:400;font-style:normal;color:var(--muted)}
+/* authority */
+.wa-auth{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r-lg);overflow:hidden}
+.wa-auth-img{position:relative;min-height:520px}
+.wa-auth-img img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover}
+.wa-auth-panel{background:var(--dark);color:var(--on-dark);padding:72px 56px;display:flex;flex-direction:column;justify-content:center}
+.wa-auth-panel blockquote{margin:0;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:500;line-height:1.32;letter-spacing:-.015em}
+.wa-auth-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px}
+.wa-auth-list li{color:var(--on-dark-mut);font-size:1rem;padding-left:26px;position:relative}
+.wa-auth-list li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:2px;background:var(--accent-hi)}
+.wa-sig{margin-top:26px;color:var(--on-dark-mut);font-size:1rem}
+.wa-sig b{color:#fff;display:block}
+/* faq */
+.wa-faq{max-width:760px;margin:44px auto 0}
+.wa-faq details{border-bottom:1px solid var(--line)}
+.wa-faq summary{list-style:none;cursor:pointer;padding:22px 0;font-size:1.13rem;font-weight:500;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.wa-faq summary::-webkit-details-marker{display:none}
+.wa-pm{flex:0 0 auto;width:20px;height:20px;position:relative;transition:transform .25s}
+.wa-pm::before,.wa-pm::after{content:"";position:absolute;background:var(--accent)}
+.wa-pm::before{top:9px;left:0;width:20px;height:2px}
+.wa-pm::after{top:0;left:9px;width:2px;height:20px;transition:opacity .2s}
+.wa-faq details[open] .wa-pm{transform:rotate(180deg)}
+.wa-faq details[open] .wa-pm::after{opacity:0}
+.wa-ans{padding:0 0 22px;color:var(--muted);font-size:1.04rem;max-width:62ch}
+.wa-disc{max-width:760px;margin:48px auto 0;font-size:.8rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--line);padding-top:24px}
+/* UGC slider */
+.wa-ugc{padding:90px 0}
+.wa-ugc-head{max-width:var(--wide);margin:0 auto 34px;padding:0 22px;text-align:center}
+.wa-ugc-track{display:flex;gap:12px;padding:0 20px;scroll-padding-left:20px;scroll-padding-right:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.wa-ugc-track::-webkit-scrollbar{display:none}
+.wa-ugc-slide{flex:0 0 auto;width:30%;aspect-ratio:9/16;scroll-snap-align:start;border-radius:20px;overflow:hidden;background:var(--dark)}
+.wa-ugc-slide img,.wa-ugc-slide video{display:block;width:100%;height:100%!important;object-fit:cover}
+/* reveal (attivo solo se JS gira) */
+.wa-js .wa-reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,.8,.26,1),transform 1s cubic-bezier(.16,.8,.26,1),filter 1s;transition-delay:var(--d,0s)}
+.wa-js .wa-reveal.wa-blur{filter:blur(8px)}
+.wa-js .wa-reveal.wa-in{opacity:1;transform:none;filter:none}
+@media (prefers-reduced-motion:reduce){.wa-js .wa-reveal{opacity:1;transform:none;filter:none;transition:none}}
+@media (max-width:860px){
+.wa-sect{padding:78px 20px}
+.wa-feat{grid-template-columns:1fr}.wa-feat.wa-rev .wa-feat-media{order:0}
+.wa-feat-copy{padding:32px}
+.wa-feat-media{min-height:320px}
+.wa-frow{grid-template-columns:1fr 1fr;gap:22px}
+.wa-steps{grid-template-columns:1fr;gap:36px}
+.wa-cl{--pt:78px;--pb:78px;padding-left:20px;padding-right:20px}
+.wa-cl-grid{grid-template-columns:1fr;gap:26px}.wa-cl-sticky{position:static}
+.wa-gal{grid-template-columns:1fr}
+.wa-spec-row{grid-template-columns:1fr auto;gap:6px 14px}.wa-spec-tag{grid-column:1/-1}
+.wa-ob{grid-template-columns:1fr}.wa-ob-cell{padding:28px}
+.wa-stats{width:auto}
+.wa-stats .wa-s{padding:11px 14px;flex-direction:column;align-items:center;gap:2px;min-width:0}
+.wa-stats .wa-sn{font-size:1.02rem}.wa-stats .wa-sl{font-size:.72rem;white-space:nowrap}
+.wa-revs{grid-template-columns:1fr}
+.wa-auth{grid-template-columns:1fr}.wa-auth-img{min-height:320px}.wa-auth-panel{padding:48px 26px}
+.wa-cine{min-height:64vh}
+}
+</style>
+<div class="wa-root" id="wa-root">
+
+<section class="wa-ugc">
+<div class="wa-ugc-head wa-reveal"><p class="wa-eyebrow">Un sachet. Ogni mattina.</p><h2 class="wa-h2">Il rituale che entra nella tua giornata.</h2></div>
+<div class="wa-ugc-track" data-autoscroll="4000">
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125728_3eb9f5b0-9730-4239-a6b3-743b5c80a2e4.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Cliente Within a colazione"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125252_4b376383-70fc-4e59-9301-5f0611678caa.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within in ufficio"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_4b32d8cb-0503-4fb1-b519-5d6783399547.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within dopo la palestra"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_da4a02fc-445d-44b6-a10f-474ef1872d26.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within sul balcone"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_130202_76ee1516-1445-4b2b-af00-f7e900a7f885.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within per strada"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125227_78c3c96e-d30f-4ffa-8cd8-dff144d18b24.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within al bar"></video></div>
+</div>
+</section>
+
+<section class="wa-sect wa-opening wa-center">
+<div class="wa-inner">
+<div class="wa-reveal"><p class="wa-eyebrow">Non è solo collagene</p>
+<h2 class="wa-display">Il collagene che arriva davvero.</h2>
+<p class="wa-sub">Il collagene generico si ferma nello stomaco. Within è costruito per arrivare fino alla pelle.</p></div>
+<div class="wa-hero-img wa-reveal wa-blur"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022239_17078ffb-fe0e-47c9-ae7b-a2bbaf16428f.png" alt="Within Collagene Marino — box e sachet" loading="lazy"></div>
+</div>
+</section>
+
+<section class="wa-cine">
+<img class="wa-cine-img" data-parallax="0.22" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_8864d567-ef36-4962-ab8f-22d5fb5b5d18.png" alt="" loading="lazy">
+<div class="wa-cine-copy wa-reveal"><p class="wa-eyebrow">Più piccolo. Più efficace.</p><h2 class="wa-h2">Sotto i 3.000 Dalton.<br>Dove gli altri non arrivano.</h2></div>
+</section>
+
+<section class="wa-sect">
+<div class="wa-wide">
+<div class="wa-feat">
+<div class="wa-feat-copy wa-reveal">
+<p class="wa-bignum"><span data-count="5000">5.000</span><small>mg</small></p>
+<h2 class="wa-h2">Collagene marino tripeptide. In ogni sachet.</h2>
+<p class="wa-sub wa-left wa-narrow">Molecole tre volte più piccole del collagene generico (oltre 10.000 Da): passano la barriera intestinale e raggiungono i fibroblasti del derma.</p>
+<p style="margin-top:22px"><a class="wa-link" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Inizia oggi →</a></p>
+</div>
+<div class="wa-feat-media wa-reveal"><img data-parallax="0.08" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022238_9b18bcf3-62e0-4f50-9640-585496f9b43d.png" alt="Tripeptide sotto 3.000 Da contro collagene generico" loading="lazy"></div>
+</div>
+</div>
+</section>
+
+<section class="wa-sect wa-tint">
+<div class="wa-wide">
+<div class="wa-feat wa-rev">
+<div class="wa-feat-copy wa-reveal">
+<p class="wa-eyebrow">Asse intestino-pelle</p>
+<h2 class="wa-h2">La bellezza comincia dall'intestino.</h2>
+<p class="wa-sub wa-left wa-narrow">1 miliardo di CFU di Lactobacillus in ogni dose. Un intestino in equilibrio assorbe meglio, e la pelle se ne accorge. È l'ingrediente che gli altri collageni non hanno.</p>
+</div>
+<div class="wa-feat-media wa-reveal"><img data-parallax="0.08" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_83292b60-8669-45f6-8eba-48b42dbb54c7.png" alt="Asse intestino-pelle" loading="lazy"></div>
+</div>
+</div>
+</section>
+
+<section class="wa-sect">
+<div class="wa-wide wa-center">
+<h2 class="wa-h2 wa-reveal" style="margin-bottom:56px">Fatto per essere preso. Non gestito.</h2>
+<div class="wa-frow">
+<div class="wa-fcard wa-reveal" style="--d:0s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022237_d1eab07b-0032-4879-b973-f38b0b68be4c.png" alt="Sachet monodose" loading="lazy"></div><h3>Monodose</h3><p>25 ml, niente misurini.</p></div>
+<div class="wa-fcard wa-reveal" style="--d:.08s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_eab2918b-f157-4d9b-baf8-46a2c4d820a5.png" alt="Mango e frutto della passione" loading="lazy"></div><h3>Mango e passion fruit</h3><p>Zero retrogusto di pesce.</p></div>
+<div class="wa-fcard wa-reveal" style="--d:.16s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_aad9a819-1ddc-426b-850e-26a8b7c3e7af.png" alt="Sachet in borsa" loading="lazy"></div><h3>Sta in borsa</h3><p>Lo prendi ovunque tu sia.</p></div>
+<div class="wa-fcard wa-reveal" style="--d:.24s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_be849ed2-83c2-4acc-9890-ec9f079e5385.png" alt="6 attivi" loading="lazy"></div><h3>6 attivi</h3><p>Zero riempitivi.</p></div>
+</div>
+</div>
+</section>
+
+<section class="wa-cine">
+<img class="wa-cine-img" data-parallax="0.24" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_da85e40f-d7a7-4813-873d-01dddb7f637d.png" alt="" loading="lazy">
+<div class="wa-cine-copy wa-reveal"><p class="wa-eyebrow">Ogni mattina</p><h2 class="wa-h2">Un sorso. 25 secondi.<br>Il resto lo fa il tuo corpo.</h2></div>
+</section>
+
+<section class="wa-sect wa-dark">
+<div class="wa-wide wa-center">
+<p class="wa-eyebrow wa-reveal">Come funziona</p>
+<h2 class="wa-h2 wa-reveal" style="color:#fff">Tre gesti. Nessuna complicazione.</h2>
+<div class="wa-steps">
+<div class="wa-step wa-reveal" style="--d:0s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_1ba91de2-16a0-4c61-aed7-623a4f288521.png" alt="Apri il sachet" loading="lazy"><span class="wa-n">Step 1</span><h3>Apri il sachet</h3><p>Monodose da 25 ml, già pronto. Niente polveri da sciogliere.</p></div>
+<div class="wa-step wa-reveal" style="--d:.12s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_e85373ce-9de8-46d8-9c26-b225e1aa994d.png" alt="Bevi Within" loading="lazy"><span class="wa-n">Step 2</span><h3>Bevi, e basta</h3><p>Mango e frutto della passione. Mattina o sera, conta la costanza.</p></div>
+<div class="wa-step wa-reveal" style="--d:.24s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_134903d6-9fbd-40e2-b45d-0a80b8a95f16.png" alt="Pelle idratata" loading="lazy"><span class="wa-n">Step 3</span><h3>Lascia che lavori</h3><p>Prima l'idratazione, in 2-3 settimane. La compattezza in 8-12.</p></div>
+</div>
+</div>
+</section>
+
+<section class="wa-cl" id="wa-cl">
+<div class="wa-wide">
+<div class="wa-cl-grid">
+<div class="wa-cl-sticky wa-reveal">
+<p class="wa-eyebrow">Ogni dettaglio conta</p>
+<h2 class="wa-h2">Sei attivi.<br>Guarda da vicino.</h2>
+<p class="wa-sub wa-left wa-narrow">Liquido, già sciolto, pronto da bere. Dieci sachet per box, dosaggi dichiarati uno per uno.</p>
+</div>
+<div class="wa-cl-media">
+<div class="wa-reveal"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_3723d142-71fa-4c8f-b9a8-fe7e1c5521bd.png" alt="Sachet aperto, dettaglio" loading="lazy"></div>
+<div class="wa-reveal"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_8399ba65-5fed-46e2-a048-612a3e50c9b0.png" alt="Il liquido Within da vicino" loading="lazy"></div>
+<div class="wa-reveal"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_376737c4-b03c-4428-b796-a58586c87a48.png" alt="Box Within con 10 sachet" loading="lazy"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="wa-sect wa-tint">
+<div class="wa-wide">
+<p class="wa-eyebrow wa-center wa-reveal" style="margin-bottom:8px">La formula</p>
+<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:16px">Costruisci. Proteggi. Attiva.</h2>
+<p class="wa-sub wa-reveal" style="text-align:center;margin-bottom:56px">Un sistema a 3 livelli, non un ingrediente da solo.</p>
+<div class="wa-gal">
+<figure class="wa-reveal" style="--d:0s"><div class="wa-gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_7e8ef482-d9fa-4caa-a5a9-05b302da9540.png" alt="Ingredienti Within" loading="lazy"></div><figcaption>6 attivi, nessun riempitivo</figcaption></figure>
+<figure class="wa-reveal" style="--d:.1s"><div class="wa-gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_4eb662ff-b9f7-4001-a858-c3a6e907c927.png" alt="Il sistema a 3 livelli" loading="lazy"></div><figcaption>Il sistema a 3 livelli</figcaption></figure>
+<figure class="wa-reveal" style="--d:.2s"><div class="wa-gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_31a77d99-ca55-46a8-b656-f774fe7ff0c5.png" alt="I sachet Within" loading="lazy"></div><figcaption>10 sachet da 25 ml</figcaption></figure>
+</div>
+<div class="wa-spec wa-reveal">
+<div class="wa-spec-row"><span class="wa-spec-tag">Costruisci</span><span class="wa-spec-name">Collagene marino tripeptide<span>Sotto i 3.000 Da, stimola i fibroblasti</span></span><span class="wa-spec-dose">5.000 mg</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Costruisci</span><span class="wa-spec-name">Vitamina C<span>Contribuisce alla normale formazione del collagene per la normale funzione della pelle*</span></span><span class="wa-spec-dose">80 mg</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Proteggi</span><span class="wa-spec-name">Estratto di cranberry<span>Antiossidante naturale</span></span><span class="wa-spec-dose">500 mg</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Proteggi</span><span class="wa-spec-name">Zinco<span>Contribuisce al mantenimento di pelle e capelli normali*</span></span><span class="wa-spec-dose">10 mg</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Attiva</span><span class="wa-spec-name">Acido ialuronico<span>Idratazione dall'interno</span></span><span class="wa-spec-dose">100 mg</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Attiva</span><span class="wa-spec-name">Probiotici Lactobacillus<span>Asse intestino-pelle</span></span><span class="wa-spec-dose">1 mld CFU</span></div>
+</div>
+</div>
+</section>
+
+<section class="wa-ugc">
+<div class="wa-ugc-head wa-reveal"><h2 class="wa-h2">Altre storie, altre mattine.</h2></div>
+<div class="wa-ugc-track" data-autoscroll="4000">
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_74fe6764-b37c-4862-828b-0d3138935d3a.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within in cucina"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125227_030e76c8-7f3e-4f20-a4b0-cd5c61d09667.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within prima del lavoro"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_130201_b6cd86d8-7c7b-41f6-a1c5-c80d5758b902.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Unboxing Within"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_03eb5516-d436-4dfd-b332-7f7af7ac2969.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within con le amiche"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125728_fb9a8c99-bf51-4f17-9fa9-c29bca390999.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within sul divano"></video></div>
+<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125229_82fbe1e9-6f64-4ac8-b525-65a2dbf6339c.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within dopo lo yoga"></video></div>
+</div>
+</section>
+
+<section class="wa-sect">
+<div class="wa-inner">
+<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:48px">Domande scomode. Risposte dirette.</h2>
+<div class="wa-ob">
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Il collagene non viene semplicemente digerito?"</p><p class="wa-ob-a">Quello generico sì. I tripeptidi sotto i 3.000 Da sono abbastanza piccoli da superare la barriera intestinale.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Ne ho già provati altri. Niente."</p><p class="wa-ob-a">Probabilmente erano collageni ad alto peso molecolare. Il problema era il prodotto, non tu.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Gli studi li pagano le aziende."</p><p class="wa-ob-a">Diffidare è giusto. Per questo dichiariamo peso molecolare e dosaggi, e usiamo solo claim approvati dall'EFSA.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Quanto devo aspettare?"</p><p class="wa-ob-a">Idratazione in 2-3 settimane, compattezza in 8-12. Chi ti promette miracoli in 3 giorni ti sta mentendo.</p></div>
+</div>
+</div>
+</section>
+
+<section class="wa-sect wa-tint">
+<div class="wa-wide">
+<p class="wa-eyebrow wa-center wa-reveal">Cosa dice la ricerca</p>
+<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:54px">Risultati misurabili. Non promesse.</h2>
+<div class="wa-stats wa-reveal">
+<div class="wa-s"><div class="wa-sn">+<span data-count="23">23</span>%</div><div class="wa-sl">idratazione</div></div>
+<div class="wa-s"><div class="wa-sn">−<span data-count="17">17</span>%</div><div class="wa-sl">rughe perioculari</div></div>
+<div class="wa-s"><div class="wa-sn">+<span data-count="15">15</span>%</div><div class="wa-sl">compattezza</div></div>
+</div>
+<p class="wa-src wa-reveal">Dati indicativi da studi su peptidi di collagene idrolizzato, 8-12 settimane. I risultati individuali possono variare.</p>
+<div class="wa-revs">
+<div class="wa-rev wa-reveal" style="--d:0s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022310_72453d34-0f9b-4a13-84b2-0ee0f50c6841.png" alt="Laura" loading="lazy"><div class="wa-rev-b"><div class="wa-stars">★★★★★</div><p>"Dopo tre settimane la pelle è visibilmente più idratata. Le colleghe mi hanno chiesto cosa uso."</p><div class="wa-who"><b>Laura</b>, 43 · Milano<br><span class="wa-ver">Acquisto verificato</span></div></div></div>
+<div class="wa-rev wa-reveal" style="--d:.1s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_9c358caf-86cc-4057-b42c-4a569e68826b.png" alt="Francesca" loading="lazy"><div class="wa-rev-b"><div class="wa-stars">★★★★★</div><p>"Avevo provato tre integratori senza risultati. Con Within ho visto la differenza dopo circa sei settimane."</p><div class="wa-who"><b>Francesca</b>, 51 · Roma<br><span class="wa-ver">Acquisto verificato</span></div></div></div>
+<div class="wa-rev wa-reveal" style="--d:.2s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_c44c87da-8b75-4660-9b9d-063661e85a11.png" alt="Giulia" loading="lazy"><div class="wa-rev-b"><div class="wa-stars">★★★★★</div><p>"Il gusto è buonissimo, sembra un succo. È l'unico integratore che non dimentico mai di prendere."</p><div class="wa-who"><b>Giulia</b>, 38 · Torino<br><span class="wa-ver">Acquisto verificato</span></div></div></div>
+</div>
+<blockquote class="wa-quote wa-reveal">"Per la prima volta ho capito cosa stavo bevendo, e perché."<cite>— Francesca, 51</cite></blockquote>
+<div class="wa-btn-row wa-reveal"><a class="wa-btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Inizia il tuo percorso</a></div>
+</div>
+</section>
+
+<section class="wa-sect">
+<div class="wa-wide wa-reveal">
+<div class="wa-auth">
+<div class="wa-auth-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022312_e1f927c5-48a6-46e8-ad78-e5e2ff68c331.png" alt="Laboratorio e certificato di analisi" loading="lazy"></div>
+<div class="wa-auth-panel">
+<p class="wa-eyebrow">Trasparenza radicale</p>
+<blockquote>"Non ti chiediamo di fidarti. Ti diamo tutto quello che serve per verificare."</blockquote>
+<ul class="wa-auth-list">
+<li>Peso molecolare dichiarato: sotto i 3.000 Da</li>
+<li>Certificato di analisi e test metalli pesanti</li>
+<li>Dosaggio dichiarato per ogni attivo</li>
+<li>Solo claim EFSA approvati</li>
+</ul>
+<div class="wa-sig"><b>Il team Within</b>Ricerca e Sviluppo</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="wa-sect wa-tint">
+<div class="wa-inner">
+<h2 class="wa-h2 wa-center wa-reveal">Buono a sapersi.</h2>
+<div class="wa-faq wa-reveal">
+<details open><summary>Quanto dura una confezione?<span class="wa-pm"></span></summary><div class="wa-ans">Ogni box contiene 10 sachet: con uno al giorno dura 10 giorni. Per un mese completo servono 3 box.</div></details>
+<details><summary>Mattina o sera?<span class="wa-pm"></span></summary><div class="wa-ans">Quando preferisci. Conta la costanza quotidiana, non l'orario.</div></details>
+<details><summary>Sa di pesce?<span class="wa-pm"></span></summary><div class="wa-ans">No. Gusto mango e frutto della passione, fresco e piacevole.</div></details>
+<details><summary>Contiene lattosio o glutine?<span class="wa-pm"></span></summary><div class="wa-ans">No. Contiene però collagene di origine marina: se sei allergica al pesce, consulta il tuo medico.</div></details>
+<details><summary>Dopo quanto vedo i risultati?<span class="wa-pm"></span></summary><div class="wa-ans">I primi segnali di idratazione possono arrivare in 2-3 settimane. Per compattezza e rughe gli studi indicano 8-12 settimane di uso continuativo.</div></details>
+<details><summary>Se smetto, torna tutto come prima?<span class="wa-pm"></span></summary><div class="wa-ans">Il collagene prodotto resta, ma dopo i 25 anni il corpo ne perde circa l'1-1,5% l'anno. Per mantenere i benefici consigliamo un uso continuativo o cicli regolari.</div></details>
+<details><summary>In cosa è diverso dagli altri collageni?<span class="wa-pm"></span></summary><div class="wa-ans">Tre cose: tripeptide sotto i 3.000 Da invece di collagene generico sopra i 10.000; probiotici per l'asse intestino-pelle; trasparenza totale su peso molecolare e dosaggi.</div></details>
+</div>
+<p class="wa-disc">Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona.</p>
+</div>
+</section>
+
+</div>
+<script>
+(function(){
+var R=document.getElementById('wa-root'); if(!R)return;
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!reduce&&'IntersectionObserver' in window){
+R.classList.add('wa-js');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('wa-in');io.unobserve(e.target);}});},{threshold:.12});
+R.querySelectorAll('.wa-reveal').forEach(function(e){io.observe(e);});
+var px=[].slice.call(R.querySelectorAll('[data-parallax]')),tk=false;
+function par(){px.forEach(function(el){var b=el.parentElement.getBoundingClientRect(),vh=innerHeight;if(b.bottom<-100||b.top>vh+100)return;var p=(b.top+b.height/2-vh/2)/vh,a=parseFloat(el.getAttribute('data-parallax'))||.15,c=el.classList.contains('wa-cine-img');el.style.transform='translateY('+(p*a*b.height*-1).toFixed(1)+'px)'+(c?' scale(1.12)':'');});tk=false;}
+addEventListener('scroll',function(){if(!tk){requestAnimationFrame(par);tk=true;}},{passive:true});addEventListener('resize',par);par();
+var cl=document.getElementById('wa-cl'),tr=cl?cl.querySelector('.wa-cl-media'):null,gr=tr?tr.parentElement:null,mq=matchMedia('(max-width:860px)'),ct=false;
+function mode(){if(!cl)return;if(mq.matches)cl.classList.add('wa-horiz');else{cl.classList.remove('wa-horiz');if(tr)tr.style.transform='';}}
+function upd(){ct=false;if(!cl||!tr||!cl.classList.contains('wa-horiz'))return;var tot=cl.offsetHeight-innerHeight,top=cl.getBoundingClientRect().top,pas=Math.min(Math.max(-top,0),tot),pr=tot>0?pas/tot:0,mx=tr.scrollWidth-gr.clientWidth;if(mx<0)mx=0;tr.style.transform='translateX('+(-pr*mx).toFixed(1)+'px)';}
+mode();upd();addEventListener('scroll',function(){if(!ct){requestAnimationFrame(upd);ct=true;}},{passive:true});addEventListener('resize',function(){mode();upd();});
+function cu(el){var t=parseInt(el.getAttribute('data-count'),10),d=1200,t0=null;function s(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/d,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*t).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');if(p<1)requestAnimationFrame(s);else el.textContent=t.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');}requestAnimationFrame(s);}
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cu(e.target);cio.unobserve(e.target);}});},{threshold:.6});
+R.querySelectorAll('[data-count]').forEach(function(e){cio.observe(e);});
+}
+var GAP=12,EDGE=20;
+function size(){var N=matchMedia('(max-width:768px)').matches?3:5;R.querySelectorAll('.wa-ugc-track').forEach(function(t){var w=t.getBoundingClientRect().width,sw=(w-EDGE*2-GAP*(N-1))/N;if(sw<=0)return;t.querySelectorAll('.wa-ugc-slide').forEach(function(s){s.style.flex='0 0 '+sw+'px';s.style.width=s.style.minWidth=s.style.maxWidth=sw+'px';});});}
+function auto(){R.querySelectorAll('.wa-ugc-track').forEach(function(t){if(t.__x)return;var d=parseInt(t.getAttribute('data-autoscroll')||'4000',10);t.__x=setInterval(function(){var m=t.scrollWidth-t.clientWidth;if(m<=2)return;if(t.scrollLeft>=m-2)t.scrollTo({left:0,behavior:'smooth'});else{var n=t.scrollLeft+t.clientWidth;if(n>m)n=m;t.scrollTo({left:n,behavior:'smooth'});}},d);});}
+size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize',size);
+})();
+</script>
+
+</body></html>

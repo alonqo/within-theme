@@ -1,0 +1,101 @@
+PROMPT ugc-1 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 40 anni nel bagno di casa la mattina presto, capelli raccolti, pelle naturale senza trucco, tiene in mano il sachet Within verso la camera con un sorriso spontaneo. Lavandino con spazzolino e asciugamano stropicciato, luce naturale dalla finestra. Formato verticale, inquadratura da storia Instagram.
+
+PROMPT ugc-2 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 50 anni alla scrivania di un ufficio open space, beve dal sachet Within tra una mail e l'altra, laptop aperto, post-it e tazza di caffè sul tavolo, colleghi visibili sullo sfondo. Luce fluorescente da ufficio mista a luce naturale. Formato verticale.
+
+PROMPT ugc-3 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 45 anni in palestra dopo l'allenamento, leggermente sudata, seduta su una panca mentre apre il sachet Within, borraccia e asciugamano accanto, attrezzi e specchi riconoscibili dietro. Luce della palestra. Formato verticale.
+
+PROMPT ugc-4 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 38 anni sul balcone di casa con vista sui tetti, tazzina di espresso sul tavolino in ferro, mostra il sachet Within alla camera ridendo. Piante in vaso e panni stesi sullo sfondo, luce del mattino. Formato verticale.
+
+PROMPT ugc-5 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Selfie allo specchio del bagno di una donna italiana sui 48 anni, pelle luminosa senza trucco, tiene il sachet Within vicino al viso. Specchio con qualche alone, mensola con creme e dentifricio, luce naturale. Formato verticale.
+
+PROMPT ugc-6 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Punto di vista in prima persona: mano di donna con smalto nude che tiene il sachet Within sopra un tavolino di un bar italiano, cappuccino con schiuma, agenda aperta e occhiali da sole. Persone e bancone del bar visibili dietro. Luce naturale. Formato verticale.
+
+PROMPT hero-opening @product:
+Infografica. Sfondo crema caldo uniforme, la confezione Within con un sachet Within appoggiato in piedi accanto, centrati, ombra morbida e pulita, mezzo mango e un frutto della passione tagliato posati in basso a lato. Composizione minimale e ariosa, molto spazio vuoto attorno. Formato orizzontale.
+
+PROMPT cine-1 @product:
+Infografica. Sfondo verde foresta scuro uniforme (#1C2B28), il sachet Within in piedi al centro nella metà bassa dell'immagine, luce laterale netta che disegna il contorno, poche gocce di liquido dorato sospese attorno. Metà superiore completamente vuota e scura per il titolo. Formato orizzontale panoramico.
+
+PROMPT feature-tripeptide:
+Infografica. Sfondo bianco. Confronto a due colonne. A sinistra molecole grandi e grigie che rimbalzano contro una barriera, etichetta "Collagene generico" e sotto "oltre 10.000 Da". A destra molecole piccolissime arancio mango (#E07D3A) che attraversano la barriera e raggiungono la pelle, etichetta "Within tripeptide" e sotto "sotto 3.000 Da". Tipografia bold verde scuro (#1C2B28), linee sottili, stile scientifico pulito. Formato verticale 4:5.
+
+PROMPT feature-intestino:
+Infografica. Sfondo crema chiaro. Schema verticale dell'asse intestino-pelle: in basso un intestino stilizzato con piccoli probiotici in marine teal (#4A9BAC), una freccia che sale verso una sezione di pelle stilizzata in alto, luminosa. Etichette in italiano: "Intestino in equilibrio", "Assorbimento", "Pelle più luminosa". Badge in basso: "1 miliardo di CFU". Tipografia bold verde scuro. Formato verticale 4:5.
+
+PROMPT mini-monodose @product:
+Infografica. Sfondo grigio chiarissimo uniforme, il sachet Within in piedi al centro, leggermente inclinato, ombra morbida a terra, niente altro nell'inquadratura. Formato quadrato.
+
+PROMPT mini-gusto:
+Infografica. Sfondo grigio chiarissimo uniforme, mezzo mango tagliato a cubetti e un frutto della passione aperto con i semi lucidi, al centro, ombra morbida, niente altro. Formato quadrato.
+
+PROMPT mini-borsa @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Dall'alto, una borsa di pelle aperta appoggiata su un sedile, dentro si vedono portafoglio, chiavi, occhiali da sole, rossetto e il sachet Within infilato nella tasca interna. Luce naturale. Formato quadrato.
+
+PROMPT mini-attivi:
+Infografica. Sfondo grigio chiarissimo. Griglia 3x2 di sei piccole icone lineari arancio mango, ciascuna con il nome sotto in grassetto: "Collagene marino", "Vitamina C", "Acido ialuronico", "Zinco", "Probiotici", "Cranberry". Al centro in alto "6 attivi". Tipografia bold verde scuro. Formato quadrato.
+
+PROMPT cine-2:
+Infografica. Sfondo quasi nero con tinta verde scura, un getto di liquido dorato arancione che forma una spirale elegante al centro, controluce caldo che lo fa brillare. Metà superiore vuota e scura per il titolo. Formato orizzontale panoramico.
+
+PROMPT step-1 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 42 anni in cucina la mattina, strappa l'angolo del sachet Within, sorriso naturale. Bancone con moka, fette biscottate e frutta, finestra con luce del mattino. Formato verticale 4:5.
+
+PROMPT step-2 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. La stessa donna sui 42 anni beve direttamente dal sachet Within in piedi accanto alla finestra della cucina, borsa e chiavi già pronte sul tavolo per uscire. Luce naturale. Formato verticale 4:5.
+
+PROMPT step-3:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Primo piano della guancia e dello zigomo di una donna sui 45 anni, pelle idratata e luminosa, texture reale con pori visibili, luce naturale da finestra. Nessun trucco pesante. Formato verticale 4:5.
+
+PROMPT closeup-1 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Macro ravvicinata dell'angolo appena strappato del sachet Within, una goccia di liquido dorato sul bordo, appoggiato su un piano di marmo chiaro. Luce naturale laterale. Formato verticale 4:5.
+
+PROMPT closeup-2:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Macro di un piccolo bicchiere di vetro con liquido dorato arancione appena versato, bollicine e riflessi visibili, sul bancone di una cucina vera. Luce naturale. Formato verticale 4:5.
+
+PROMPT closeup-3 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Dall'alto, la confezione Within aperta su un tavolo di legno, i dieci sachet Within disposti a ventaglio accanto. Luce naturale da finestra. Formato verticale 4:5.
+
+PROMPT gallery-1:
+Infografica. Flat lay su sfondo crema: mirtilli rossi in una ciotolina, mezzo mango, un frutto della passione aperto, una boccetta di siero trasparente, alcune compresse bianche, ognuno con una piccola etichetta in italiano accanto: "Cranberry", "Mango", "Passion fruit", "Acido ialuronico", "Zinco". Composizione ordinata e simmetrica. Formato verticale 4:5.
+
+PROMPT gallery-2:
+Infografica. Sfondo bianco. Tre colonne verticali con icone e titoli bold: "COSTRUISCI" (collagene e vitamina C), "PROTEGGI" (cranberry e zinco), "ATTIVA" (acido ialuronico e probiotici). Linee sottili arancio mango, tipografia verde scuro, numerazione 1-2-3. Formato verticale 4:5.
+
+PROMPT gallery-3 @product:
+Infografica. Sfondo crema uniforme, dieci sachet Within allineati in fila ordinata, perfettamente paralleli, ombra morbida, accanto la confezione Within. Testo in basso bold verde scuro: "10 sachet da 25 ml". Formato verticale 4:5.
+
+PROMPT ugc-7 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 55 anni con capelli brizzolati in cucina, ride mentre apre il sachet Within, piatti nello scolapiatti e calendario appeso dietro. Luce calda del mattino. Formato verticale.
+
+PROMPT ugc-8 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 42 anni seduta in macchina parcheggiata, occhiali da sole sulla testa, beve dal sachet Within prima di entrare al lavoro, cruscotto e parabrezza visibili. Luce del giorno. Formato verticale.
+
+PROMPT ugc-9 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 47 anni seduta sul letto, ha appena aperto la confezione Within, i sachet Within sparsi sul piumone, espressione entusiasta, comodino con lampada. Luce naturale. Formato verticale.
+
+PROMPT ugc-10 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Due amiche italiane sui 40 anni a un tavolino di un bar sul lungomare, una alza il sachet Within come per un brindisi, spritz sul tavolo, mare visibile dietro. Luce del tardo pomeriggio. Formato verticale.
+
+PROMPT ugc-11 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Selfie ravvicinato di una donna italiana sui 50 anni, la guancia vicina alla camera mostra pelle idratata, tiene il sachet Within sotto il mento. Tenda e finestra di casa visibili dietro. Luce naturale. Formato verticale.
+
+PROMPT ugc-12 @product:
+UGC. Shot on iPhone, no bokeh, tutto a fuoco. Donna italiana sui 44 anni seduta sul tappetino da yoga in salotto, sorridente, il sachet Within e un bicchiere d'acqua accanto, divano e libreria dietro. Luce del mattino. Formato verticale.
+
+PROMPT recensione-laura @product:
+Foto scattata con iPhone 11 da una collega, ufficio con luce al neon fredda, leggermente sovraesposta. Donna italiana sui 43 anni seduta alla scrivania che guarda la camera a metà risata, inquadratura un po' storta, il sachet Within appoggiato vicino alla tastiera accanto a una tazza. Monitor e faldoni dietro.
+
+PROMPT recensione-francesca @product:
+Foto da Samsung economico con il timer, salotto la sera, luce gialla di una lampada, leggermente sottoesposta e con un po' di grana. Donna italiana sui 51 anni in piedi accanto alla libreria, viso un po' tagliato in alto, tiene la confezione Within in mano. Divano con plaid e televisore spento visibili.
+
+PROMPT recensione-giulia @product:
+Selfie da iPhone 13 controluce davanti a una finestra di un appartamento a Torino, viso in parte in ombra, foto leggermente mossa. Donna italiana sui 38 anni con capelli ricci scuri che sorride, il sachet Within tenuto vicino alla guancia. Cortile e palazzo di fronte visibili fuori dalla finestra.
+
+PROMPT authority-trasparenza:
+Infografica. Sfondo bianco. Un certificato di analisi stilizzato con intestazione "Certificato di analisi", righe di tabella e tre badge circolari in evidenza: "Peso molecolare sotto 3.000 Da", "Metalli pesanti sotto i limiti", "Dosaggi dichiarati". Accanto una provetta e una piccola bilancia da laboratorio stilizzate. Tipografia bold verde scuro, dettagli in arancio mango. Formato verticale.
