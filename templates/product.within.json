@@ -1,0 +1,768 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-information",
+      "blocks": {
+        "disclosures_g9mWze": {
+          "type": "disclosures",
+          "name": "t:names.disclosures",
+          "settings": {
+            "heading": "Disclosures",
+            "heading_preset": "h5",
+            "open_by_default": false,
+            "icon": "caret",
+            "disclosure_heading_preset": "h6",
+            "text_color": "",
+            "dividers": true,
+            "divider_color": "{{ settings.color_palette.color2 }}",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "media-gallery": {
+          "type": "_product-media-gallery",
+          "static": true,
+          "settings": {
+            "media_presentation": "grid",
+            "media_columns": "two",
+            "image_gap": 4,
+            "large_first_image": false,
+            "slideshow_controls_style": "counter",
+            "slideshow_mobile_controls_style": "dots",
+            "thumbnail_position": "right",
+            "thumbnail_width": 44,
+            "thumbnail_radius": 0,
+            "aspect_ratio": "adapt",
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "media_radius": 0,
+            "extend_media": false,
+            "zoom": true,
+            "video_loop": false,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "details_position": "flex-start",
+            "gap": 28,
+            "sticky_details_desktop": true,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 24,
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "group_icgrde": {
+              "type": "group",
+              "name": "t:names.header",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "background_media": "none",
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_xrnftG": {
+                  "type": "text",
+                  "name": "t:names.product_title",
+                  "settings": {
+                    "text": "<h1>{{ closest.product.title }}</h1>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "price_tVjtKg": {
+                  "type": "price",
+                  "settings": {
+                    "show_sale_price_first": true,
+                    "show_installments": false,
+                    "show_tax_info": false,
+                    "type_preset": "paragraph",
+                    "width": "100%",
+                    "alignment": "left",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "text_color": "",
+                    "padding-block-start": 4,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_xrnftG",
+                "price_tVjtKg"
+              ]
+            },
+            "divider_VJhene": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "divider_color": "{{ settings.color_palette.color2 }}",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "variant_picker_R3rGDr": {
+              "type": "variant-picker",
+              "settings": {
+                "variant_style": "buttons",
+                "show_swatches": false,
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "buy_buttons_eYQEYi": {
+              "type": "buy-buttons",
+              "settings": {
+                "stacking": true,
+                "text_color": "",
+                "show_pickup_availability": false,
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "settings": {
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            }
+          },
+          "block_order": [
+            "group_icgrde",
+            "divider_VJhene",
+            "variant_picker_R3rGDr",
+            "buy_buttons_eYQEYi"
+          ]
+        }
+      },
+      "block_order": [
+        "disclosures_g9mWze"
+      ],
+      "settings": {
+        "content_width": "content-center-aligned",
+        "desktop_media_position": "left",
+        "equal_columns": false,
+        "limit_details_width": false,
+        "gap": 48,
+        "enable_sticky_add_to_cart": true,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "product_recommendations_qggXJq": {
+      "type": "product-recommendations",
+      "blocks": {
+        "text_cbcgyb": {
+          "type": "text",
+          "name": "t:names.header",
+          "settings": {
+            "text": "<h3>You may also like </h3>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h4",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "static-product-card": {
+          "type": "_product-card",
+          "name": "t:names.product_card",
+          "static": true,
+          "settings": {
+            "product_card_gap": 8,
+            "background_color": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 8,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "product_card_gallery_DNizbJ": {
+              "type": "_product-card-gallery",
+              "name": "t:names.product_card_media",
+              "settings": {
+                "image_ratio": "adapt",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_title_M7MJkb": {
+              "type": "product-title",
+              "name": "t:names.product_title",
+              "settings": {
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "price_gLWgA6": {
+              "type": "price",
+              "settings": {
+                "show_sale_price_first": true,
+                "show_installments": false,
+                "show_tax_info": false,
+                "type_preset": "h6",
+                "width": "100%",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_card_gallery_DNizbJ",
+            "product_title_M7MJkb",
+            "price_gLWgA6"
+          ]
+        }
+      },
+      "block_order": [
+        "text_cbcgyb"
+      ],
+      "name": "t:names.product_recommendations",
+      "settings": {
+        "product": "{{ closest.product }}",
+        "recommendation_type": "related",
+        "layout_type": "grid",
+        "carousel_on_mobile": false,
+        "max_products": 4,
+        "columns": 4,
+        "mobile_columns": "2",
+        "columns_gap": 12,
+        "rows_gap": 24,
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "section_width": "page-width",
+        "gap": 28,
+        "background_color": "{{ settings.color_palette.background }}",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "within_pp": {
+      "type": "within-product-page",
+      "blocks": {
+        "ugc_slider_1": {
+          "type": "ugc_slider",
+          "settings": {
+            "autoscroll_ms": 4000,
+            "tinted": false,
+            "padding_top": 88,
+            "padding_bottom": 88,
+            "eyebrow": "Un sachet. Ogni mattina.",
+            "heading": "Il rituale che entra nella tua giornata.",
+            "video_url_1": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125728_3eb9f5b0-9730-4239-a6b3-743b5c80a2e4.mp4",
+            "video_url_2": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125252_4b376383-70fc-4e59-9301-5f0611678caa.mp4",
+            "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_4b32d8cb-0503-4fb1-b519-5d6783399547.mp4",
+            "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_da4a02fc-445d-44b6-a10f-474ef1872d26.mp4",
+            "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_130202_76ee1516-1445-4b2b-af00-f7e900a7f885.mp4",
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125227_78c3c96e-d30f-4ffa-8cd8-dff144d18b24.mp4"
+          }
+        },
+        "value_prop_2": {
+          "type": "value_prop",
+          "settings": {
+            "eyebrow": "Non è solo collagene",
+            "heading": "Il collagene che arriva davvero.",
+            "sub": "Il collagene generico si ferma nello stomaco. Within è costruito per arrivare fino alla pelle.",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022239_17078ffb-fe0e-47c9-ae7b-a2bbaf16428f.png",
+            "show_cta": false,
+            "cta_label": "Inizia oggi",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "cinematic_3": {
+          "type": "cinematic",
+          "settings": {
+            "eyebrow": "Più piccolo. Più efficace.",
+            "heading": "Sotto i 3.000 Dalton. Dove gli altri non arrivano.",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_8864d567-ef36-4962-ab8f-22d5fb5b5d18.png",
+            "parallax": 0.2
+          }
+        },
+        "benefits_4": {
+          "type": "benefits",
+          "settings": {
+            "bignum": "5000",
+            "bignum_unit": "mg",
+            "heading": "Collagene marino tripeptide. In ogni sachet.",
+            "sub": "Molecole tre volte più piccole del collagene generico (oltre 10.000 Da): passano la barriera intestinale e raggiungono i fibroblasti del derma.",
+            "link_label": "Inizia oggi →",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022238_9b18bcf3-62e0-4f50-9640-585496f9b43d.png",
+            "reversed": false,
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "benefits_5": {
+          "type": "benefits",
+          "settings": {
+            "bignum": "",
+            "bignum_unit": "",
+            "heading": "La bellezza comincia dall'intestino.",
+            "sub": "1 miliardo di CFU di Lactobacillus in ogni dose. Un intestino in equilibrio assorbe meglio, e la pelle se ne accorge. È l'ingrediente che gli altri collageni non hanno.",
+            "link_label": "",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_83292b60-8669-45f6-8eba-48b42dbb54c7.png",
+            "reversed": true,
+            "tinted": true,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "eyebrow": "Asse intestino-pelle"
+          }
+        },
+        "feature_row_6": {
+          "type": "feature_row",
+          "settings": {
+            "heading": "Fatto per essere preso. Non gestito.",
+            "f1_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022237_d1eab07b-0032-4879-b973-f38b0b68be4c.png",
+            "f1_title": "Monodose",
+            "f1_text": "25 ml, niente misurini.",
+            "f2_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_eab2918b-f157-4d9b-baf8-46a2c4d820a5.png",
+            "f2_title": "Mango e passion fruit",
+            "f2_text": "Zero retrogusto di pesce.",
+            "f3_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_aad9a819-1ddc-426b-850e-26a8b7c3e7af.png",
+            "f3_title": "Sta in borsa",
+            "f3_text": "Lo prendi ovunque tu sia.",
+            "f4_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_be849ed2-83c2-4acc-9890-ec9f079e5385.png",
+            "f4_title": "6 attivi",
+            "f4_text": "Zero riempitivi.",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "cinematic_7": {
+          "type": "cinematic",
+          "settings": {
+            "eyebrow": "Ogni mattina",
+            "heading": "Un sorso. 25 secondi. Il resto lo fa il tuo corpo.",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_da85e40f-d7a7-4813-873d-01dddb7f637d.png",
+            "parallax": 0.2
+          }
+        },
+        "how_it_works_8": {
+          "type": "how_it_works",
+          "settings": {
+            "eyebrow": "Come funziona",
+            "heading": "Tre gesti. Nessuna complicazione.",
+            "step1_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_1ba91de2-16a0-4c61-aed7-623a4f288521.png",
+            "step1_title": "Apri il sachet",
+            "step1_text": "Monodose da 25 ml, già pronto. Niente polveri da sciogliere.",
+            "step2_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_e85373ce-9de8-46d8-9c26-b225e1aa994d.png",
+            "step2_title": "Bevi, e basta",
+            "step2_text": "Mango e frutto della passione. Mattina o sera, conta la costanza.",
+            "step3_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_134903d6-9fbd-40e2-b45d-0a80b8a95f16.png",
+            "step3_title": "Lascia che lavori",
+            "step3_text": "Prima l'idratazione, in 2-3 settimane. La compattezza in 8-12.",
+            "dark": true,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "closeup_9": {
+          "type": "closeup",
+          "settings": {
+            "eyebrow": "Ogni dettaglio conta",
+            "heading": "Sei attivi. Guarda da vicino.",
+            "sub": "Liquido, già sciolto, pronto da bere. Dieci sachet per box, dosaggi dichiarati uno per uno.",
+            "image_url_1": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_3723d142-71fa-4c8f-b9a8-fe7e1c5521bd.png",
+            "image_url_2": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_8399ba65-5fed-46e2-a048-612a3e50c9b0.png",
+            "image_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_376737c4-b03c-4428-b796-a58586c87a48.png",
+            "mobile_horizontal": true,
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "whats_inside_10": {
+          "type": "whats_inside",
+          "settings": {
+            "eyebrow": "La formula",
+            "heading": "Costruisci. Proteggi. Attiva.",
+            "sub": "Un sistema a 3 livelli, non un ingrediente da solo.",
+            "g1_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_7e8ef482-d9fa-4caa-a5a9-05b302da9540.png",
+            "g1_caption": "6 attivi, nessun riempitivo",
+            "g2_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_4eb662ff-b9f7-4001-a858-c3a6e907c927.png",
+            "g2_caption": "Il sistema a 3 livelli",
+            "g3_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_31a77d99-ca55-46a8-b656-f774fe7ff0c5.png",
+            "g3_caption": "10 sachet da 25 ml",
+            "ing1_tag": "Costruisci",
+            "ing1_name": "Collagene marino tripeptide",
+            "ing1_desc": "Sotto i 3.000 Da, stimola i fibroblasti",
+            "ing1_dose": "5.000 mg",
+            "ing2_tag": "Costruisci",
+            "ing2_name": "Vitamina C",
+            "ing2_desc": "Contribuisce alla normale formazione del collagene per la normale funzione della pelle*",
+            "ing2_dose": "80 mg",
+            "ing3_tag": "Proteggi",
+            "ing3_name": "Estratto di cranberry",
+            "ing3_desc": "Antiossidante naturale",
+            "ing3_dose": "500 mg",
+            "ing4_tag": "Proteggi",
+            "ing4_name": "Zinco",
+            "ing4_desc": "Contribuisce al mantenimento di pelle e capelli normali*",
+            "ing4_dose": "10 mg",
+            "ing5_tag": "Attiva",
+            "ing5_name": "Acido ialuronico",
+            "ing5_desc": "Idratazione dall'interno",
+            "ing5_dose": "100 mg",
+            "ing6_tag": "Attiva",
+            "ing6_name": "Probiotici Lactobacillus",
+            "ing6_desc": "Asse intestino-pelle",
+            "ing6_dose": "1 mld CFU",
+            "tinted": true,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "ugc_slider_11": {
+          "type": "ugc_slider",
+          "settings": {
+            "autoscroll_ms": 4000,
+            "tinted": false,
+            "padding_top": 88,
+            "padding_bottom": 88,
+            "eyebrow": "",
+            "heading": "Altre storie, altre mattine.",
+            "video_url_1": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_74fe6764-b37c-4862-828b-0d3138935d3a.mp4",
+            "video_url_2": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125227_030e76c8-7f3e-4f20-a4b0-cd5c61d09667.mp4",
+            "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_130201_b6cd86d8-7c7b-41f6-a1c5-c80d5758b902.mp4",
+            "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_03eb5516-d436-4dfd-b332-7f7af7ac2969.mp4",
+            "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125728_fb9a8c99-bf51-4f17-9fa9-c29bca390999.mp4",
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125229_82fbe1e9-6f64-4ac8-b525-65a2dbf6339c.mp4"
+          }
+        },
+        "objections_12": {
+          "type": "objections",
+          "settings": {
+            "heading": "Domande scomode. Risposte dirette.",
+            "q1": "\"Il collagene non viene semplicemente digerito?\"",
+            "a1": "Quello generico sì. I tripeptidi sotto i 3.000 Da sono abbastanza piccoli da superare la barriera intestinale.",
+            "q2": "\"Ne ho già provati altri. Niente.\"",
+            "a2": "Probabilmente erano collageni ad alto peso molecolare. Il problema era il prodotto, non tu.",
+            "q3": "\"Gli studi li pagano le aziende.\"",
+            "a3": "Diffidare è giusto. Per questo dichiariamo peso molecolare e dosaggi, e usiamo solo claim approvati dall'EFSA.",
+            "q4": "\"Quanto devo aspettare?\"",
+            "a4": "Idratazione in 2-3 settimane, compattezza in 8-12. Chi ti promette miracoli in 3 giorni ti sta mentendo.",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "social_proof_13": {
+          "type": "social_proof",
+          "settings": {
+            "eyebrow": "Cosa dice la ricerca",
+            "heading": "Risultati misurabili. Non promesse.",
+            "stat1_prefix": "+",
+            "stat1_count": "23",
+            "stat1_suffix": "%",
+            "stat1_label": "idratazione",
+            "stat2_prefix": "−",
+            "stat2_count": "17",
+            "stat2_suffix": "%",
+            "stat2_label": "rughe perioculari",
+            "stat3_prefix": "+",
+            "stat3_count": "15",
+            "stat3_suffix": "%",
+            "stat3_label": "compattezza",
+            "source_note": "Dati indicativi da studi su peptidi di collagene idrolizzato, 8-12 settimane. I risultati individuali possono variare.",
+            "verified_label": "Acquisto verificato",
+            "r1_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022310_72453d34-0f9b-4a13-84b2-0ee0f50c6841.png",
+            "r1_quote": "\"Dopo tre settimane la pelle è visibilmente più idratata. Le colleghe mi hanno chiesto cosa uso.\"",
+            "r1_name": "Laura",
+            "r1_meta": "43 · Milano",
+            "r2_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_9c358caf-86cc-4057-b42c-4a569e68826b.png",
+            "r2_quote": "\"Avevo provato tre integratori senza risultati. Con Within ho visto la differenza dopo circa sei settimane.\"",
+            "r2_name": "Francesca",
+            "r2_meta": "51 · Roma",
+            "r3_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_c44c87da-8b75-4660-9b9d-063661e85a11.png",
+            "r3_quote": "\"Il gusto è buonissimo, sembra un succo. È l'unico integratore che non dimentico mai di prendere.\"",
+            "r3_name": "Giulia",
+            "r3_meta": "38 · Torino",
+            "big_quote": "\"Per la prima volta ho capito cosa stavo bevendo, e perché.\"",
+            "big_quote_cite": "— Francesca, 51",
+            "cta_label": "Inizia il tuo percorso",
+            "tinted": true,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "authority_14": {
+          "type": "authority",
+          "settings": {
+            "eyebrow": "Trasparenza radicale",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022312_e1f927c5-48a6-46e8-ad78-e5e2ff68c331.png",
+            "quote": "\"Non ti chiediamo di fidarti. Ti diamo tutto quello che serve per verificare.\"",
+            "point1": "Peso molecolare dichiarato: sotto i 3.000 Da",
+            "point2": "Certificato di analisi e test metalli pesanti",
+            "point3": "Dosaggio dichiarato per ogni attivo",
+            "point4": "Solo claim EFSA approvati",
+            "name": "Il team Within",
+            "role": "Ricerca e Sviluppo",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "faq_15": {
+          "type": "faq",
+          "settings": {
+            "heading": "Buono a sapersi.",
+            "q1": "Quanto dura una confezione?",
+            "a1": "Ogni box contiene 10 sachet: con uno al giorno dura 10 giorni. Per un mese completo servono 3 box.",
+            "q2": "Mattina o sera?",
+            "a2": "Quando preferisci. Conta la costanza quotidiana, non l'orario.",
+            "q3": "Sa di pesce?",
+            "a3": "No. Gusto mango e frutto della passione, fresco e piacevole.",
+            "q4": "Contiene lattosio o glutine?",
+            "a4": "No. Contiene però collagene di origine marina: se sei allergica al pesce, consulta il tuo medico.",
+            "q5": "Dopo quanto vedo i risultati?",
+            "a5": "I primi segnali di idratazione possono arrivare in 2-3 settimane. Per compattezza e rughe gli studi indicano 8-12 settimane di uso continuativo.",
+            "q6": "Se smetto, torna tutto come prima?",
+            "a6": "Il collagene prodotto resta, ma dopo i 25 anni il corpo ne perde circa l'1-1,5% l'anno. Per mantenere i benefici consigliamo un uso continuativo o cicli regolari.",
+            "q7": "In cosa è diverso dagli altri collageni?",
+            "a7": "Tre cose: tripeptide sotto i 3.000 Da invece di collagene generico sopra i 10.000; probiotici per l'asse intestino-pelle; trasparenza totale su peso molecolare e dosaggi.",
+            "disclaimer": "Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona.",
+            "tinted": true,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        }
+      },
+      "block_order": [
+        "ugc_slider_1",
+        "value_prop_2",
+        "cinematic_3",
+        "benefits_4",
+        "benefits_5",
+        "feature_row_6",
+        "cinematic_7",
+        "how_it_works_8",
+        "closeup_9",
+        "whats_inside_10",
+        "ugc_slider_11",
+        "objections_12",
+        "social_proof_13",
+        "authority_14",
+        "faq_15"
+      ],
+      "settings": {
+        "max_width": 1020,
+        "bg_color": "#ffffff",
+        "surface2_color": "#f7f3ec",
+        "text_color": "#1d1d1f",
+        "muted_color": "#6e6a64",
+        "line_color": "#ddd6cb",
+        "dark_color": "#1C2B28",
+        "on_dark_color": "#f7f3ec",
+        "on_dark_mut_color": "#b5c2bd",
+        "accent_color": "#A8432E",
+        "accent_hi_color": "#F2C05C",
+        "btn_color": "#CC5B3E",
+        "btn_hover_color": "#A8432E",
+        "star_color": "#F2C05C"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "within_pp",
+    "product_recommendations_qggXJq"
+  ]
+}
