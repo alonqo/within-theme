@@ -139,6 +139,13 @@
 .wa-ugc-cap em{font-style:normal}
 .wa-ugc-slide img,.wa-ugc-slide video{display:block;width:100%;height:100%!important;object-fit:cover}
 /* reveal (attivo solo se JS gira) */
+.wa-paths{margin-top:28px;display:grid;gap:10px}
+.wa-path{border:1px solid var(--line);border-radius:14px;padding:14px 18px;background:var(--bg)}
+.wa-path b{display:block;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.wa-path p{margin:0;font-size:1rem;line-height:1.4;color:var(--ink)}
+.wa-path-hi{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.wa-path-hi b{color:var(--accent)}
+.wa-gar .wa-btn-row{justify-content:flex-start;margin-top:28px}
 .wa-js .wa-reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,.8,.26,1),transform 1s cubic-bezier(.16,.8,.26,1),filter 1s;transition-delay:var(--d,0s)}
 .wa-js .wa-reveal.wa-blur{filter:blur(8px)}
 .wa-js .wa-reveal.wa-in{opacity:1;transform:none;filter:none}
@@ -167,7 +174,7 @@
 <div class="wa-root" id="wa-root">
 
 <section class="wa-ugc">
-<div class="wa-ugc-head wa-reveal"><p class="wa-eyebrow">Un sachet. Ogni mattina.</p><h2 class="wa-h2">Il rituale che entra nella tua giornata.</h2></div>
+<div class="wa-ugc-head wa-reveal"><p class="wa-eyebrow">25 ml, ogni mattina</p><h2 class="wa-h2">Il rituale che porti ovunque.</h2></div>
 <div class="wa-ugc-track" data-autoscroll="4000">
 <figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_88724a13-f607-470d-938c-d2e4fc6d8632.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Cliente Within a colazione"></video></div><figcaption class="wa-ugc-cap"><b>Marta, 45</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
 <figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_aeef790c-4bbb-4f66-b426-cbc80055018c.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within in ufficio"></video></div><figcaption class="wa-ugc-cap"><b>Paola, 52</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
@@ -180,16 +187,16 @@
 
 <section class="wa-sect wa-opening wa-center">
 <div class="wa-inner">
-<div class="wa-reveal"><p class="wa-eyebrow">Non è solo collagene</p>
-<h2 class="wa-display">Il collagene che arriva davvero.</h2>
-<p class="wa-sub">Il collagene generico si ferma nello stomaco. Within è costruito per arrivare fino alla pelle.</p></div>
+<div class="wa-reveal"><p class="wa-eyebrow">Hai già provato il collagene?</p>
+<h2 class="wa-display">Non era colpa tua. Era il collagene.</h2>
+<p class="wa-sub">Quasi tutti i collageni usano molecole oltre 10.000 Dalton, che il corpo smonta come qualsiasi proteina. Within no: è costruito su una Doppia Chiave.</p></div>
 <div class="wa-hero-img wa-reveal wa-blur"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133239_332fc57d-882d-47db-8c71-ef9c0c432cf4.png" alt="Within Collagene Marino — box e sachet" loading="lazy"></div>
 </div>
 </section>
 
 <section class="wa-cine">
 <img class="wa-cine-img" data-parallax="0.22" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133240_6e62d467-ccec-48a2-8db0-5be293d52d9e.png" alt="" loading="lazy">
-<div class="wa-cine-copy wa-reveal"><p class="wa-eyebrow">Più piccolo. Più efficace.</p><h2 class="wa-h2">Sotto i 3.000 Dalton.<br>Dove gli altri non arrivano.</h2></div>
+<div class="wa-cine-copy wa-reveal"><p class="wa-eyebrow">Chiave n.1 · La dimensione</p><h2 class="wa-h2">Sotto i 3.000 Dalton.<br>Tre volte più piccolo del generico.</h2></div>
 </section>
 
 <section class="wa-sect">
@@ -197,9 +204,9 @@
 <div class="wa-feat">
 <div class="wa-feat-copy wa-reveal">
 <p class="wa-bignum"><span data-count="5000">5.000</span><small>mg</small></p>
-<h2 class="wa-h2">Collagene marino tripeptide. In ogni sachet.</h2>
-<p class="wa-sub wa-left wa-narrow">Molecole tre volte più piccole del collagene generico (oltre 10.000 Da): passano la barriera intestinale e raggiungono i fibroblasti del derma.</p>
-<p style="margin-top:22px"><a class="wa-link" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Inizia oggi →</a></p>
+<h2 class="wa-h2">Collagene marino tripeptide. Con il peso molecolare in chiaro.</h2>
+<p class="wa-sub wa-left wa-narrow">Il collagene generico supera i 10.000 Dalton: il corpo lo smonta come qualsiasi proteina. I nostri tripeptidi stanno sotto i 3.000. Quasi nessuno dichiara il peso molecolare. Noi sì.</p>
+<p style="margin-top:22px"><a class="wa-link" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Provalo 90 giorni →</a></p>
 </div>
 <div class="wa-feat-media wa-reveal"><img data-parallax="0.08" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133239_3c10111a-879c-49fe-8e0c-b7b2fa3ad58f.png" alt="Tripeptide sotto 3.000 Da contro collagene generico" loading="lazy"></div>
 </div>
@@ -210,9 +217,9 @@
 <div class="wa-wide">
 <div class="wa-feat wa-rev">
 <div class="wa-feat-copy wa-reveal">
-<p class="wa-eyebrow">Asse intestino-pelle</p>
-<h2 class="wa-h2">La bellezza comincia dall'intestino.</h2>
-<p class="wa-sub wa-left wa-narrow">1 miliardo di CFU di Lactobacillus in ogni dose. Un intestino in equilibrio assorbe meglio, e la pelle se ne accorge. È l'ingrediente che gli altri collageni non hanno.</p>
+<p class="wa-eyebrow">Chiave n.2 · L'intestino</p>
+<h2 class="wa-h2">Tutto quello che bevi passa prima da qui.</h2>
+<p class="wa-sub wa-left wa-narrow">L'intestino decide ogni giorno cosa entra, e il suo legame con la pelle è uno dei temi più studiati dalla dermatologia. Per questo in ogni sachet ci sono 1 miliardo di fermenti lattici Lactobacillus. Quasi nessun collagene li mette.</p>
 </div>
 <div class="wa-feat-media wa-reveal"><img data-parallax="0.08" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133240_ee766943-416e-4325-b47c-79f0d5d04a3e.png" alt="Asse intestino-pelle" loading="lazy"></div>
 </div>
@@ -221,29 +228,29 @@
 
 <section class="wa-sect">
 <div class="wa-wide wa-center">
-<h2 class="wa-h2 wa-reveal" style="margin-bottom:56px">Fatto per essere preso. Non gestito.</h2>
+<h2 class="wa-h2 wa-reveal" style="margin-bottom:56px">Facile da prendere. Difficile da dimenticare.</h2>
 <div class="wa-frow">
-<div class="wa-fcard wa-reveal" style="--d:0s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_26746d27-a7ec-45d7-a193-1513087a5388.png" alt="Sachet monodose" loading="lazy"></div><h3>Monodose</h3><p>25 ml, niente misurini.</p></div>
+<div class="wa-fcard wa-reveal" style="--d:0s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_26746d27-a7ec-45d7-a193-1513087a5388.png" alt="Sachet monodose" loading="lazy"></div><h3>Già pronto</h3><p>25 ml liquidi. Niente polveri, niente misurini.</p></div>
 <div class="wa-fcard wa-reveal" style="--d:.08s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133238_fc407666-d76c-4c6c-8ac6-3b2d5a361b56.png" alt="Mango e frutto della passione" loading="lazy"></div><h3>Mango e passion fruit</h3><p>Zero retrogusto di pesce.</p></div>
-<div class="wa-fcard wa-reveal" style="--d:.16s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_1abf951e-6f7d-403b-be9c-3107a4780e77.png" alt="Sachet in borsa" loading="lazy"></div><h3>Sta in borsa</h3><p>Lo prendi ovunque tu sia.</p></div>
-<div class="wa-fcard wa-reveal" style="--d:.24s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133238_8571bba6-01a9-4777-a781-09d42e942cf4.png" alt="6 attivi" loading="lazy"></div><h3>6 attivi</h3><p>Zero riempitivi.</p></div>
+<div class="wa-fcard wa-reveal" style="--d:.16s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_1abf951e-6f7d-403b-be9c-3107a4780e77.png" alt="Sachet in borsa" loading="lazy"></div><h3>Sta in borsa</h3><p>Ufficio, palestra, viaggio: viene con te.</p></div>
+<div class="wa-fcard wa-reveal" style="--d:.24s"><div class="wa-fimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133238_8571bba6-01a9-4777-a781-09d42e942cf4.png" alt="6 attivi" loading="lazy"></div><h3>6 attivi</h3><p>Zero riempitivi, zero formule segrete.</p></div>
 </div>
 </div>
 </section>
 
 <section class="wa-cine">
 <img class="wa-cine-img" data-parallax="0.24" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133239_6cf21ec1-ed7b-40cf-896e-9bef5c7c9fe3.png" alt="" loading="lazy">
-<div class="wa-cine-copy wa-reveal"><p class="wa-eyebrow">Ogni mattina</p><h2 class="wa-h2">Un sorso. 25 secondi.<br>Il resto lo fa il tuo corpo.</h2></div>
+<div class="wa-cine-copy wa-reveal"><p class="wa-eyebrow">25 secondi al giorno</p><h2 class="wa-h2">Apri. Bevi. Fatto.<br>Il gesto più semplice della giornata.</h2></div>
 </section>
 
 <section class="wa-sect wa-dark">
 <div class="wa-wide wa-center">
-<p class="wa-eyebrow wa-reveal">Come funziona</p>
-<h2 class="wa-h2 wa-reveal" style="color:#fff">Tre gesti. Nessuna complicazione.</h2>
+<p class="wa-eyebrow wa-reveal">Come si usa</p>
+<h2 class="wa-h2 wa-reveal" style="color:#fff">Un sachet al giorno. Per 12 settimane.</h2>
 <div class="wa-steps">
 <div class="wa-step wa-reveal" style="--d:0s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_b04083cf-2797-417c-a668-1d31438e7ebf.png" alt="Apri il sachet" loading="lazy"><span class="wa-n">Step 1</span><h3>Apri il sachet</h3><p>Monodose da 25 ml, già pronto. Niente polveri da sciogliere.</p></div>
 <div class="wa-step wa-reveal" style="--d:.12s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_a4ddb530-ae66-412d-a16f-b29af692d74b.png" alt="Bevi Within" loading="lazy"><span class="wa-n">Step 2</span><h3>Bevi, e basta</h3><p>Mango e frutto della passione. Mattina o sera, conta la costanza.</p></div>
-<div class="wa-step wa-reveal" style="--d:.24s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133240_4ced341c-f117-401a-b5a7-d4080dacac47.png" alt="Pelle idratata" loading="lazy"><span class="wa-n">Step 3</span><h3>Lascia che lavori</h3><p>Prima l'idratazione, in 2-3 settimane. La compattezza in 8-12.</p></div>
+<div class="wa-step wa-reveal" style="--d:.24s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133240_4ced341c-f117-401a-b5a7-d4080dacac47.png" alt="Pelle idratata" loading="lazy"><span class="wa-n">Step 3</span><h3>Dagli tempo</h3><p>Gli studi sui peptidi di collagene misurano i cambiamenti dopo 8-12 settimane. Per questo hai 90 giorni per provarlo.</p></div>
 </div>
 </div>
 </section>
@@ -252,9 +259,9 @@
 <div class="wa-wide">
 <div class="wa-cl-grid">
 <div class="wa-cl-sticky wa-reveal">
-<p class="wa-eyebrow">Ogni dettaglio conta</p>
-<h2 class="wa-h2">Sei attivi.<br>Guarda da vicino.</h2>
-<p class="wa-sub wa-left wa-narrow">Liquido, già sciolto, pronto da bere. Dieci sachet per box, dosaggi dichiarati uno per uno.</p>
+<p class="wa-eyebrow">Guarda da vicino</p>
+<h2 class="wa-h2">Liquido. Già sciolto.<br>Pronto da bere.</h2>
+<p class="wa-sub wa-left wa-narrow">10 sachet per box, 6 attivi, ogni dose scritta al milligrammo. Niente formule proprietarie dietro cui nascondersi.</p>
 </div>
 <div class="wa-cl-media">
 <div class="wa-reveal"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133254_e48850f5-6671-4e5b-bc13-494ca45bfb60.png" alt="Sachet aperto, dettaglio" loading="lazy"></div>
@@ -269,25 +276,25 @@
 <div class="wa-wide">
 <p class="wa-eyebrow wa-center wa-reveal" style="margin-bottom:8px">La formula</p>
 <h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:16px">Costruisci. Proteggi. Attiva.</h2>
-<p class="wa-sub wa-reveal" style="text-align:center;margin-bottom:56px">Un sistema a 3 livelli, non un ingrediente da solo.</p>
+<p class="wa-sub wa-reveal" style="text-align:center;margin-bottom:56px">Sei attivi, tre compiti. Ogni dose dichiarata al milligrammo.</p>
 <div class="wa-gal">
 <figure class="wa-reveal" style="--d:0s"><div class="wa-gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_30982ea6-2615-4a32-b502-41790e54d059.png" alt="Ingredienti Within" loading="lazy"></div><figcaption>6 attivi, nessun riempitivo</figcaption></figure>
 <figure class="wa-reveal" style="--d:.1s"><div class="wa-gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_d338bb4a-03f7-48f0-a1bc-0da4d5fca874.png" alt="Il sistema a 3 livelli" loading="lazy"></div><figcaption>Il sistema a 3 livelli</figcaption></figure>
 <figure class="wa-reveal" style="--d:.2s"><div class="wa-gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133254_352c07bd-f5b1-4d7d-a673-f432152ad6f9.png" alt="I sachet Within" loading="lazy"></div><figcaption>10 sachet da 25 ml</figcaption></figure>
 </div>
 <div class="wa-spec wa-reveal">
-<div class="wa-spec-row"><span class="wa-spec-tag">Costruisci</span><span class="wa-spec-name">Collagene marino tripeptide<span>Sotto i 3.000 Da, stimola i fibroblasti</span></span><span class="wa-spec-dose">5.000 mg</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Costruisci</span><span class="wa-spec-name">Collagene marino tripeptide<span>Sotto i 3.000 Da, tre volte più piccolo del generico</span></span><span class="wa-spec-dose">5.000 mg</span></div>
 <div class="wa-spec-row"><span class="wa-spec-tag">Costruisci</span><span class="wa-spec-name">Vitamina C<span>Contribuisce alla normale formazione del collagene per la normale funzione della pelle*</span></span><span class="wa-spec-dose">80 mg</span></div>
-<div class="wa-spec-row"><span class="wa-spec-tag">Proteggi</span><span class="wa-spec-name">Estratto di cranberry<span>Antiossidante naturale</span></span><span class="wa-spec-dose">500 mg</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Proteggi</span><span class="wa-spec-name">Estratto di cranberry<span>Estratto vegetale ricco di polifenoli</span></span><span class="wa-spec-dose">500 mg</span></div>
 <div class="wa-spec-row"><span class="wa-spec-tag">Proteggi</span><span class="wa-spec-name">Zinco<span>Contribuisce al mantenimento di pelle e capelli normali*</span></span><span class="wa-spec-dose">10 mg</span></div>
-<div class="wa-spec-row"><span class="wa-spec-tag">Attiva</span><span class="wa-spec-name">Acido ialuronico<span>Idratazione dall'interno</span></span><span class="wa-spec-dose">100 mg</span></div>
-<div class="wa-spec-row"><span class="wa-spec-tag">Attiva</span><span class="wa-spec-name">Probiotici Lactobacillus<span>Asse intestino-pelle</span></span><span class="wa-spec-dose">1 mld CFU</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Attiva</span><span class="wa-spec-name">Acido ialuronico<span>Molecola presente in natura nella pelle</span></span><span class="wa-spec-dose">100 mg</span></div>
+<div class="wa-spec-row"><span class="wa-spec-tag">Attiva</span><span class="wa-spec-name">Probiotici Lactobacillus<span>Fermenti lattici: la Chiave n.2</span></span><span class="wa-spec-dose">1 mld CFU</span></div>
 </div>
 </div>
 </section>
 
 <section class="wa-ugc">
-<div class="wa-ugc-head wa-reveal"><h2 class="wa-h2">Altre storie, altre mattine.</h2></div>
+<div class="wa-ugc-head wa-reveal"><h2 class="wa-h2">Ufficio, palestra, divano. Within viene con te.</h2></div>
 <div class="wa-ugc-track" data-autoscroll="4000">
 <figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_bc9cba9e-5312-42d4-bd3d-f3fec0ee1761.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within in cucina"></video></div><figcaption class="wa-ugc-cap"><b>Anna, 55</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
 <figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_218f9802-ceea-4faf-bdef-a2bd45b04142.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within prima del lavoro"></video></div><figcaption class="wa-ugc-cap"><b>Federica, 48</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
@@ -300,33 +307,35 @@
 
 <section class="wa-sect">
 <div class="wa-inner">
-<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:48px">Domande scomode. Risposte dirette.</h2>
+<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:48px">Le domande che ti fai. Le risposte che nessuno ti dà.</h2>
 <div class="wa-ob">
-<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Il collagene non viene semplicemente digerito?"</p><p class="wa-ob-a">Quello generico sì. I tripeptidi sotto i 3.000 Da sono abbastanza piccoli da superare la barriera intestinale.</p></div>
-<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Ne ho già provati altri. Niente."</p><p class="wa-ob-a">Probabilmente erano collageni ad alto peso molecolare. Il problema era il prodotto, non tu.</p></div>
-<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Gli studi li pagano le aziende."</p><p class="wa-ob-a">Diffidare è giusto. Per questo dichiariamo peso molecolare e dosaggi, e usiamo solo claim approvati dall'EFSA.</p></div>
-<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Quanto devo aspettare?"</p><p class="wa-ob-a">Idratazione in 2-3 settimane, compattezza in 8-12. Chi ti promette miracoli in 3 giorni ti sta mentendo.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Il collagene non viene digerito e basta?"</p><p class="wa-ob-a">Quello generico, sì: oltre 10.000 Dalton, smontato come qualsiasi proteina. Per questo abbiamo scelto tripeptidi sotto i 3.000 Da, tra i frammenti di collagene più piccoli.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Ne ho già provati altri. Niente."</p><p class="wa-ob-a">Guarda l'etichetta: se il peso molecolare non c'è, ora sai perché. Non era colpa tua.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Gli studi li pagano le aziende."</p><p class="wa-ob-a">Hai ragione a diffidare. Per questo non ti promettiamo miracoli: solo claim approvati dall'EFSA, e i certificati di analisi li puoi leggere.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"Quanto devo aspettare?"</p><p class="wa-ob-a">Gli studi parlano di 8-12 settimane. Chi ti promette risultati in 10 giorni ti sta vendendo qualcosa. Noi ti diamo 90 giorni per verificare.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"E i metalli pesanti?"</p><p class="wa-ob-a">Il Clean Label Project ha trovato tracce di metalli pesanti nel 64% dei collageni venduti su Amazon. Ogni lotto Within è testato, e il certificato è pubblico.</p></div>
+<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">"E se non vedo nessuna differenza?"</p><p class="wa-ob-a">Ci scrivi entro 90 giorni dall'acquisto e ti rimborsiamo. Il rischio è nostro, non tuo.</p></div>
 </div>
 </div>
 </section>
 
 <section class="wa-sect wa-tint">
 <div class="wa-wide">
-<p class="wa-eyebrow wa-center wa-reveal">Cosa dice la ricerca</p>
-<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:54px">Risultati misurabili. Non promesse.</h2>
+<p class="wa-eyebrow wa-center wa-reveal">Prove, non promesse</p>
+<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:54px">I numeri sono nostri. Le parole sono loro.</h2>
 <div class="wa-stats wa-reveal">
-<div class="wa-s"><div class="wa-sn">+<span data-count="23">23</span>%</div><div class="wa-sl">idratazione</div></div>
-<div class="wa-s"><div class="wa-sn">−<span data-count="17">17</span>%</div><div class="wa-sl">rughe perioculari</div></div>
-<div class="wa-s"><div class="wa-sn">+<span data-count="15">15</span>%</div><div class="wa-sl">compattezza</div></div>
+<div class="wa-s"><div class="wa-sn"><span data-count="5000">5.000</span> mg</div><div class="wa-sl">collagene per sachet</div></div>
+<div class="wa-s"><div class="wa-sn">&lt;<span data-count="3000">3.000</span> Da</div><div class="wa-sl">peso molecolare</div></div>
+<div class="wa-s"><div class="wa-sn"><span data-count="90">90</span> giorni</div><div class="wa-sl">di garanzia</div></div>
 </div>
-<p class="wa-src wa-reveal">Dati indicativi da studi su peptidi di collagene idrolizzato, 8-12 settimane. I risultati individuali possono variare.</p>
+<p class="wa-src wa-reveal">Valori per sachet da 25 ml, verificabili nel certificato di analisi.</p>
 <div class="wa-revs">
 <div class="wa-rev wa-reveal" style="--d:0s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022310_72453d34-0f9b-4a13-84b2-0ee0f50c6841.png" alt="Laura" loading="lazy"><div class="wa-rev-b"><div class="wa-stars">★★★★★</div><p>"Dopo tre settimane la pelle è visibilmente più idratata. Le colleghe mi hanno chiesto cosa uso."</p><div class="wa-who"><b>Laura</b>, 43 · Milano<br><span class="wa-ver">Acquisto verificato</span></div></div></div>
 <div class="wa-rev wa-reveal" style="--d:.1s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_9c358caf-86cc-4057-b42c-4a569e68826b.png" alt="Francesca" loading="lazy"><div class="wa-rev-b"><div class="wa-stars">★★★★★</div><p>"Avevo provato tre integratori senza risultati. Con Within ho visto la differenza dopo circa sei settimane."</p><div class="wa-who"><b>Francesca</b>, 51 · Roma<br><span class="wa-ver">Acquisto verificato</span></div></div></div>
 <div class="wa-rev wa-reveal" style="--d:.2s"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_c44c87da-8b75-4660-9b9d-063661e85a11.png" alt="Giulia" loading="lazy"><div class="wa-rev-b"><div class="wa-stars">★★★★★</div><p>"Il gusto è buonissimo, sembra un succo. È l'unico integratore che non dimentico mai di prendere."</p><div class="wa-who"><b>Giulia</b>, 38 · Torino<br><span class="wa-ver">Acquisto verificato</span></div></div></div>
 </div>
 <blockquote class="wa-quote wa-reveal">"Per la prima volta ho capito cosa stavo bevendo, e perché."<cite>— Francesca, 51</cite></blockquote>
-<div class="wa-btn-row wa-reveal"><a class="wa-btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Inizia il tuo percorso</a></div>
+<div class="wa-btn-row wa-reveal"><a class="wa-btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Provalo per 90 giorni</a></div>
 </div>
 </section>
 
@@ -336,15 +345,32 @@
 <div class="wa-auth-img"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_113ae570-8806-4947-b614-a6b1a28d0c82.png" alt="Laboratorio e certificato di analisi" loading="lazy"></div>
 <div class="wa-auth-panel">
 <p class="wa-eyebrow">Trasparenza radicale</p>
-<blockquote>"Non ti chiediamo di fidarti. Ti diamo tutto quello che serve per verificare."</blockquote>
+<blockquote>"Gli altri ti chiedono di fidarti. Noi ti diamo i documenti per controllare."</blockquote>
 <ul class="wa-auth-list">
 <li>Peso molecolare dichiarato: sotto i 3.000 Da</li>
-<li>Certificato di analisi e test metalli pesanti</li>
-<li>Dosaggio dichiarato per ogni attivo</li>
-<li>Solo claim EFSA approvati</li>
+<li>Certificato di analisi per ogni lotto</li>
+<li>Test metalli pesanti, pubblicato</li>
+<li>Ogni dose al milligrammo, niente formule segrete</li>
+<li>Solo claim approvati dall'EFSA</li>
 </ul>
 <div class="wa-sig"><b>Il team Within</b>Ricerca e Sviluppo</div>
 </div>
+</div>
+</div>
+</section>
+
+<section class="wa-sect">
+<div class="wa-wide">
+<div class="wa-feat wa-gar">
+<div class="wa-feat-copy wa-reveal">
+<p class="wa-eyebrow">Garanzia 90 giorni</p>
+<p class="wa-bignum"><span data-count="90">90</span><small>giorni</small></p>
+<h2 class="wa-h2">Provalo 12 settimane. Se non ti convince, ti rimborsiamo.</h2>
+<p class="wa-sub wa-left wa-narrow">90 giorni non sono un numero a caso: è il tempo che gli studi usano per misurare un cambiamento. Una garanzia di 14 giorni sarebbe solo marketing.</p>
+<div class="wa-paths"><div class="wa-path"><b>Se non fai niente</b><p>Dopo i 25 anni perdi circa l'1-1,5% di collagene. Ogni anno.</p></div><div class="wa-path"><b>Se scegli un collagene qualunque</b><p>Spendi 30-70 € al mese senza sapere quanto è grande la molecola che bevi.</p></div><div class="wa-path wa-path-hi"><b>Se scegli Within</b><p>Sai cosa bevi, al milligrammo. E hai 90 giorni per decidere.</p></div></div>
+<div class="wa-btn-row"><a class="wa-btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Provalo senza rischi</a></div>
+</div>
+<div class="wa-feat-media wa-reveal"><img data-parallax="0.08" src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_a095fd80-1e6b-4c1d-a9a9-8cc6d2128b44.png" alt="Within: box da 10 sachet" loading="lazy"></div>
 </div>
 </div>
 </section>
@@ -357,11 +383,12 @@
 <details><summary>Mattina o sera?<span class="wa-pm"></span></summary><div class="wa-ans">Quando preferisci. Conta la costanza quotidiana, non l'orario.</div></details>
 <details><summary>Sa di pesce?<span class="wa-pm"></span></summary><div class="wa-ans">No. Gusto mango e frutto della passione, fresco e piacevole.</div></details>
 <details><summary>Contiene lattosio o glutine?<span class="wa-pm"></span></summary><div class="wa-ans">No. Contiene però collagene di origine marina: se sei allergica al pesce, consulta il tuo medico.</div></details>
-<details><summary>Dopo quanto vedo i risultati?<span class="wa-pm"></span></summary><div class="wa-ans">I primi segnali di idratazione possono arrivare in 2-3 settimane. Per compattezza e rughe gli studi indicano 8-12 settimane di uso continuativo.</div></details>
-<details><summary>Se smetto, torna tutto come prima?<span class="wa-pm"></span></summary><div class="wa-ans">Il collagene prodotto resta, ma dopo i 25 anni il corpo ne perde circa l'1-1,5% l'anno. Per mantenere i benefici consigliamo un uso continuativo o cicli regolari.</div></details>
-<details><summary>In cosa è diverso dagli altri collageni?<span class="wa-pm"></span></summary><div class="wa-ans">Tre cose: tripeptide sotto i 3.000 Da invece di collagene generico sopra i 10.000; probiotici per l'asse intestino-pelle; trasparenza totale su peso molecolare e dosaggi.</div></details>
+<details><summary>Quando posso aspettarmi qualcosa?<span class="wa-pm"></span></summary><div class="wa-ans">Gli studi sui peptidi di collagene misurano i cambiamenti dopo 8-12 settimane di uso quotidiano. Per questo la garanzia dura 90 giorni: il tempo giusto per farti un'idea.</div></details>
+<details><summary>Se smetto, torna tutto come prima?<span class="wa-pm"></span></summary><div class="wa-ans">Con l'età il corpo continua a perdere collagene: circa l'1-1,5% l'anno dopo i 25. Per questo chi si trova bene lo prende con continuità.</div></details>
+<details><summary>In cosa è diverso dagli altri collageni?<span class="wa-pm"></span></summary><div class="wa-ans">La Doppia Chiave: tripeptide sotto i 3.000 Da (il generico supera i 10.000) e 1 miliardo di fermenti lattici. In più, dosaggi e certificati sono pubblici.</div></details>
+<details><summary>Come funziona la garanzia?<span class="wa-pm"></span></summary><div class="wa-ans">Se entro 90 giorni dall'acquisto non sei soddisfatta, scrivici e ti rimborsiamo. Il rischio è nostro, non tuo.</div></details>
 </div>
-<p class="wa-disc">Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona.</p>
+<p class="wa-disc">Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona. Garanzia soddisfatta o rimborsata di 90 giorni secondo le condizioni di vendita.</p>
 </div>
 </section>
 

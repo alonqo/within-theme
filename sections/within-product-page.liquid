@@ -145,7 +145,14 @@
 #shopify-section-{{ section.id }} .wa-ugc-cap em{font-style:normal}
 #shopify-section-{{ section.id }} .wa-ugc-slide img,#shopify-section-{{ section.id }} .wa-ugc-slide video{display:block;width:100%;height:100%!important;object-fit:cover}
 #shopify-section-{{ section.id }} /* reveal (attivo solo se JS gira) */
-.wa-js .wa-reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,.8,.26,1),transform 1s cubic-bezier(.16,.8,.26,1),filter 1s;transition-delay:var(--d,0s)}
+.wa-paths{margin-top:28px;display:grid;gap:10px}
+#shopify-section-{{ section.id }} .wa-path{border:1px solid var(--line);border-radius:14px;padding:14px 18px;background:var(--bg)}
+#shopify-section-{{ section.id }} .wa-path b{display:block;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+#shopify-section-{{ section.id }} .wa-path p{margin:0;font-size:1rem;line-height:1.4;color:var(--ink)}
+#shopify-section-{{ section.id }} .wa-path-hi{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+#shopify-section-{{ section.id }} .wa-path-hi b{color:var(--accent)}
+#shopify-section-{{ section.id }} .wa-gar .wa-btn-row{justify-content:flex-start;margin-top:28px}
+#shopify-section-{{ section.id }} .wa-js .wa-reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,.8,.26,1),transform 1s cubic-bezier(.16,.8,.26,1),filter 1s;transition-delay:var(--d,0s)}
 #shopify-section-{{ section.id }} .wa-js .wa-reveal.wa-blur{filter:blur(8px)}
 #shopify-section-{{ section.id }} .wa-js .wa-reveal.wa-in{opacity:1;transform:none;filter:none}
 @media (prefers-reduced-motion:reduce){
@@ -365,6 +372,28 @@
         <ul class="wa-auth-list">{%- for i in (1..5) -%}{%- assign lk = 'point' | append: i -%}{%- assign l = block.settings[lk] -%}{%- if l != blank -%}<li>{{ l }}</li>{%- endif -%}{%- endfor -%}</ul>
         <div class="wa-sig"><b>{{ block.settings.name }}</b>{{ block.settings.role }}</div>
       </div>
+    </div>
+  </div>
+</section>
+
+{%- when 'guarantee' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide">
+    <div class="wa-feat wa-gar{% if block.settings.reversed %} wa-rev{% endif %}">
+      <div class="wa-feat-copy wa-reveal">
+        {% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}
+        {%- if block.settings.days != blank -%}<p class="wa-bignum"><span data-count="{{ block.settings.days }}">{{ block.settings.days }}</span>{% if block.settings.days_unit != blank %}<small>{{ block.settings.days_unit }}</small>{% endif %}</p>{%- endif -%}
+        <h2 class="wa-h2">{{ block.settings.heading }}</h2>
+        {% if block.settings.sub != blank %}<p class="wa-sub wa-left wa-narrow">{{ block.settings.sub }}</p>{% endif %}
+        <div class="wa-paths">
+        {%- for i in (1..3) -%}
+          {%- assign tk = 'path' | append: i | append: '_title' -%}{%- assign t = block.settings[tk] -%}
+          {%- if t != blank -%}{%- assign xk = 'path' | append: i | append: '_text' -%}<div class="wa-path{% if forloop.last %} wa-path-hi{% endif %}"><b>{{ t }}</b><p>{{ block.settings[xk] }}</p></div>{%- endif -%}
+        {%- endfor -%}
+        </div>
+        {% if block.settings.cta_label != blank %}<div class="wa-btn-row"><a class="wa-btn wa-top" href="#">{{ block.settings.cta_label }}</a></div>{% endif %}
+      </div>
+      <div class="wa-feat-media wa-reveal">{% if block.settings.image != blank %}<img data-parallax="0.08" src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">{% elsif block.settings.image_url != blank %}<img data-parallax="0.08" src="{{ block.settings.image_url }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}</div>
     </div>
   </div>
 </section>
@@ -705,19 +734,19 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "eyebrow",
           "label": "Sopra-titolo",
-          "default": "Non è solo collagene"
+          "default": "Hai già provato il collagene?"
         },
         {
           "type": "text",
           "id": "heading",
           "label": "Titolo grande",
-          "default": "Il collagene che arriva davvero."
+          "default": "Non era colpa tua. Era il collagene."
         },
         {
           "type": "textarea",
           "id": "sub",
           "label": "Sottotitolo",
-          "default": "Il collagene generico si ferma nello stomaco. Within è costruito per arrivare fino alla pelle."
+          "default": "Quasi tutti i collageni usano molecole oltre 10.000 Dalton, che il corpo smonta come qualsiasi proteina. Within no: è costruito su una Doppia Chiave."
         },
         {
           "type": "image_picker",
@@ -778,13 +807,13 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "eyebrow",
           "label": "Sopra-titolo",
-          "default": "Più piccolo. Più efficace."
+          "default": "Chiave n.1 · La dimensione"
         },
         {
           "type": "text",
           "id": "heading",
           "label": "Titolo",
-          "default": "Sotto i 3.000 Dalton. Dove gli altri non arrivano."
+          "default": "Sotto i 3.000 Dalton. Tre volte più piccolo del generico."
         },
         {
           "type": "text",
@@ -838,19 +867,19 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "heading",
           "label": "Titolo",
-          "default": "Collagene marino tripeptide. In ogni sachet."
+          "default": "Collagene marino tripeptide. Con il peso molecolare in chiaro."
         },
         {
           "type": "textarea",
           "id": "sub",
           "label": "Sottotitolo",
-          "default": "Molecole tre volte più piccole del collagene generico (oltre 10.000 Da): passano la barriera intestinale e raggiungono i fibroblasti del derma."
+          "default": "Il collagene generico supera i 10.000 Dalton: il corpo lo smonta come qualsiasi proteina. I nostri tripeptidi stanno sotto i 3.000. Quasi nessuno dichiara il peso molecolare. Noi sì."
         },
         {
           "type": "text",
           "id": "link_label",
           "label": "Link (torna su, opz.)",
-          "default": "Inizia oggi →"
+          "default": "Provalo 90 giorni →"
         },
         {
           "type": "image_picker",
@@ -905,7 +934,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "heading",
           "label": "Titolo",
-          "default": "Fatto per essere preso. Non gestito."
+          "default": "Facile da prendere. Difficile da dimenticare."
         },
         {
           "type": "image_picker",
@@ -922,13 +951,13 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "f1_title",
           "label": "1 · titolo",
-          "default": "Monodose"
+          "default": "Già pronto"
         },
         {
           "type": "text",
           "id": "f1_text",
           "label": "1 · testo",
-          "default": "25 ml, niente misurini."
+          "default": "25 ml liquidi. Niente polveri, niente misurini."
         },
         {
           "type": "image_picker",
@@ -974,7 +1003,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "f3_text",
           "label": "3 · testo",
-          "default": "Lo prendi ovunque tu sia."
+          "default": "Ufficio, palestra, viaggio: viene con te."
         },
         {
           "type": "image_picker",
@@ -997,7 +1026,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "f4_text",
           "label": "4 · testo",
-          "default": "Zero riempitivi."
+          "default": "Zero riempitivi, zero formule segrete."
         },
         {
           "type": "checkbox",
@@ -1035,13 +1064,13 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "eyebrow",
           "label": "Sopra-titolo",
-          "default": "Come funziona"
+          "default": "Come si usa"
         },
         {
           "type": "text",
           "id": "heading",
           "label": "Titolo",
-          "default": "Tre gesti. Nessuna complicazione."
+          "default": "Un sachet al giorno. Per 12 settimane."
         },
         {
           "type": "image_picker",
@@ -1104,13 +1133,13 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "step3_title",
           "label": "Step 3 · titolo",
-          "default": "Lascia che lavori"
+          "default": "Dagli tempo"
         },
         {
           "type": "text",
           "id": "step3_text",
           "label": "Step 3 · testo",
-          "default": "Prima l'idratazione, in 2-3 settimane. La compattezza in 8-12."
+          "default": "Gli studi sui peptidi di collagene misurano i cambiamenti dopo 8-12 settimane. Per questo hai 90 giorni per provarlo."
         },
         {
           "type": "image_picker",
@@ -1168,19 +1197,19 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "eyebrow",
           "label": "Sopra-titolo",
-          "default": "Ogni dettaglio conta"
+          "default": "Guarda da vicino"
         },
         {
           "type": "text",
           "id": "heading",
           "label": "Titolo",
-          "default": "Sei attivi. Guarda da vicino."
+          "default": "Liquido. Già sciolto. Pronto da bere."
         },
         {
           "type": "textarea",
           "id": "sub",
           "label": "Sottotitolo",
-          "default": "Liquido, già sciolto, pronto da bere. Dieci sachet per box, dosaggi dichiarati uno per uno."
+          "default": "10 sachet per box, 6 attivi, ogni dose scritta al milligrammo. Niente formule proprietarie dietro cui nascondersi."
         },
         {
           "type": "image_picker",
@@ -1279,7 +1308,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "sub",
           "label": "Sottotitolo",
-          "default": "Un sistema a 3 livelli, non un ingrediente da solo."
+          "default": "Sei attivi, tre compiti. Ogni dose dichiarata al milligrammo."
         },
         {
           "type": "image_picker",
@@ -1352,7 +1381,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "ing1_desc",
           "label": "1 · descrizione",
-          "default": "Sotto i 3.000 Da, stimola i fibroblasti"
+          "default": "Sotto i 3.000 Da, tre volte più piccolo del generico"
         },
         {
           "type": "text",
@@ -1400,7 +1429,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "ing3_desc",
           "label": "3 · descrizione",
-          "default": "Antiossidante naturale"
+          "default": "Estratto vegetale ricco di polifenoli"
         },
         {
           "type": "text",
@@ -1448,7 +1477,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "ing5_desc",
           "label": "5 · descrizione",
-          "default": "Idratazione dall'interno"
+          "default": "Molecola presente in natura nella pelle"
         },
         {
           "type": "text",
@@ -1472,7 +1501,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "ing6_desc",
           "label": "6 · descrizione",
-          "default": "Asse intestino-pelle"
+          "default": "Fermenti lattici: la Chiave n.2"
         },
         {
           "type": "text",
@@ -1556,19 +1585,19 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "heading",
           "label": "Titolo",
-          "default": "Domande scomode. Risposte dirette."
+          "default": "Le domande che ti fai. Le risposte che nessuno ti dà."
         },
         {
           "type": "text",
           "id": "q1",
           "label": "Dubbio 1",
-          "default": "\"Il collagene non viene semplicemente digerito?\""
+          "default": "\"Il collagene non viene digerito e basta?\""
         },
         {
           "type": "textarea",
           "id": "a1",
           "label": "Risposta 1",
-          "default": "Quello generico sì. I tripeptidi sotto i 3.000 Da sono abbastanza piccoli da superare la barriera intestinale."
+          "default": "Quello generico, sì: oltre 10.000 Dalton, smontato come qualsiasi proteina. Per questo abbiamo scelto tripeptidi sotto i 3.000 Da, tra i frammenti di collagene più piccoli."
         },
         {
           "type": "text",
@@ -1580,7 +1609,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "textarea",
           "id": "a2",
           "label": "Risposta 2",
-          "default": "Probabilmente erano collageni ad alto peso molecolare. Il problema era il prodotto, non tu."
+          "default": "Guarda l'etichetta: se il peso molecolare non c'è, ora sai perché. Non era colpa tua."
         },
         {
           "type": "text",
@@ -1592,7 +1621,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "textarea",
           "id": "a3",
           "label": "Risposta 3",
-          "default": "Diffidare è giusto. Per questo dichiariamo peso molecolare e dosaggi, e usiamo solo claim approvati dall'EFSA."
+          "default": "Hai ragione a diffidare. Per questo non ti promettiamo miracoli: solo claim approvati dall'EFSA, e i certificati di analisi li puoi leggere."
         },
         {
           "type": "text",
@@ -1604,27 +1633,31 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "textarea",
           "id": "a4",
           "label": "Risposta 4",
-          "default": "Idratazione in 2-3 settimane, compattezza in 8-12. Chi ti promette miracoli in 3 giorni ti sta mentendo."
+          "default": "Gli studi parlano di 8-12 settimane. Chi ti promette risultati in 10 giorni ti sta vendendo qualcosa. Noi ti diamo 90 giorni per verificare."
         },
         {
           "type": "text",
           "id": "q5",
-          "label": "Dubbio 5"
+          "label": "Dubbio 5",
+          "default": "\"E i metalli pesanti?\""
         },
         {
-          "type": "text",
+          "type": "textarea",
           "id": "a5",
-          "label": "Risposta 5"
+          "label": "Risposta 5",
+          "default": "Il Clean Label Project ha trovato tracce di metalli pesanti nel 64% dei collageni venduti su Amazon. Ogni lotto Within è testato, e il certificato è pubblico."
         },
         {
           "type": "text",
           "id": "q6",
-          "label": "Dubbio 6"
+          "label": "Dubbio 6",
+          "default": "\"E se non vedo nessuna differenza?\""
         },
         {
-          "type": "text",
+          "type": "textarea",
           "id": "a6",
-          "label": "Risposta 6"
+          "label": "Risposta 6",
+          "default": "Ci scrivi entro 90 giorni dall'acquisto e ti rimborsiamo. Il rischio è nostro, non tuo."
         },
         {
           "type": "checkbox",
@@ -1662,13 +1695,13 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "eyebrow",
           "label": "Sopra-titolo",
-          "default": "Cosa dice la ricerca"
+          "default": "Prove, non promesse"
         },
         {
           "type": "text",
           "id": "heading",
           "label": "Titolo",
-          "default": "Risultati misurabili. Non promesse."
+          "default": "I numeri sono nostri. Le parole sono loro."
         },
         {
           "type": "header",
@@ -1677,80 +1710,78 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
         {
           "type": "text",
           "id": "stat1_prefix",
-          "label": "Stat 1 · prefisso",
-          "default": "+"
+          "label": "Stat 1 · prefisso"
         },
         {
           "type": "text",
           "id": "stat1_count",
           "label": "Stat 1 · numero",
-          "default": "23"
+          "default": "5000"
         },
         {
           "type": "text",
           "id": "stat1_suffix",
           "label": "Stat 1 · suffisso",
-          "default": "%"
+          "default": " mg"
         },
         {
           "type": "text",
           "id": "stat1_label",
           "label": "Stat 1 · etichetta",
-          "default": "idratazione"
+          "default": "collagene per sachet"
         },
         {
           "type": "text",
           "id": "stat2_prefix",
           "label": "Stat 2 · prefisso",
-          "default": "−"
+          "default": "<"
         },
         {
           "type": "text",
           "id": "stat2_count",
           "label": "Stat 2 · numero",
-          "default": "17"
+          "default": "3000"
         },
         {
           "type": "text",
           "id": "stat2_suffix",
           "label": "Stat 2 · suffisso",
-          "default": "%"
+          "default": " Da"
         },
         {
           "type": "text",
           "id": "stat2_label",
           "label": "Stat 2 · etichetta",
-          "default": "rughe perioculari"
+          "default": "peso molecolare"
         },
         {
           "type": "text",
           "id": "stat3_prefix",
-          "label": "Stat 3 · prefisso",
-          "default": "+"
+          "label": "Stat 3 · prefisso"
         },
         {
           "type": "text",
           "id": "stat3_count",
           "label": "Stat 3 · numero",
-          "default": "15"
+          "default": "90"
         },
         {
           "type": "text",
           "id": "stat3_suffix",
           "label": "Stat 3 · suffisso",
-          "default": "%"
+          "default": " giorni"
         },
         {
           "type": "text",
           "id": "stat3_label",
           "label": "Stat 3 · etichetta",
-          "default": "compattezza"
+          "default": "di garanzia"
         },
         {
           "type": "textarea",
           "id": "source_note",
           "label": "Nota fonte",
-          "default": "Dati indicativi da studi su peptidi di collagene idrolizzato, 8-12 settimane. I risultati individuali possono variare."
+          "default": "Valori per sachet da 25 ml, verificabili nel certificato di analisi."
         },
         {
           "type": "header",
@@ -1865,7 +1896,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "cta_label",
           "label": "Pulsante (torna su)",
-          "default": "Inizia il tuo percorso"
+          "default": "Provalo per 90 giorni"
         },
         {
           "type": "checkbox",
@@ -1920,7 +1951,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "textarea",
           "id": "quote",
           "label": "Citazione",
-          "default": "\"Non ti chiediamo di fidarti. Ti diamo tutto quello che serve per verificare.\""
+          "default": "\"Gli altri ti chiedono di fidarti. Noi ti diamo i documenti per controllare.\""
         },
         {
           "type": "text",
@@ -1932,24 +1963,25 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "point2",
           "label": "Punto 2",
-          "default": "Certificato di analisi e test metalli pesanti"
+          "default": "Certificato di analisi per ogni lotto"
         },
         {
           "type": "text",
           "id": "point3",
           "label": "Punto 3",
-          "default": "Dosaggio dichiarato per ogni attivo"
+          "default": "Test metalli pesanti, pubblicato"
         },
         {
           "type": "text",
           "id": "point4",
           "label": "Punto 4",
-          "default": "Solo claim EFSA approvati"
+          "default": "Ogni dose al milligrammo, niente formule segrete"
         },
         {
           "type": "text",
           "id": "point5",
-          "label": "Punto 5 (opz.)"
+          "label": "Punto 5 (opz.)",
+          "default": "Solo claim approvati dall'EFSA"
         },
         {
           "type": "text",
@@ -1962,6 +1994,131 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "id": "role",
           "label": "Ruolo",
           "default": "Ricerca e Sviluppo"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "guarantee",
+      "name": "Garanzia",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo",
+          "default": "Garanzia 90 giorni"
+        },
+        {
+          "type": "text",
+          "id": "days",
+          "label": "Numero gigante",
+          "default": "90"
+        },
+        {
+          "type": "text",
+          "id": "days_unit",
+          "label": "Unità",
+          "default": "giorni"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Provalo 12 settimane. Se non ti convince, ti rimborsiamo."
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Testo",
+          "default": "90 giorni non sono un numero a caso: è il tempo che gli studi usano per misurare un cambiamento. Una garanzia di 14 giorni sarebbe solo marketing."
+        },
+        {
+          "type": "header",
+          "content": "Le 3 strade (l'ultima è evidenziata)"
+        },
+        {
+          "type": "text",
+          "id": "path1_title",
+          "label": "Strada 1 · titolo",
+          "default": "Se non fai niente"
+        },
+        {
+          "type": "textarea",
+          "id": "path1_text",
+          "label": "Strada 1 · testo",
+          "default": "Dopo i 25 anni perdi circa l'1-1,5% di collagene. Ogni anno."
+        },
+        {
+          "type": "text",
+          "id": "path2_title",
+          "label": "Strada 2 · titolo",
+          "default": "Se scegli un collagene qualunque"
+        },
+        {
+          "type": "textarea",
+          "id": "path2_text",
+          "label": "Strada 2 · testo",
+          "default": "Spendi 30-70 € al mese senza sapere quanto è grande la molecola che bevi."
+        },
+        {
+          "type": "text",
+          "id": "path3_title",
+          "label": "Strada 3 · titolo",
+          "default": "Se scegli Within"
+        },
+        {
+          "type": "textarea",
+          "id": "path3_text",
+          "label": "Strada 3 · testo",
+          "default": "Sai cosa bevi, al milligrammo. E hai 90 giorni per decidere."
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Pulsante (torna su)",
+          "default": "Provalo senza rischi"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_a095fd80-1e6b-4c1d-a9a9-8cc6d2128b44.png"
+        },
+        {
+          "type": "checkbox",
+          "id": "reversed",
+          "label": "Immagine a sinistra",
+          "default": false
         },
         {
           "type": "checkbox",
@@ -2053,13 +2210,13 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "q5",
           "label": "Domanda 5",
-          "default": "Dopo quanto vedo i risultati?"
+          "default": "Quando posso aspettarmi qualcosa?"
         },
         {
           "type": "textarea",
           "id": "a5",
           "label": "Risposta 5",
-          "default": "I primi segnali di idratazione possono arrivare in 2-3 settimane. Per compattezza e rughe gli studi indicano 8-12 settimane di uso continuativo."
+          "default": "Gli studi sui peptidi di collagene misurano i cambiamenti dopo 8-12 settimane di uso quotidiano. Per questo la garanzia dura 90 giorni: il tempo giusto per farti un'idea."
         },
         {
           "type": "text",
@@ -2071,7 +2228,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "textarea",
           "id": "a6",
           "label": "Risposta 6",
-          "default": "Il collagene prodotto resta, ma dopo i 25 anni il corpo ne perde circa l'1-1,5% l'anno. Per mantenere i benefici consigliamo un uso continuativo o cicli regolari."
+          "default": "Con l'età il corpo continua a perdere collagene: circa l'1-1,5% l'anno dopo i 25. Per questo chi si trova bene lo prende con continuità."
         },
         {
           "type": "text",
@@ -2083,23 +2240,25 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "textarea",
           "id": "a7",
           "label": "Risposta 7",
-          "default": "Tre cose: tripeptide sotto i 3.000 Da invece di collagene generico sopra i 10.000; probiotici per l'asse intestino-pelle; trasparenza totale su peso molecolare e dosaggi."
+          "default": "La Doppia Chiave: tripeptide sotto i 3.000 Da (il generico supera i 10.000) e 1 miliardo di fermenti lattici. In più, dosaggi e certificati sono pubblici."
         },
         {
           "type": "text",
           "id": "q8",
-          "label": "Domanda 8"
+          "label": "Domanda 8",
+          "default": "Come funziona la garanzia?"
         },
         {
-          "type": "text",
+          "type": "textarea",
           "id": "a8",
-          "label": "Risposta 8"
+          "label": "Risposta 8",
+          "default": "Se entro 90 giorni dall'acquisto non sei soddisfatta, scrivici e ti rimborsiamo. Il rischio è nostro, non tuo."
         },
         {
           "type": "textarea",
           "id": "disclaimer",
           "label": "Disclaimer legale",
-          "default": "Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona."
+          "default": "Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona. Garanzia soddisfatta o rimborsata di 90 giorni secondo le condizioni di vendita."
         },
         {
           "type": "checkbox",
@@ -2137,8 +2296,8 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
         {
           "type": "ugc_slider",
           "settings": {
-            "eyebrow": "Un sachet. Ogni mattina.",
-            "heading": "Il rituale che entra nella tua giornata.",
+            "eyebrow": "25 ml, ogni mattina",
+            "heading": "Il rituale che porti ovunque.",
             "video_url_1": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_88724a13-f607-470d-938c-d2e4fc6d8632.mp4",
             "video_url_2": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_aeef790c-4bbb-4f66-b426-cbc80055018c.mp4",
             "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_e533b3b9-6806-45a1-909c-64872cb3c19b.mp4",
@@ -2167,9 +2326,9 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "settings": {
             "bignum": "",
             "bignum_unit": "",
-            "eyebrow": "Asse intestino-pelle",
-            "heading": "La bellezza comincia dall'intestino.",
-            "sub": "1 miliardo di CFU di Lactobacillus in ogni dose. Un intestino in equilibrio assorbe meglio, e la pelle se ne accorge. È l'ingrediente che gli altri collageni non hanno.",
+            "eyebrow": "Chiave n.2 · L'intestino",
+            "heading": "Tutto quello che bevi passa prima da qui.",
+            "sub": "L'intestino decide ogni giorno cosa entra, e il suo legame con la pelle è uno dei temi più studiati dalla dermatologia. Per questo in ogni sachet ci sono 1 miliardo di fermenti lattici Lactobacillus. Quasi nessun collagene li mette.",
             "link_label": "",
             "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133240_ee766943-416e-4325-b47c-79f0d5d04a3e.png",
             "reversed": true,
@@ -2182,8 +2341,8 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
         {
           "type": "cinematic",
           "settings": {
-            "eyebrow": "Ogni mattina",
-            "heading": "Un sorso. 25 secondi. Il resto lo fa il tuo corpo.",
+            "eyebrow": "25 secondi al giorno",
+            "heading": "Apri. Bevi. Fatto. Il gesto più semplice della giornata.",
             "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133239_6cf21ec1-ed7b-40cf-896e-9bef5c7c9fe3.png",
             "parallax": 0.2
           }
@@ -2201,7 +2360,7 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "ugc_slider",
           "settings": {
             "eyebrow": "",
-            "heading": "Altre storie, altre mattine.",
+            "heading": "Ufficio, palestra, divano. Within viene con te.",
             "video_url_1": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_bc9cba9e-5312-42d4-bd3d-f3fec0ee1761.mp4",
             "video_url_2": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_218f9802-ceea-4faf-bdef-a2bd45b04142.mp4",
             "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_418ffb7b-eda3-484e-9c30-0b0ce3a8d0b5.mp4",
@@ -2224,6 +2383,9 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
         },
         {
           "type": "authority"
+        },
+        {
+          "type": "guarantee"
         },
         {
           "type": "faq"
