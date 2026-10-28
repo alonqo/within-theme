@@ -358,7 +358,7 @@ CSS='''
 .wp-tl li{padding:0 0 0 40px}
 .wp-stats b{font-size:1.5rem}.wp-stats span{font-size:.72rem}.wp-stats div{padding:16px 6px}
 .wp-revs{grid-template-columns:1fr}
-.wh-cmp-r{grid-template-columns:repeat(3,minmax(0,1fr))}.wh-cmp-h span:first-child{display:none}.wh-cmp-h span{padding:14px 12px;font-size:.64rem;letter-spacing:.05em;line-height:1.25}.wh-cmp-r span{padding:4px 12px 16px;font-size:.88rem;align-items:flex-start}.wh-cmp-r .wh-cmp-l{grid-column:1/-1;padding:14px 12px 6px;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)!important;background:transparent}
+.wh-cmp-r{grid-template-columns:repeat(3,minmax(0,1fr))}.wh-cmp-h span:first-child{display:none}.wh-cmp-h span{padding:14px 10px;font-size:.6rem;letter-spacing:.02em;line-height:1.25}.wh-cmp-r span{padding:4px 12px 16px;font-size:.88rem;align-items:flex-start}.wh-cmp-r .wh-cmp-l{grid-column:1/-1;padding:14px 12px 6px;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)!important;background:transparent}
 .wp-gar{grid-template-columns:1fr;justify-items:center;text-align:center}
 .wp-gar .wp-cta{align-items:center}
 .wp-seal{width:160px;height:160px}.wp-seal b{font-size:2.6rem}.wp-seal text{font-size:12px}

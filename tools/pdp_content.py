@@ -44,7 +44,7 @@ def build(I,V):
        "r1_title":"Le colleghe se ne sono accorte prima di me","r1_quote":"Dopo tre settimane la pelle era più idratata. A metà del secondo mese una collega mi ha chiesto se avessi cambiato crema. Non l'ho cambiata.","r1_name":"Laura, 58 · Milano","r1_image_url":I("022310_72453d34-0f9b-4a13-84b2-0ee0f50c6841"),
        "r2_title":"Finalmente uno che funziona","r2_quote":"Ne avevo provati tre, senza vedere niente. Con Within la differenza l'ho vista dopo circa sei settimane, soprattutto intorno agli occhi.","r2_name":"Francesca, 56 · Roma","r2_image_url":I("022311_9c358caf-86cc-4057-b42c-4a569e68826b"),
        "r3_title":"L'unico che non dimentico","r3_quote":"Sembra un succo di frutta, lo bevo mentre preparo il caffè. È l'unico integratore che non ho mai saltato un giorno.","r3_name":"Giulia, 60 · Torino","r3_image_url":I("022311_c44c87da-8b75-4660-9b9d-063661e85a11")}),
-     ("compare",{"eyebrow":"Fai due conti","heading":"Le alternative chiedono di più. E danno di meno.","col_a":"Within","col_b":"Creme anti-age","col_c":"Trattamenti estetici",
+     ("compare",{"eyebrow":"Fai due conti","heading":"Le alternative chiedono di più. E danno di meno.","col_a":"Within","col_b":"Creme anti-age","col_c":"Medicina estetica",
        "r1_label":"Dove agisce","r1_a":"Dall'interno, su tutto il viso","r1_b":"In superficie","r1_c":"Solo nella zona trattata",
        "r2_label":"Aghi o dolore","r2_a":"Mai","r2_b":"No","r2_c":"Spesso",
        "r3_label":"Tempo richiesto","r3_a":"25 secondi al giorno","r3_b":"Mattina e sera","r3_c":"Appuntamenti e recupero",
