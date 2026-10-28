@@ -357,14 +357,16 @@ out='''{% comment %}
 open('/home/claude/within-theme/sections/within-product-page.liquid','w').write(out)
 print(len(out))
 
-# ---- rebuild templates/product.within.json section from preset + defaults ----
-T_PATH='/home/claude/within-theme/templates/product.within.json'
-raw=open(T_PATH).read(); k=raw.find('{'); head=raw[:k]; tpl=json.loads(raw[k:])
-defs={b['type']:{s['id']:s['default'] for s in b['settings'] if 'default' in s} for b in schema['blocks']}
-blocks={}; order=[]
-for n,pb in enumerate(schema['presets'][0]['blocks'],1):
-    bid='%s_%d'%(pb['type'],n); st=dict(defs[pb['type']]); st.update(pb.get('settings',{}))
-    blocks[bid]={'type':pb['type'],'settings':st}; order.append(bid)
-tpl['sections']['within_pp']['blocks']=blocks; tpl['sections']['within_pp']['block_order']=order
-open(T_PATH,'w').write(head+json.dumps(tpl,ensure_ascii=False,indent=2))
-print('template blocks',len(order))
+import os
+if os.environ.get('WITHIN_PP_TEMPLATE')=='1':
+    # ---- rebuild templates/product.within.json section from preset + defaults ----
+    T_PATH='/home/claude/within-theme/templates/product.within.json'
+    raw=open(T_PATH).read(); k=raw.find('{'); head=raw[:k]; tpl=json.loads(raw[k:])
+    defs={b['type']:{s['id']:s['default'] for s in b['settings'] if 'default' in s} for b in schema['blocks']}
+    blocks={}; order=[]
+    for n,pb in enumerate(schema['presets'][0]['blocks'],1):
+        bid='%s_%d'%(pb['type'],n); st=dict(defs[pb['type']]); st.update(pb.get('settings',{}))
+        blocks[bid]={'type':pb['type'],'settings':st}; order.append(bid)
+    tpl['sections']['within_pp']['blocks']=blocks; tpl['sections']['within_pp']['block_order']=order
+    open(T_PATH,'w').write(head+json.dumps(tpl,ensure_ascii=False,indent=2))
+    print('template blocks',len(order))

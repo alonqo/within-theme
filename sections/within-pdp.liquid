@@ -1,0 +1,2099 @@
+{% comment %}
+  Within · Pagina prodotto — struttura CRO a lettera di vendita (sotto l'hero del tema).
+{% endcomment %}
+{% style %}
+#shopify-section-{{ section.id }} .wa-root{--bg:{{ section.settings.bg_color }};--bg-2:{{ section.settings.surface2_color }};--ink:{{ section.settings.text_color }};--muted:{{ section.settings.muted_color }};--line:{{ section.settings.line_color }};--line-soft:#ebe5db;--dark:{{ section.settings.dark_color }};--on-dark:{{ section.settings.on_dark_color }};--on-dark-mut:{{ section.settings.on_dark_mut_color }};--accent:{{ section.settings.accent_color }};--btn:{{ section.settings.btn_color }};--btn-hi:{{ section.settings.btn_hover_color }};--accent-hi:{{ section.settings.accent_hi_color }};--gold:{{ section.settings.star_color }};--r:18px;--r-lg:28px;--r-pill:980px;--maxw:{{ section.settings.max_width }}px;--wide:1280px;font-family:inherit;color:var(--ink);line-height:1.45;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+#shopify-section-{{ section.id }} .wa-root *{box-sizing:border-box}
+#shopify-section-{{ section.id }} .wa-root img{display:block;max-width:100%;height:auto}
+#shopify-section-{{ section.id }} .wa-root h1,#shopify-section-{{ section.id }} .wa-root h2,#shopify-section-{{ section.id }} .wa-root h3,#shopify-section-{{ section.id }} .wa-root p,#shopify-section-{{ section.id }} .wa-root blockquote,#shopify-section-{{ section.id }} .wa-root figure{font-family:inherit}
+#shopify-section-{{ section.id }} .wa-sect{padding:var(--pt,120px) 22px var(--pb,120px)}
+#shopify-section-{{ section.id }} .wa-inner{max-width:var(--maxw);margin:0 auto}
+#shopify-section-{{ section.id }} .wa-wide{max-width:var(--wide);margin:0 auto}
+#shopify-section-{{ section.id }} .wa-center{text-align:center}
+#shopify-section-{{ section.id }} .wa-dark{background:var(--dark);color:var(--on-dark)}
+#shopify-section-{{ section.id }} .wa-tint{background:var(--bg-2)}
+#shopify-section-{{ section.id }} .wa-eyebrow{font-size:.84rem;font-weight:600;letter-spacing:.02em;color:var(--accent);margin:0 0 14px}
+#shopify-section-{{ section.id }} .wa-dark .wa-eyebrow{color:var(--accent-hi)}
+#shopify-section-{{ section.id }} .wa-display{font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:650;line-height:1.03;letter-spacing:-.026em;margin:0 0 18px;color:inherit}
+#shopify-section-{{ section.id }} .wa-h2{font-size:clamp(1.9rem,4.4vw,3.1rem);font-weight:650;line-height:1.07;letter-spacing:-.022em;margin:0 0 16px;color:inherit}
+#shopify-section-{{ section.id }} .wa-sub{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:450;color:var(--muted);max-width:34ch;margin:0 auto}
+#shopify-section-{{ section.id }} .wa-dark .wa-sub{color:var(--on-dark-mut)}
+#shopify-section-{{ section.id }} .wa-sub.wa-left{margin:0}
+#shopify-section-{{ section.id }} .wa-narrow{max-width:40ch}
+#shopify-section-{{ section.id }} .wa-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--btn);color:#fff!important;font-size:1.05rem;font-weight:600;border:0;cursor:pointer;padding:14px 28px;border-radius:var(--r-pill);text-decoration:none;min-height:48px;transition:background .2s,transform .2s}
+#shopify-section-{{ section.id }} .wa-btn:hover{background:var(--btn-hi);transform:translateY(-1px)}
+#shopify-section-{{ section.id }} .wa-link{color:var(--accent);font-weight:600;font-size:1.05rem;text-decoration:none;cursor:pointer}
+#shopify-section-{{ section.id }} .wa-link:hover{text-decoration:underline}
+#shopify-section-{{ section.id }} .wa-btn-row{display:flex;justify-content:center;margin-top:44px}
+#shopify-section-{{ section.id }} /* opening */
+.wa-opening .wa-display{max-width:15ch;margin:0 auto 18px}
+#shopify-section-{{ section.id }} .wa-hero-img{margin-top:58px;border-radius:var(--r-lg);overflow:hidden}
+#shopify-section-{{ section.id }} /* cinematic */
+.wa-cine{position:relative;overflow:hidden;min-height:88vh;background:var(--dark)}
+#shopify-section-{{ section.id }} .wa-cine-img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover;will-change:transform}
+#shopify-section-{{ section.id }} .wa-cine-copy{position:relative;z-index:2;text-align:center;padding:9vh 22px 0}
+#shopify-section-{{ section.id }} .wa-cine-copy .wa-h2{color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.55)}
+#shopify-section-{{ section.id }} .wa-cine-copy .wa-sub{color:rgba(255,255,255,.88)}
+#shopify-section-{{ section.id }} .wa-cine-copy .wa-eyebrow{color:var(--accent-hi)}
+#shopify-section-{{ section.id }} /* feature */
+.wa-feat{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--bg);border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 18px 50px rgba(28,43,40,.07)}
+#shopify-section-{{ section.id }} .wa-feat.wa-rev .wa-feat-media{order:2}
+#shopify-section-{{ section.id }} .wa-feat-copy{padding:clamp(36px,5vw,72px);display:flex;flex-direction:column;justify-content:center}
+#shopify-section-{{ section.id }} .wa-feat-media{overflow:hidden;position:relative;min-height:480px;background:var(--bg-2)}
+#shopify-section-{{ section.id }} .wa-feat-media img{position:absolute;left:0;top:-40px;width:100%;height:calc(100% + 80px)!important;object-fit:cover;will-change:transform}
+#shopify-section-{{ section.id }} .wa-bignum{font-size:clamp(4.4rem,11vw,8.4rem);font-weight:650;letter-spacing:-.045em;line-height:.86;color:var(--accent);margin:0 0 14px}
+#shopify-section-{{ section.id }} .wa-bignum small{font-size:.32em;letter-spacing:-.01em;margin-left:6px}
+#shopify-section-{{ section.id }} /* feature row */
+.wa-frow{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+#shopify-section-{{ section.id }} .wa-fcard{text-align:center}
+#shopify-section-{{ section.id }} .wa-fcard .wa-fimg{border-radius:var(--r);overflow:hidden;margin-bottom:18px;transition:transform .5s cubic-bezier(.16,.8,.26,1)}
+#shopify-section-{{ section.id }} .wa-fcard:hover .wa-fimg{transform:translateY(-6px) scale(1.02)}
+#shopify-section-{{ section.id }} .wa-fcard h3{font-size:1.2rem;font-weight:600;margin:0 0 6px;letter-spacing:-.01em;color:var(--ink)}
+#shopify-section-{{ section.id }} .wa-fcard p{margin:0;color:var(--muted);font-size:1rem}
+#shopify-section-{{ section.id }} /* steps */
+.wa-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;text-align:left}
+#shopify-section-{{ section.id }} .wa-step img{border-radius:var(--r-lg);margin-bottom:22px;width:100%;aspect-ratio:4/5;object-fit:cover}
+#shopify-section-{{ section.id }} .wa-step .wa-n{display:block;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-hi)}
+#shopify-section-{{ section.id }} .wa-step h3{font-size:1.45rem;font-weight:600;margin:8px 0;letter-spacing:-.015em;color:#fff}
+#shopify-section-{{ section.id }} .wa-step p{margin:0;color:var(--on-dark-mut);font-size:1.05rem}
+#shopify-section-{{ section.id }} /* closeup */
+.wa-cl{position:relative;--pt:120px;--pb:120px;padding-top:var(--pt);padding-bottom:var(--pb)}
+#shopify-section-{{ section.id }} .wa-cl-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;max-width:min(1500px,94vw);margin:0 auto}
+#shopify-section-{{ section.id }} .wa-cl-sticky{position:sticky;top:14vh;align-self:start}
+#shopify-section-{{ section.id }} .wa-cl-media{display:flex;flex-direction:column;gap:26px}
+#shopify-section-{{ section.id }} .wa-cl-media img{width:100%;border-radius:var(--r-lg)}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz{height:300vh;--pt:0px;--pb:0px}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-wide{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:0 20px;max-width:none}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-grid{display:flex;flex-direction:column;gap:20px;align-items:flex-start;max-width:100%;width:100%;margin:0}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-sticky{position:static;width:100%;max-width:100%}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz{padding-left:0!important;padding-right:0!important}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-media{flex-direction:row;flex-wrap:nowrap;gap:14px;width:max-content;will-change:transform}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-media > div{flex:0 0 auto;width:78vw;opacity:1!important;transform:none!important;filter:none!important}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-media img{height:54vh!important;width:100%;object-fit:cover}
+#shopify-section-{{ section.id }} /* gallery + spec */
+.wa-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#shopify-section-{{ section.id }} .wa-gal figure{margin:0}
+#shopify-section-{{ section.id }} .wa-gal .wa-gimg{overflow:hidden;border-radius:var(--r-lg)}
+#shopify-section-{{ section.id }} .wa-gal img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s cubic-bezier(.16,.8,.26,1)}
+#shopify-section-{{ section.id }} .wa-gal figure:hover img{transform:scale(1.04)}
+#shopify-section-{{ section.id }} .wa-gal figcaption{margin-top:12px;color:var(--muted);font-size:.98rem;text-align:center}
+#shopify-section-{{ section.id }} .wa-spec{max-width:820px;margin:72px auto 0;border-top:1px solid var(--line)}
+#shopify-section-{{ section.id }} .wa-spec-row{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+#shopify-section-{{ section.id }} .wa-spec-tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+#shopify-section-{{ section.id }} .wa-spec-name{font-weight:600;font-size:1.08rem}
+#shopify-section-{{ section.id }} .wa-spec-name span{display:block;font-weight:400;color:var(--muted);font-size:.95rem;margin-top:3px}
+#shopify-section-{{ section.id }} .wa-spec-dose{font-weight:650;font-size:1.08rem;white-space:nowrap}
+#shopify-section-{{ section.id }} /* objections */
+.wa-ob{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:var(--r-lg);overflow:hidden}
+#shopify-section-{{ section.id }} .wa-ob-cell{background:var(--bg);padding:38px}
+#shopify-section-{{ section.id }} .wa-ob-q{font-weight:600;font-size:1.16rem;margin:0 0 10px;letter-spacing:-.01em}
+#shopify-section-{{ section.id }} .wa-ob-a{margin:0;color:var(--muted);font-size:1.03rem}
+#shopify-section-{{ section.id }} /* social proof */
+.wa-stats{display:flex;justify-content:center;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden;background:var(--bg);margin:0 auto 18px;width:max-content;max-width:100%}
+#shopify-section-{{ section.id }} .wa-stats .wa-s{padding:13px 40px;text-align:center;border-right:1px solid var(--line);display:flex;align-items:baseline;gap:7px;justify-content:center}
+#shopify-section-{{ section.id }} .wa-stats .wa-s:last-child{border-right:0}
+#shopify-section-{{ section.id }} .wa-stats .wa-sn{font-size:1.12rem;font-weight:650;color:var(--ink)}
+#shopify-section-{{ section.id }} .wa-stats .wa-sl{color:var(--muted);font-size:.82rem}
+#shopify-section-{{ section.id }} .wa-src{text-align:center;color:var(--muted);font-size:.78rem;margin:0 auto 48px;max-width:60ch}
+#shopify-section-{{ section.id }} .wa-revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+#shopify-section-{{ section.id }} .wa-rev{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+#shopify-section-{{ section.id }} .wa-rev img{width:100%;aspect-ratio:4/3;object-fit:cover}
+#shopify-section-{{ section.id }} .wa-rev-b{padding:26px}
+#shopify-section-{{ section.id }} .wa-stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+#shopify-section-{{ section.id }} .wa-rev p{margin:12px 0 18px;font-size:1.06rem;line-height:1.42}
+#shopify-section-{{ section.id }} .wa-who{font-size:.92rem;color:var(--muted)}
+#shopify-section-{{ section.id }} .wa-who b{color:var(--ink);font-weight:600}
+#shopify-section-{{ section.id }} .wa-ver{display:inline-block;margin-top:6px;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2e7d5b}
+#shopify-section-{{ section.id }} .wa-quote{max-width:24ch;margin:64px auto 0;text-align:center;font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:550;line-height:1.22;letter-spacing:-.018em}
+#shopify-section-{{ section.id }} .wa-quote cite{display:block;margin-top:20px;font-size:1rem;font-weight:400;font-style:normal;color:var(--muted)}
+#shopify-section-{{ section.id }} /* authority */
+.wa-auth{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r-lg);overflow:hidden}
+#shopify-section-{{ section.id }} .wa-auth-img{position:relative;min-height:520px}
+#shopify-section-{{ section.id }} .wa-auth-img img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover}
+#shopify-section-{{ section.id }} .wa-auth-panel{background:var(--dark);color:var(--on-dark);padding:72px 56px;display:flex;flex-direction:column;justify-content:center}
+#shopify-section-{{ section.id }} .wa-auth-panel blockquote{margin:0;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:500;line-height:1.32;letter-spacing:-.015em}
+#shopify-section-{{ section.id }} .wa-auth-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px}
+#shopify-section-{{ section.id }} .wa-auth-list li{color:var(--on-dark-mut);font-size:1rem;padding-left:26px;position:relative}
+#shopify-section-{{ section.id }} .wa-auth-list li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:2px;background:var(--accent-hi)}
+#shopify-section-{{ section.id }} .wa-sig{margin-top:26px;color:var(--on-dark-mut);font-size:1rem}
+#shopify-section-{{ section.id }} .wa-sig b{color:#fff;display:block}
+#shopify-section-{{ section.id }} /* faq */
+.wa-faq{max-width:760px;margin:44px auto 0}
+#shopify-section-{{ section.id }} .wa-faq details{border-bottom:1px solid var(--line)}
+#shopify-section-{{ section.id }} .wa-faq summary{list-style:none;cursor:pointer;padding:22px 0;font-size:1.13rem;font-weight:500;display:flex;justify-content:space-between;gap:16px;align-items:center}
+#shopify-section-{{ section.id }} .wa-faq summary::-webkit-details-marker{display:none}
+#shopify-section-{{ section.id }} .wa-pm{flex:0 0 auto;width:20px;height:20px;position:relative;transition:transform .25s}
+#shopify-section-{{ section.id }} .wa-pm::before,#shopify-section-{{ section.id }} .wa-pm::after{content:"";position:absolute;background:var(--accent)}
+#shopify-section-{{ section.id }} .wa-pm::before{top:9px;left:0;width:20px;height:2px}
+#shopify-section-{{ section.id }} .wa-pm::after{top:0;left:9px;width:2px;height:20px;transition:opacity .2s}
+#shopify-section-{{ section.id }} .wa-faq details[open] .wa-pm{transform:rotate(180deg)}
+#shopify-section-{{ section.id }} .wa-faq details[open] .wa-pm::after{opacity:0}
+#shopify-section-{{ section.id }} .wa-ans{padding:0 0 22px;color:var(--muted);font-size:1.04rem;max-width:62ch}
+#shopify-section-{{ section.id }} .wa-disc{max-width:760px;margin:48px auto 0;font-size:.8rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--line);padding-top:24px}
+#shopify-section-{{ section.id }} /* UGC slider */
+.wa-ugc{padding:90px 0}
+#shopify-section-{{ section.id }} .wa-ugc-head{max-width:var(--wide);margin:0 auto 34px;padding:0 22px;text-align:center}
+#shopify-section-{{ section.id }} .wa-ugc-track{display:flex;gap:12px;padding:8px 20px 30px;margin-bottom:-22px;scroll-padding-left:20px;scroll-padding-right:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#shopify-section-{{ section.id }} .wa-ugc-track::-webkit-scrollbar{display:none}
+#shopify-section-{{ section.id }} .wa-ugc-item{flex:0 0 auto;width:30%;margin:0;scroll-snap-align:start}
+#shopify-section-{{ section.id }} .wa-ugc-slide{width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:var(--dark)}
+#shopify-section-{{ section.id }} .wa-ugc-slide{position:relative;box-shadow:0 14px 34px rgba(28,43,40,.14);transition:transform .5s cubic-bezier(.16,.8,.26,1),box-shadow .5s}
+#shopify-section-{{ section.id }} .wa-ugc-item:hover .wa-ugc-slide{transform:translateY(-4px);box-shadow:0 22px 44px rgba(28,43,40,.2)}
+#shopify-section-{{ section.id }} .wa-ugc-slide::after{content:"";position:absolute;inset:auto 0 0 0;height:42%;background:linear-gradient(to top,rgba(0,0,0,.42),rgba(0,0,0,0));pointer-events:none}
+#shopify-section-{{ section.id }} .wa-ugc-cap{position:absolute;z-index:2;left:12px;right:12px;bottom:12px;margin:0;padding:10px 13px;border-radius:14px;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%);border:1px solid rgba(255,255,255,.28);color:#fff;text-align:left;line-height:1.2}
+#shopify-section-{{ section.id }} .wa-ugc-cap b{display:block;font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:#fff}
+#shopify-section-{{ section.id }} .wa-ugc-ver{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:.74rem;font-weight:500;letter-spacing:.01em;color:rgba(255,255,255,.88)}
+#shopify-section-{{ section.id }} .wa-ugc-ver i{flex:0 0 auto;position:relative;width:14px;height:14px;border-radius:50%;background:#34c759}
+#shopify-section-{{ section.id }} .wa-ugc-ver i::after{content:"";position:absolute;left:4.6px;top:2.6px;width:3.4px;height:6.6px;border:solid #fff;border-width:0 1.6px 1.6px 0;transform:rotate(45deg)}
+#shopify-section-{{ section.id }} .wa-ugc-slide img,#shopify-section-{{ section.id }} .wa-ugc-slide video{display:block;width:100%;height:100%!important;object-fit:cover}
+#shopify-section-{{ section.id }} /* reveal (attivo solo se JS gira) */
+.wa-paths{margin-top:28px;display:grid;gap:10px}
+#shopify-section-{{ section.id }} .wa-path{border:1px solid var(--line);border-radius:14px;padding:14px 18px;background:var(--bg)}
+#shopify-section-{{ section.id }} .wa-path b{display:block;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+#shopify-section-{{ section.id }} .wa-path p{margin:0;font-size:1rem;line-height:1.4;color:var(--ink)}
+#shopify-section-{{ section.id }} .wa-path-hi{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+#shopify-section-{{ section.id }} .wa-path-hi b{color:var(--accent)}
+#shopify-section-{{ section.id }} .wa-gar .wa-btn-row{justify-content:flex-start;margin-top:28px}
+#shopify-section-{{ section.id }} .wa-js .wa-reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,.8,.26,1),transform 1s cubic-bezier(.16,.8,.26,1),filter 1s;transition-delay:var(--d,0s)}
+#shopify-section-{{ section.id }} .wa-js .wa-reveal.wa-blur{filter:blur(8px)}
+#shopify-section-{{ section.id }} .wa-js .wa-reveal.wa-in{opacity:1;transform:none;filter:none}
+@media (prefers-reduced-motion:reduce){
+#shopify-section-{{ section.id }} .wa-js .wa-reveal{opacity:1;transform:none;filter:none;transition:none}
+}
+@media (max-width:860px){
+#shopify-section-{{ section.id }} .wa-ugc-slide{border-radius:14px}
+#shopify-section-{{ section.id }} .wa-ugc-cap{left:6px;right:6px;bottom:6px;padding:6px 7px;border-radius:10px}
+#shopify-section-{{ section.id }} .wa-ugc-cap b{font-size:.72rem}
+#shopify-section-{{ section.id }} .wa-ugc-ver{gap:4px;margin-top:2px;font-size:.56rem;line-height:1.15}
+#shopify-section-{{ section.id }} .wa-ugc-ver i{width:10px;height:10px}
+#shopify-section-{{ section.id }} .wa-ugc-ver i::after{left:3.3px;top:1.8px;width:2.4px;height:4.8px;border-width:0 1.3px 1.3px 0}
+#shopify-section-{{ section.id }} .wa-sect{padding:min(var(--pt,120px),78px) 20px min(var(--pb,120px),78px)}
+#shopify-section-{{ section.id }} .wa-feat{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-feat.wa-rev .wa-feat-media{order:0}
+#shopify-section-{{ section.id }} .wa-feat-copy{padding:32px}
+#shopify-section-{{ section.id }} .wa-feat-media{min-height:320px}
+#shopify-section-{{ section.id }} .wa-frow{grid-template-columns:1fr 1fr;gap:22px}
+#shopify-section-{{ section.id }} .wa-steps{grid-template-columns:1fr;gap:36px}
+#shopify-section-{{ section.id }} .wa-cl{--pt:78px;--pb:78px;padding-left:20px;padding-right:20px}
+#shopify-section-{{ section.id }} .wa-cl-grid{grid-template-columns:1fr;gap:26px}
+#shopify-section-{{ section.id }} .wa-cl-sticky{position:static}
+#shopify-section-{{ section.id }} .wa-gal{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-spec-row{grid-template-columns:1fr auto;gap:6px 14px}
+#shopify-section-{{ section.id }} .wa-spec-tag{grid-column:1/-1}
+#shopify-section-{{ section.id }} .wa-ob{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-ob-cell{padding:28px}
+#shopify-section-{{ section.id }} .wa-stats{width:auto}
+#shopify-section-{{ section.id }} .wa-stats .wa-s{padding:11px 14px;flex-direction:column;align-items:center;gap:2px;min-width:0}
+#shopify-section-{{ section.id }} .wa-stats .wa-sn{font-size:1.02rem}
+#shopify-section-{{ section.id }} .wa-stats .wa-sl{font-size:.72rem;white-space:nowrap}
+#shopify-section-{{ section.id }} .wa-revs{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-auth{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-auth-img{min-height:320px}
+#shopify-section-{{ section.id }} .wa-auth-panel{padding:48px 26px}
+#shopify-section-{{ section.id }} .wa-cine{min-height:64vh}
+}
+#shopify-section-{{ section.id }} .wa-ugc-item{margin:0}
+#shopify-section-{{ section.id }} .wa-ugc{padding-top:var(--pt,90px);padding-bottom:var(--pb,90px)}
+#shopify-section-{{ section.id }} .wa-ph{display:flex;align-items:center;justify-content:center;min-height:300px;background:repeating-linear-gradient(135deg,#ece6dc 0 16px,#f4efe7 16px 32px);color:#8a8278;font-size:.84rem;font-weight:600;border-radius:var(--r)}
+#shopify-section-{{ section.id }} .wp .wa-sect{padding:var(--pt,120px) 22px var(--pb,120px)}
+#shopify-section-{{ section.id }} .wp-cta{margin-top:34px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+#shopify-section-{{ section.id }} .wa-center .wp-cta,#shopify-section-{{ section.id }} .wp-final .wp-cta,#shopify-section-{{ section.id }} .wa-inner>.wp-cta{align-items:center}
+#shopify-section-{{ section.id }} .wp-atc{margin:0}
+#shopify-section-{{ section.id }} .wp-cta .wa-btn{min-height:56px;padding:16px 34px;font-size:1.08rem}
+#shopify-section-{{ section.id }} .wp-cta-note{margin:0;font-size:.84rem;color:var(--muted)}
+#shopify-section-{{ section.id }} .wp-trust{background:var(--bg);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+#shopify-section-{{ section.id }} .wp-trust-in{max-width:var(--wide);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:20px 22px}
+#shopify-section-{{ section.id }} .wp-trust-i{display:flex;align-items:center;gap:12px;font-size:.92rem;font-weight:600;color:var(--ink)}
+#shopify-section-{{ section.id }} .wp-ico{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--bg-2);position:relative}
+#shopify-section-{{ section.id }} .wp-ico::after{content:"";position:absolute;inset:0;margin:auto;width:9px;height:15px;border:solid var(--accent);border-width:0 2.4px 2.4px 0;transform:translate(0,-2px) rotate(45deg)}
+#shopify-section-{{ section.id }} .wp-h{font-size:clamp(2.2rem,4.8vw,3.6rem);font-weight:650;line-height:1.05;letter-spacing:-.03em;margin:0 0 26px;color:var(--ink)}
+#shopify-section-{{ section.id }} .wp-prose{font-size:1.18rem;line-height:1.62;color:var(--ink)}
+#shopify-section-{{ section.id }} .wp-prose p{margin:0 0 18px}
+#shopify-section-{{ section.id }} .wp-prose strong{font-weight:650}
+#shopify-section-{{ section.id }} .wp-kicker{margin:26px 0 0;font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:650;letter-spacing:-.015em;color:var(--accent);line-height:1.25}
+#shopify-section-{{ section.id }} .wp-lead-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,88px);align-items:center}
+#shopify-section-{{ section.id }} .wp-lead-media{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:var(--bg-2)}
+#shopify-section-{{ section.id }} .wp-lead-media img{width:100%;height:100%!important;object-fit:cover}
+#shopify-section-{{ section.id }} .wp-lead-copy{max-width:56ch}
+#shopify-section-{{ section.id }} .wp-mech-head{max-width:820px;margin:0 auto 56px}
+#shopify-section-{{ section.id }} .wp-mech .wa-h2{color:#fff}
+#shopify-section-{{ section.id }} .wp-vs{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1040px;margin:0 auto}
+#shopify-section-{{ section.id }} .wp-vs-c{border-radius:var(--r-lg);padding:clamp(26px,4vw,44px);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+#shopify-section-{{ section.id }} .wp-vs-good{background:var(--bg);color:var(--ink);border-color:transparent;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+#shopify-section-{{ section.id }} .wp-vs-l{margin:0;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-mut)}
+#shopify-section-{{ section.id }} .wp-vs-good .wp-vs-l{color:var(--accent)}
+#shopify-section-{{ section.id }} .wp-vs-n{margin:14px 0 18px;font-size:clamp(2.6rem,5vw,3.8rem);font-weight:650;letter-spacing:-.04em;line-height:1;color:#fff}
+#shopify-section-{{ section.id }} .wp-vs-good .wp-vs-n{color:var(--accent)}
+#shopify-section-{{ section.id }} .wp-vs-c ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#shopify-section-{{ section.id }} .wp-vs-c li{position:relative;padding-left:30px;font-size:1.04rem;color:var(--on-dark-mut)}
+#shopify-section-{{ section.id }} .wp-vs-good li{color:var(--ink)}
+#shopify-section-{{ section.id }} .wp-vs-c li::before{content:"";position:absolute;left:0;top:.25em;width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.12)}
+#shopify-section-{{ section.id }} .wp-vs-bad li::after{content:"\00d7";position:absolute;left:5px;top:-.02em;font-size:1rem;color:#e99}
+#shopify-section-{{ section.id }} .wp-vs-good li::before{background:var(--accent)}
+#shopify-section-{{ section.id }} .wp-vs-good li::after{content:"";position:absolute;left:6.5px;top:.42em;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+#shopify-section-{{ section.id }} .wp-mol{height:96px;margin:22px 0 4px;display:flex;align-items:center;gap:10px}
+#shopify-section-{{ section.id }} .wp-mol-big i{width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.35),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.18)}
+#shopify-section-{{ section.id }} .wp-mol-small{flex-wrap:wrap;align-content:center;max-width:220px;gap:8px}
+#shopify-section-{{ section.id }} .wp-mol-small i{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f2c05c,#cc5b3e);animation:wp-float 3s ease-in-out infinite}
+#shopify-section-{{ section.id }} .wp-mol-small i:nth-child(2n){animation-delay:.6s}
+#shopify-section-{{ section.id }} .wp-mol-small i:nth-child(3n){animation-delay:1.2s}
+#shopify-section-{{ section.id }} 50%{transform:translateY(-6px)}
+#shopify-section-{{ section.id }} .wp-mech-note{display:flex;gap:18px;align-items:flex-start;max-width:820px;margin:44px auto 0;padding:24px 28px;border-radius:var(--r-lg);border:1px solid rgba(255,255,255,.14)}
+#shopify-section-{{ section.id }} .wp-mech-note p{margin:0;font-size:1.08rem;line-height:1.55;color:var(--on-dark)}
+#shopify-section-{{ section.id }} .wp-key{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:var(--accent-hi);color:var(--dark);font-weight:700;display:flex;align-items:center;justify-content:center}
+#shopify-section-{{ section.id }} .wp-ben{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+#shopify-section-{{ section.id }} .wp-ben-media{position:sticky;top:90px;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:var(--bg-2)}
+#shopify-section-{{ section.id }} .wp-ben-media img{width:100%;height:100%!important;object-fit:cover}
+#shopify-section-{{ section.id }} .wp-ben-list{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+#shopify-section-{{ section.id }} .wp-ben-list li{position:relative;padding:20px 0 20px 44px;border-bottom:1px solid var(--line);font-size:1.1rem;line-height:1.5;color:var(--muted)}
+#shopify-section-{{ section.id }} .wp-ben-list li b{color:var(--ink);font-weight:650}
+#shopify-section-{{ section.id }} .wp-ben-list li::before{content:"";position:absolute;left:0;top:22px;width:26px;height:26px;border-radius:50%;background:var(--accent)}
+#shopify-section-{{ section.id }} .wp-ben-list li::after{content:"";position:absolute;left:9.5px;top:28px;width:5px;height:10px;border:solid #fff;border-width:0 2.2px 2.2px 0;transform:rotate(45deg)}
+#shopify-section-{{ section.id }} .wp-head{display:grid;grid-template-columns:1fr 1fr;gap:16px 56px;align-items:end;margin-bottom:44px}
+#shopify-section-{{ section.id }} .wp-head .wa-eyebrow{grid-column:1/-1;margin:0}
+#shopify-section-{{ section.id }} .wp-head .wa-h2{margin:0}
+#shopify-section-{{ section.id }} .wp-form{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#shopify-section-{{ section.id }} .wp-ing{background:var(--bg);border:1px solid var(--line-soft);border-radius:var(--r-lg);padding:28px;transition:transform .4s,box-shadow .4s}
+#shopify-section-{{ section.id }} .wp-ing:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(28,43,40,.08)}
+#shopify-section-{{ section.id }} .wp-ing-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:rgba(168,67,46,.08);padding:5px 10px;border-radius:var(--r-pill)}
+#shopify-section-{{ section.id }} .wp-ing-dose{margin:16px 0 4px;font-size:2rem;font-weight:650;letter-spacing:-.03em;color:var(--ink)}
+#shopify-section-{{ section.id }} .wp-ing h3{margin:0 0 8px;font-size:1.1rem;font-weight:600}
+#shopify-section-{{ section.id }} .wp-ing p:last-child{margin:0;color:var(--muted);font-size:.98rem}
+#shopify-section-{{ section.id }} .wp-foot{margin:22px 0 0;font-size:.8rem;color:var(--muted)}
+#shopify-section-{{ section.id }} .wp-tl{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative}
+#shopify-section-{{ section.id }} .wp-tl::before{content:"";position:absolute;left:8px;right:8px;top:9px;height:2px;background:linear-gradient(90deg,var(--line),var(--accent))}
+#shopify-section-{{ section.id }} .wp-tl li{position:relative;padding-top:38px}
+#shopify-section-{{ section.id }} .wp-tl li::before{content:"";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+#shopify-section-{{ section.id }} .wp-tl li:last-child::before{background:var(--accent)}
+#shopify-section-{{ section.id }} .wp-tl-w{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+#shopify-section-{{ section.id }} .wp-tl h3{margin:8px 0 6px;font-size:1.35rem;font-weight:600;letter-spacing:-.015em}
+#shopify-section-{{ section.id }} .wp-tl p{margin:0;color:var(--muted);font-size:1.04rem}
+#shopify-section-{{ section.id }} .wp-tl-note{margin:44px auto 0;max-width:56ch;text-align:center;font-size:1.06rem;color:var(--ink);font-weight:500}
+#shopify-section-{{ section.id }} .wp-quote-h{max-width:22ch;margin-left:auto;margin-right:auto}
+#shopify-section-{{ section.id }} .wp-rating{margin:6px 0 0;color:var(--muted);font-size:.98rem}
+#shopify-section-{{ section.id }} .wp-stats{display:grid;grid-template-columns:repeat(3,1fr);max-width:820px;margin:44px auto 14px;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--bg)}
+#shopify-section-{{ section.id }} .wp-stats div{padding:24px 16px;text-align:center;border-right:1px solid var(--line)}
+#shopify-section-{{ section.id }} .wp-stats div:last-child{border-right:0}
+#shopify-section-{{ section.id }} .wp-stats b{display:block;font-size:2.2rem;font-weight:650;letter-spacing:-.03em;color:var(--accent)}
+#shopify-section-{{ section.id }} .wp-stats span{font-size:.88rem;color:var(--muted)}
+#shopify-section-{{ section.id }} .wp-revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+#shopify-section-{{ section.id }} .wp-rev{margin:0;background:var(--bg);border:1px solid var(--line-soft);border-radius:var(--r-lg);padding:28px;display:flex;flex-direction:column}
+#shopify-section-{{ section.id }} .wp-rev h3{margin:12px 0 8px;font-size:1.12rem;font-weight:650;letter-spacing:-.01em}
+#shopify-section-{{ section.id }} .wp-rev blockquote{margin:0 0 22px;font-size:1.02rem;line-height:1.55;color:var(--muted);flex:1}
+#shopify-section-{{ section.id }} .wp-rev figcaption{display:flex;align-items:center;gap:12px}
+#shopify-section-{{ section.id }} .wp-rev figcaption img{width:46px;height:46px!important;border-radius:50%;object-fit:cover}
+#shopify-section-{{ section.id }} .wp-rev figcaption span{display:grid;gap:2px;font-size:.92rem}
+#shopify-section-{{ section.id }} .wp-rev figcaption em{font-style:normal;font-size:.76rem;display:flex;align-items:center;gap:6px}
+#shopify-section-{{ section.id }} .wh-cmp{border-radius:var(--r-lg);border:1px solid var(--line);overflow:hidden;background:var(--bg)}
+#shopify-section-{{ section.id }} .wh-cmp-r{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;border-bottom:1px solid var(--line-soft)}
+#shopify-section-{{ section.id }} .wh-cmp-r:last-child{border-bottom:0}
+#shopify-section-{{ section.id }} .wh-cmp-r span{padding:18px 20px;font-size:1rem;color:var(--muted);display:flex;align-items:center}
+#shopify-section-{{ section.id }} .wh-cmp-h span{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+#shopify-section-{{ section.id }} .wh-cmp-l{color:var(--ink)!important;font-weight:600}
+#shopify-section-{{ section.id }} .wh-cmp-r .wh-cmp-w{background:rgba(168,67,46,.07);color:var(--ink);font-weight:600}
+#shopify-section-{{ section.id }} .wh-cmp-h .wh-cmp-w{background:var(--accent);color:#fff}
+#shopify-section-{{ section.id }} .wp-gar{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,64px);align-items:center;background:var(--bg);border:2px solid var(--accent);border-radius:var(--r-lg);padding:clamp(28px,5vw,60px)}
+#shopify-section-{{ section.id }} .wp-seal{position:relative;width:200px;height:200px;border-radius:50%;background:var(--accent);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 20px 50px rgba(168,67,46,.35)}
+#shopify-section-{{ section.id }} .wp-seal svg{position:absolute;inset:0;width:100%;height:100%;animation:wp-spin 30s linear infinite}
+#shopify-section-{{ section.id }} .wp-seal text{fill:#fff;font-size:13px;font-weight:700;letter-spacing:3.2px;text-transform:uppercase}
+#shopify-section-{{ section.id }} .wp-seal b{font-size:3.4rem;font-weight:700;line-height:1;letter-spacing:-.04em}
+#shopify-section-{{ section.id }} .wp-seal span{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+#shopify-section-{{ section.id }} to{transform:rotate(360deg)}
+#shopify-section-{{ section.id }} .wp-gar .wp-prose{font-size:1.08rem;color:var(--muted)}
+#shopify-section-{{ section.id }} .wp-final{position:relative;min-height:min(86vh,800px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--dark);color:#fff;padding:var(--pt,120px) 22px var(--pb,120px)}
+#shopify-section-{{ section.id }} .wp-final-media{position:absolute;inset:0;opacity:.55}
+#shopify-section-{{ section.id }} .wh-cover{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover}
+#shopify-section-{{ section.id }} .wp-final::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(14,22,20,.35),rgba(14,22,20,.85))}
+#shopify-section-{{ section.id }} .wp-final-in{position:relative;z-index:2;max-width:780px}
+#shopify-section-{{ section.id }} .wp-final-h{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:650;line-height:1.06;letter-spacing:-.03em;margin:0 0 20px;color:#fff}
+#shopify-section-{{ section.id }} .wp-final .wa-sub{color:rgba(255,255,255,.86);margin:0 auto}
+#shopify-section-{{ section.id }} .wp-final .wa-eyebrow{color:var(--accent-hi)}
+#shopify-section-{{ section.id }} .wp-final .wp-cta-note{color:rgba(255,255,255,.7)}
+#shopify-section-{{ section.id }} .wp-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;transform:translateY(110%);transition:transform .35s cubic-bezier(.16,.8,.26,1);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+#shopify-section-{{ section.id }} .wp-sticky.is-on{transform:none}
+#shopify-section-{{ section.id }} .wp-sticky-in{max-width:880px;margin:0 auto;display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(18px) saturate(170%);backdrop-filter:blur(18px) saturate(170%);border:1px solid var(--line);border-radius:22px;padding:10px 10px 10px 12px;box-shadow:0 16px 40px rgba(28,43,40,.18)}
+#shopify-section-{{ section.id }} .wp-sticky-in img{border-radius:12px;object-fit:cover;flex:0 0 auto}
+#shopify-section-{{ section.id }} .wp-sticky-t{flex:1;min-width:0;display:grid;line-height:1.25}
+#shopify-section-{{ section.id }} .wp-sticky-t b{font-size:.95rem;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+#shopify-section-{{ section.id }} .wp-sticky-t span{font-size:.8rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#shopify-section-{{ section.id }} .wp-sticky .wa-btn{min-height:46px;padding:0 22px;font-size:.95rem;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){
+#shopify-section-{{ section.id }} .wp-seal svg,#shopify-section-{{ section.id }} .wp-mol-small i{animation:none}
+}
+@media (max-width:860px){
+#shopify-section-{{ section.id }} .wp .wa-sect{padding:min(var(--pt,120px),76px) 20px min(var(--pb,120px),76px)}
+#shopify-section-{{ section.id }} .wp-trust-in{grid-template-columns:1fr 1fr;gap:14px 10px;padding:16px 20px}
+#shopify-section-{{ section.id }} .wp-trust-i{font-size:.8rem;gap:9px}
+#shopify-section-{{ section.id }} .wp-ico{width:28px;height:28px}
+#shopify-section-{{ section.id }} .wp-ico::after{width:7px;height:12px}
+#shopify-section-{{ section.id }} .wp-lead-g,#shopify-section-{{ section.id }} .wp-ben{grid-template-columns:1fr;gap:28px}
+#shopify-section-{{ section.id }} .wp-lead-media{aspect-ratio:4/3}
+#shopify-section-{{ section.id }} .wp-prose{font-size:1.08rem}
+#shopify-section-{{ section.id }} .wp-vs{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wp-mol{height:70px;margin:16px 0 0}
+#shopify-section-{{ section.id }} .wp-mol-big i{width:60px;height:60px}
+#shopify-section-{{ section.id }} .wp-ben-media{position:relative;top:0;aspect-ratio:4/3}
+#shopify-section-{{ section.id }} .wp-head{grid-template-columns:1fr;gap:10px}
+#shopify-section-{{ section.id }} .wp-form{grid-template-columns:1fr 1fr;gap:10px}
+#shopify-section-{{ section.id }} .wp-ing{padding:18px}
+#shopify-section-{{ section.id }} .wp-ing-dose{font-size:1.5rem}
+#shopify-section-{{ section.id }} .wp-ing h3{font-size:.98rem}
+#shopify-section-{{ section.id }} .wp-ing p:last-child{font-size:.86rem}
+#shopify-section-{{ section.id }} .wp-tl{grid-template-columns:1fr;gap:26px;margin-top:36px}
+#shopify-section-{{ section.id }} .wp-tl::before{left:9px;right:auto;top:8px;bottom:8px;width:2px;height:auto;background:linear-gradient(180deg,var(--line),var(--accent))}
+#shopify-section-{{ section.id }} .wp-tl li{padding:0 0 0 40px}
+#shopify-section-{{ section.id }} .wp-stats b{font-size:1.5rem}
+#shopify-section-{{ section.id }} .wp-stats span{font-size:.72rem}
+#shopify-section-{{ section.id }} .wp-stats div{padding:16px 6px}
+#shopify-section-{{ section.id }} .wp-revs{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wh-cmp-r span{padding:12px 8px;font-size:.78rem}
+#shopify-section-{{ section.id }} .wh-cmp-h span{font-size:.6rem;letter-spacing:.03em}
+#shopify-section-{{ section.id }} .wp-gar{grid-template-columns:1fr;justify-items:center;text-align:center}
+#shopify-section-{{ section.id }} .wp-gar .wp-cta{align-items:center}
+#shopify-section-{{ section.id }} .wp-seal{width:160px;height:160px}
+#shopify-section-{{ section.id }} .wp-seal b{font-size:2.6rem}
+#shopify-section-{{ section.id }} .wp-seal text{font-size:12px}
+#shopify-section-{{ section.id }} .wp-sticky-in{border-radius:18px}
+#shopify-section-{{ section.id }} .wp-sticky .wa-btn{padding:0 16px}
+}
+{% endstyle %}
+
+<div class="wa-root wp">
+{%- for block in section.blocks -%}
+{%- case block.type -%}
+
+{%- when 'trust' -%}
+<div class="wp-trust" {{ block.shopify_attributes }}>
+  <div class="wp-trust-in">
+  {%- for i in (1..4) -%}{%- assign k = 'item_' | append: i -%}{%- assign t = block.settings[k] -%}
+    {%- if t != blank -%}<div class="wp-trust-i"><span class="wp-ico wp-ico-{{ i }}" aria-hidden="true"></span><span>{{ t }}</span></div>{%- endif -%}
+  {%- endfor -%}
+  </div>
+</div>
+
+{%- when 'ugc' -%}
+<section class="wa-ugc{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  {%- if block.settings.heading != blank or block.settings.eyebrow != blank -%}<div class="wa-ugc-head wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}{% if block.settings.heading != blank %}<h2 class="wa-h2">{{ block.settings.heading }}</h2>{% endif %}</div>{%- endif -%}
+  <div class="wa-ugc-track" data-autoscroll="{{ block.settings.autoscroll_ms }}">
+  {%- for i in (1..8) -%}
+    {%- assign vk = 'video_' | append: i -%}{%- assign uk = 'video_url_' | append: i -%}{%- assign ck = 'caption_' | append: i -%}
+    {%- assign v = block.settings[vk] -%}{%- assign vu = block.settings[uk] -%}{%- assign cap = block.settings[ck] -%}
+    {%- capture capt -%}{%- if cap != blank -%}<figcaption class="wa-ugc-cap"><b>{{ cap }}</b>{% if block.settings.verified_label != blank %}<span class="wa-ugc-ver"><i></i>{{ block.settings.verified_label }}</span>{% endif %}</figcaption>{%- endif -%}{%- endcapture -%}
+    {%- if v != blank -%}<figure class="wa-ugc-item"><div class="wa-ugc-slide">{{ v | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata' }}{{ capt }}</div></figure>
+    {%- elsif vu != blank -%}<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="{{ vu }}" autoplay muted loop playsinline preload="metadata"></video>{{ capt }}</div></figure>{%- endif -%}
+  {%- endfor -%}
+  </div>
+</section>
+
+{%- when 'lead' -%}
+<section class="wa-sect wp-lead{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide wp-lead-g">
+    <div class="wp-lead-media wa-reveal">{% if block.settings.image != blank %}<img class="" src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">{% elsif block.settings.image_url != blank %}<img class="" src="{{ block.settings.image_url }}" alt="" loading="lazy">{% endif %}</div>
+    <div class="wp-lead-copy wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}
+      <h2 class="wp-h">{{ block.settings.heading }}</h2>
+      <div class="wp-prose">{{ block.settings.text }}</div>
+      {% if block.settings.kicker != blank %}<p class="wp-kicker">{{ block.settings.kicker }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+
+{%- when 'mechanism' -%}
+<section class="wa-sect wp-mech wa-dark" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide">
+    <div class="wa-center wa-reveal wp-mech-head">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2">{{ block.settings.heading }}</h2>{% if block.settings.sub != blank %}<p class="wa-sub">{{ block.settings.sub }}</p>{% endif %}</div>
+    <div class="wp-vs">
+      <div class="wp-vs-c wp-vs-bad wa-reveal">
+        <p class="wp-vs-l">{{ block.settings.a_label }}</p>
+        <div class="wp-mol wp-mol-big" aria-hidden="true"><i></i><i></i><i></i></div>
+        <p class="wp-vs-n">{{ block.settings.a_big }}</p>
+        {%- assign a_all = block.settings.a_points | newline_to_br | split: '<br />' -%}<ul>{%- for l in a_all -%}{%- assign t = l | strip -%}{%- if t != blank -%}<li>{{ t }}</li>{%- endif -%}{%- endfor -%}</ul>
+      </div>
+      <div class="wp-vs-c wp-vs-good wa-reveal" style="--d:.12s">
+        <p class="wp-vs-l">{{ block.settings.b_label }}</p>
+        <div class="wp-mol wp-mol-small" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="wp-vs-n">{{ block.settings.b_big }}</p>
+        {%- assign b_all = block.settings.b_points | newline_to_br | split: '<br />' -%}<ul>{%- for l in b_all -%}{%- assign t = l | strip -%}{%- if t != blank -%}<li>{{ t }}</li>{%- endif -%}{%- endfor -%}</ul>
+      </div>
+    </div>
+    {% if block.settings.note != blank %}<div class="wp-mech-note wa-reveal"><span class="wp-key" aria-hidden="true">2</span><p>{{ block.settings.note }}</p></div>{% endif %}
+  </div>
+</section>
+
+{%- when 'benefits' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide wp-ben">
+    <div class="wp-ben-media">{% if block.settings.image != blank %}<img class="" src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">{% elsif block.settings.image_url != blank %}<img class="" src="{{ block.settings.image_url }}" alt="" loading="lazy">{% endif %}</div>
+    <div class="wp-ben-copy">
+      <div class="wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2">{{ block.settings.heading }}</h2></div>
+      <ul class="wp-ben-list">
+      {%- for i in (1..6) -%}{%- assign tk = 'b' | append: i | append: '_title' -%}{%- assign xk = 'b' | append: i | append: '_text' -%}
+        {%- if block.settings[tk] != blank -%}<li class="wa-reveal"><b>{{ block.settings[tk] }}</b> {{ block.settings[xk] }}</li>{%- endif -%}
+      {%- endfor -%}
+      </ul>
+      {% if block.settings.cta_label != blank %}<div class="wp-cta">{%- if section.settings.cta_action == "cart" and product != blank -%}<form method="post" action="{{ routes.cart_add_url }}" class="wp-atc"><input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><input type="hidden" name="quantity" value="1"><button type="submit" class="wa-btn">{{ block.settings.cta_label }}</button></form>{%- else -%}<a class="wa-btn wa-top" href="#">{{ block.settings.cta_label }}</a>{%- endif -%}{% if block.settings.cta_note != blank %}<p class="wp-cta-note">{{ block.settings.cta_note }}</p>{% endif %}</div>{% endif %}
+    </div>
+  </div>
+</section>
+
+{%- when 'formula' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide">
+    <div class="wp-head wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2">{{ block.settings.heading }}</h2>{% if block.settings.sub != blank %}<p class="wa-sub wa-left">{{ block.settings.sub }}</p>{% endif %}</div>
+    <div class="wp-form">
+    {%- for i in (1..6) -%}{%- assign nk = 'i' | append: i | append: '_name' -%}
+      {%- if block.settings[nk] != blank -%}{%- assign dk = 'i' | append: i | append: '_dose' -%}{%- assign tk = 'i' | append: i | append: '_tag' -%}{%- assign xk = 'i' | append: i | append: '_text' -%}
+      <div class="wp-ing wa-reveal" style="--d:{{ forloop.index0 | times: 0.05 }}s"><span class="wp-ing-tag">{{ block.settings[tk] }}</span><p class="wp-ing-dose">{{ block.settings[dk] }}</p><h3>{{ block.settings[nk] }}</h3><p>{{ block.settings[xk] }}</p></div>
+      {%- endif -%}
+    {%- endfor -%}
+    </div>
+    {% if block.settings.footnote != blank %}<p class="wp-foot wa-reveal">{{ block.settings.footnote }}</p>{% endif %}
+  </div>
+</section>
+
+{%- when 'timeline' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-inner">
+    <div class="wa-center wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2">{{ block.settings.heading }}</h2></div>
+    <ol class="wp-tl">
+    {%- for i in (1..3) -%}{%- assign wk = 's' | append: i | append: '_when' -%}{%- assign tk = 's' | append: i | append: '_title' -%}{%- assign xk = 's' | append: i | append: '_text' -%}
+      {%- if block.settings[tk] != blank -%}<li class="wa-reveal" style="--d:{{ forloop.index0 | times: 0.12 }}s"><span class="wp-tl-w">{{ block.settings[wk] }}</span><h3>{{ block.settings[tk] }}</h3><p>{{ block.settings[xk] }}</p></li>{%- endif -%}
+    {%- endfor -%}
+    </ol>
+    {% if block.settings.note != blank %}<p class="wp-tl-note wa-reveal">{{ block.settings.note }}</p>{% endif %}
+  </div>
+</section>
+
+{%- when 'reviews' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide">
+    <div class="wa-center wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2 wp-quote-h">{{ block.settings.heading }}</h2>
+      {% if block.settings.rating != blank %}<p class="wp-rating"><span class="wa-stars">★★★★★</span> {{ block.settings.rating }}</p>{% endif %}
+    </div>
+    {%- if block.settings.stat1 != blank -%}
+    <div class="wp-stats wa-reveal">{%- for i in (1..3) -%}{%- assign sk = 'stat' | append: i -%}{%- assign lk = 'stat' | append: i | append: '_label' -%}{%- if block.settings[sk] != blank -%}<div><b>{{ block.settings[sk] }}</b><span>{{ block.settings[lk] }}</span></div>{%- endif -%}{%- endfor -%}</div>
+    {% if block.settings.stats_note != blank %}<p class="wa-src wa-reveal">{{ block.settings.stats_note }}</p>{% endif %}
+    {%- endif -%}
+    <div class="wp-revs">
+    {%- for i in (1..3) -%}{%- assign qk = 'r' | append: i | append: '_quote' -%}
+      {%- if block.settings[qk] != blank -%}{%- assign hk = 'r' | append: i | append: '_title' -%}{%- assign nk = 'r' | append: i | append: '_name' -%}{%- assign pk = 'r' | append: i | append: '_image' -%}{%- assign uk = 'r' | append: i | append: '_image_url' -%}{%- assign p = block.settings[pk] -%}{%- assign u = block.settings[uk] -%}
+      <figure class="wp-rev wa-reveal" style="--d:{{ forloop.index0 | times: 0.1 }}s">
+        <div class="wa-stars">★★★★★</div>
+        {% if block.settings[hk] != blank %}<h3>{{ block.settings[hk] }}</h3>{% endif %}
+        <blockquote>{{ block.settings[qk] }}</blockquote>
+        <figcaption>{% if p != blank %}<img class="" src="{{ p | image_url: width: 200 }}" alt="{{ p.alt | escape }}" loading="lazy">{% elsif u != blank %}<img class="" src="{{ u }}" alt="" loading="lazy">{% endif %}<span><b>{{ block.settings[nk] }}</b><em class="wa-ugc-ver" style="color:#2e7d5b"><i></i>{{ block.settings.verified_label }}</em></span></figcaption>
+      </figure>
+      {%- endif -%}
+    {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- when 'compare' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-inner">
+    <div class="wa-center wa-reveal" style="margin-bottom:40px">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2">{{ block.settings.heading }}</h2></div>
+    <div class="wh-cmp wa-reveal" role="table">
+      <div class="wh-cmp-r wh-cmp-h" role="row"><span role="columnheader"></span><span class="wh-cmp-w" role="columnheader">{{ block.settings.col_a }}</span><span role="columnheader">{{ block.settings.col_b }}</span><span role="columnheader">{{ block.settings.col_c }}</span></div>
+      {%- for i in (1..7) -%}{%- assign lk = 'r' | append: i | append: '_label' -%}
+        {%- if block.settings[lk] != blank -%}{%- assign ak = 'r' | append: i | append: '_a' -%}{%- assign bk = 'r' | append: i | append: '_b' -%}{%- assign ck = 'r' | append: i | append: '_c' -%}
+        <div class="wh-cmp-r" role="row"><span class="wh-cmp-l" role="rowheader">{{ block.settings[lk] }}</span><span class="wh-cmp-w" role="cell">{{ block.settings[ak] }}</span><span role="cell">{{ block.settings[bk] }}</span><span role="cell">{{ block.settings[ck] }}</span></div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    {% if block.settings.cta_label != blank %}<div class="wp-cta">{%- if section.settings.cta_action == "cart" and product != blank -%}<form method="post" action="{{ routes.cart_add_url }}" class="wp-atc"><input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><input type="hidden" name="quantity" value="1"><button type="submit" class="wa-btn">{{ block.settings.cta_label }}</button></form>{%- else -%}<a class="wa-btn wa-top" href="#">{{ block.settings.cta_label }}</a>{%- endif -%}{% if block.settings.cta_note != blank %}<p class="wp-cta-note">{{ block.settings.cta_note }}</p>{% endif %}</div>{% endif %}
+  </div>
+</section>
+
+{%- when 'guarantee' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-inner">
+    <div class="wp-gar wa-reveal">
+      <div class="wp-seal" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="wpsc" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#wpsc" startOffset="0">{{ block.settings.seal_text }}</textPath></text></svg><b>{{ block.settings.seal_big }}</b><span>{{ block.settings.seal_small }}</span></div>
+      <div class="wp-gar-c">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2">{{ block.settings.heading }}</h2><div class="wp-prose">{{ block.settings.text }}</div>{% if block.settings.cta_label != blank %}<div class="wp-cta">{%- if section.settings.cta_action == "cart" and product != blank -%}<form method="post" action="{{ routes.cart_add_url }}" class="wp-atc"><input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><input type="hidden" name="quantity" value="1"><button type="submit" class="wa-btn">{{ block.settings.cta_label }}</button></form>{%- else -%}<a class="wa-btn wa-top" href="#">{{ block.settings.cta_label }}</a>{%- endif -%}{% if block.settings.cta_note != blank %}<p class="wp-cta-note">{{ block.settings.cta_note }}</p>{% endif %}</div>{% endif %}</div>
+    </div>
+  </div>
+</section>
+
+{%- when 'faq' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-inner">
+    <div class="wa-center wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2">{{ block.settings.heading }}</h2></div>
+    <div class="wa-faq wa-reveal">
+    {%- for i in (1..8) -%}{%- assign qk = 'q' | append: i -%}{%- assign q = block.settings[qk] -%}
+      {%- if q != blank -%}{%- assign ak = 'a' | append: i -%}<details{% if forloop.first %} open{% endif %}><summary>{{ q }}<span class="wa-pm"></span></summary><div class="wa-ans">{{ block.settings[ak] }}</div></details>{%- endif -%}
+    {%- endfor -%}
+    </div>
+    {% if block.settings.disclaimer != blank %}<div class="wa-disc">{{ block.settings.disclaimer }}</div>{% endif %}
+  </div>
+</section>
+
+{%- when 'final' -%}
+<section class="wp-final" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wp-final-media">{% if block.settings.image != blank %}<img class="wh-cover" src="{{ block.settings.image | image_url: width: 2200 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">{% elsif block.settings.image_url != blank %}<img class="wh-cover" src="{{ block.settings.image_url }}" alt="" loading="lazy">{% endif %}</div>
+  <div class="wp-final-in wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wp-final-h">{{ block.settings.heading }}</h2>{% if block.settings.text != blank %}<p class="wa-sub">{{ block.settings.text }}</p>{% endif %}{% if block.settings.cta_label != blank %}<div class="wp-cta">{%- if section.settings.cta_action == "cart" and product != blank -%}<form method="post" action="{{ routes.cart_add_url }}" class="wp-atc"><input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><input type="hidden" name="quantity" value="1"><button type="submit" class="wa-btn">{{ block.settings.cta_label }}</button></form>{%- else -%}<a class="wa-btn wa-top" href="#">{{ block.settings.cta_label }}</a>{%- endif -%}{% if block.settings.cta_note != blank %}<p class="wp-cta-note">{{ block.settings.cta_note }}</p>{% endif %}</div>{% endif %}</div>
+</section>
+
+{%- endcase -%}
+{%- endfor -%}
+
+{%- if section.settings.sticky and product != blank -%}
+<div class="wp-sticky" data-sticky>
+  <div class="wp-sticky-in">
+    {%- if product.featured_image != blank -%}<img src="{{ product.featured_image | image_url: width: 120 }}" alt="" width="46" height="46">{%- endif -%}
+    <div class="wp-sticky-t"><b>{{ product.title }}</b><span>{% if product.price > 0 %}{{ product.price | money }} · {% endif %}{{ section.settings.sticky_note }}</span></div>
+    {%- if section.settings.cta_action == "cart" and product != blank -%}<form method="post" action="{{ routes.cart_add_url }}" class="wp-atc"><input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><input type="hidden" name="quantity" value="1"><button type="submit" class="wa-btn wp-sticky-b">{{ section.settings.sticky_label }}</button></form>{%- else -%}<a class="wa-btn wp-sticky-b wa-top" href="#">{{ section.settings.sticky_label }}</a>{%- endif -%}
+  </div>
+</div>
+{%- endif -%}
+</div>
+
+<script>
+(function(){
+var S=document.getElementById('shopify-section-{{ section.id }}'); if(!S)return; var R=S.querySelector('.wa-root'); if(!R)return;
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!reduce&&'IntersectionObserver' in window){
+R.classList.add('wa-js');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('wa-in');io.unobserve(e.target);}});},{threshold:.12});
+R.querySelectorAll('.wa-reveal').forEach(function(e){io.observe(e);});
+var px=[].slice.call(R.querySelectorAll('[data-parallax]')),tk=false;
+function par(){px.forEach(function(el){var b=el.parentElement.getBoundingClientRect(),vh=innerHeight;if(b.bottom<-100||b.top>vh+100)return;var p=(b.top+b.height/2-vh/2)/vh,a=parseFloat(el.getAttribute('data-parallax'))||.15,c=el.classList.contains('wa-cine-img');el.style.transform='translateY('+(p*a*b.height*-1).toFixed(1)+'px)'+(c?' scale(1.12)':'');});tk=false;}
+addEventListener('scroll',function(){if(!tk){requestAnimationFrame(par);tk=true;}},{passive:true});addEventListener('resize',par);par();
+var cl=R.querySelector('.wa-cl'),tr=cl?cl.querySelector('.wa-cl-media'):null,gr=tr?tr.parentElement:null,mq=matchMedia('(max-width:860px)'),ct=false;
+function mode(){if(!cl)return;if(mq.matches&&cl.getAttribute('data-horizontal')!=='false')cl.classList.add('wa-horiz');else{cl.classList.remove('wa-horiz');if(tr)tr.style.transform='';}}
+function upd(){ct=false;if(!cl||!tr||!cl.classList.contains('wa-horiz'))return;var tot=cl.offsetHeight-innerHeight,top=cl.getBoundingClientRect().top,pas=Math.min(Math.max(-top,0),tot),pr=tot>0?pas/tot:0,mx=tr.scrollWidth-gr.clientWidth;if(mx<0)mx=0;tr.style.transform='translateX('+(-pr*mx).toFixed(1)+'px)';}
+mode();upd();addEventListener('scroll',function(){if(!ct){requestAnimationFrame(upd);ct=true;}},{passive:true});addEventListener('resize',function(){mode();upd();});
+function cu(el){var t=parseInt(el.getAttribute('data-count'),10),d=1200,t0=null;function s(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/d,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*t).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');if(p<1)requestAnimationFrame(s);else el.textContent=t.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');}requestAnimationFrame(s);}
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cu(e.target);cio.unobserve(e.target);}});},{threshold:.6});
+R.querySelectorAll('[data-count]').forEach(function(e){cio.observe(e);});
+}
+
+var sk=R.querySelector('[data-sticky]');
+if(sk){var mainF=null;document.querySelectorAll('form[action*="/cart/add"]').forEach(function(f){if(!mainF&&!f.classList.contains('wp-atc'))mainF=f;});
+ var past=false,ft=false;function skU(){var on;if(mainF){var r=mainF.getBoundingClientRect();on=r.bottom<0;}else{on=scrollY>700;}
+ var fin=R.querySelector('.wp-final');if(fin){var fr=fin.getBoundingClientRect();if(fr.top<innerHeight*.6&&fr.bottom>0)on=false;}
+ sk.classList.toggle('is-on',on);}
+ addEventListener('scroll',function(){if(!ft){ft=true;requestAnimationFrame(function(){ft=false;skU();});}},{passive:true});skU();
+ document.body.appendChild(sk);}
+
+var GAP=12,EDGE=20;
+R.querySelectorAll('.wa-top').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});});
+function size(){var N=matchMedia('(max-width:768px)').matches?3:5;R.querySelectorAll('.wa-ugc-track').forEach(function(t){var w=t.getBoundingClientRect().width,sw=(w-EDGE*2-GAP*(N-1))/N;if(sw<=0)return;t.querySelectorAll('.wa-ugc-item').forEach(function(s){s.style.flex='0 0 '+sw+'px';s.style.width=s.style.minWidth=s.style.maxWidth=sw+'px';});});}
+function auto(){R.querySelectorAll('.wa-ugc-track').forEach(function(t){if(t.__x)return;var d=parseInt(t.getAttribute('data-autoscroll')||'4000',10);t.__x=setInterval(function(){var m=t.scrollWidth-t.clientWidth;if(m<=2)return;if(t.scrollLeft>=m-2)t.scrollTo({left:0,behavior:'smooth'});else{var n=t.scrollLeft+t.clientWidth;if(n>m)n=m;t.scrollTo({left:n,behavior:'smooth'});}},d);});}
+size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize',size);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Within · Pagina prodotto",
+  "tag": "section",
+  "class": "wa-section",
+  "max_blocks": 30,
+  "settings": [
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Larghezza contenuto",
+      "min": 900,
+      "max": 1280,
+      "step": 20,
+      "unit": "px",
+      "default": 1020
+    },
+    {
+      "type": "header",
+      "content": "Colori"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Sfondo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "surface2_color",
+      "label": "Sfondo sezioni tinta",
+      "default": "#f7f3ec"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Testo",
+      "default": "#1d1d1f"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Testo secondario",
+      "default": "#6e6a64"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Linee",
+      "default": "#ddd6cb"
+    },
+    {
+      "type": "color",
+      "id": "dark_color",
+      "label": "Sezioni scure",
+      "default": "#1C2B28"
+    },
+    {
+      "type": "color",
+      "id": "on_dark_color",
+      "label": "Testo su scuro",
+      "default": "#f7f3ec"
+    },
+    {
+      "type": "color",
+      "id": "on_dark_mut_color",
+      "label": "Testo su scuro (secondario)",
+      "default": "#b5c2bd"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accento",
+      "default": "#A8432E"
+    },
+    {
+      "type": "color",
+      "id": "accent_hi_color",
+      "label": "Accento su scuro",
+      "default": "#F2C05C"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Pulsante",
+      "default": "#CC5B3E"
+    },
+    {
+      "type": "color",
+      "id": "btn_hover_color",
+      "label": "Pulsante hover",
+      "default": "#A8432E"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Stelle",
+      "default": "#F2C05C"
+    },
+    {
+      "type": "header",
+      "content": "Pulsanti e barra d'acquisto"
+    },
+    {
+      "type": "select",
+      "id": "cta_action",
+      "label": "I pulsanti della pagina",
+      "options": [
+        {
+          "value": "cart",
+          "label": "Aggiungono al carrello"
+        },
+        {
+          "value": "top",
+          "label": "Riportano in cima"
+        }
+      ],
+      "default": "cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Barra d'acquisto fissa in basso",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "sticky_label",
+      "label": "Pulsante barra",
+      "default": "Aggiungi al carrello"
+    },
+    {
+      "type": "text",
+      "id": "sticky_note",
+      "label": "Testo barra",
+      "default": "Garanzia 90 giorni"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Striscia fiducia",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item_1",
+          "label": "Voce 1"
+        },
+        {
+          "type": "text",
+          "id": "item_2",
+          "label": "Voce 2"
+        },
+        {
+          "type": "text",
+          "id": "item_3",
+          "label": "Voce 3"
+        },
+        {
+          "type": "text",
+          "id": "item_4",
+          "label": "Voce 4"
+        }
+      ]
+    },
+    {
+      "type": "ugc",
+      "name": "Video clienti",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "text",
+          "id": "verified_label",
+          "label": "Etichetta verificato",
+          "default": "Acquisto verificato"
+        },
+        {
+          "type": "range",
+          "id": "autoscroll_ms",
+          "label": "Auto-scroll",
+          "min": 2000,
+          "max": 8000,
+          "step": 500,
+          "default": 4000,
+          "unit": "ms"
+        },
+        {
+          "type": "video",
+          "id": "video_1",
+          "label": "Video 1 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_1",
+          "label": "Video 1 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_1",
+          "label": "Video 1 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_2",
+          "label": "Video 2 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_2",
+          "label": "Video 2 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_2",
+          "label": "Video 2 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_3",
+          "label": "Video 3 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_3",
+          "label": "Video 3 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_3",
+          "label": "Video 3 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_4",
+          "label": "Video 4 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_4",
+          "label": "Video 4 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_4",
+          "label": "Video 4 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_5",
+          "label": "Video 5 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_5",
+          "label": "Video 5 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_5",
+          "label": "Video 5 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_6",
+          "label": "Video 6 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_6",
+          "label": "Video 6 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_6",
+          "label": "Video 6 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_7",
+          "label": "Video 7 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_7",
+          "label": "Video 7 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_7",
+          "label": "Video 7 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_8",
+          "label": "Video 8 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_8",
+          "label": "Video 8 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_8",
+          "label": "Video 8 · didascalia"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 88
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 88
+        }
+      ]
+    },
+    {
+      "type": "lead",
+      "name": "Apertura (storia)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Testo"
+        },
+        {
+          "type": "text",
+          "id": "kicker",
+          "label": "Frase finale evidenziata"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Immagine (link)"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "mechanism",
+      "name": "Meccanismo (confronto)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Sottotitolo"
+        },
+        {
+          "type": "text",
+          "id": "a_label",
+          "label": "Sinistra · etichetta"
+        },
+        {
+          "type": "text",
+          "id": "a_big",
+          "label": "Sinistra · numero"
+        },
+        {
+          "type": "textarea",
+          "id": "a_points",
+          "label": "Sinistra · punti (uno per riga)"
+        },
+        {
+          "type": "text",
+          "id": "b_label",
+          "label": "Destra · etichetta"
+        },
+        {
+          "type": "text",
+          "id": "b_big",
+          "label": "Destra · numero"
+        },
+        {
+          "type": "textarea",
+          "id": "b_points",
+          "label": "Destra · punti (uno per riga)"
+        },
+        {
+          "type": "textarea",
+          "id": "note",
+          "label": "Nota sotto (seconda chiave)"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "benefits",
+      "name": "Benefici",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Immagine (link)"
+        },
+        {
+          "type": "text",
+          "id": "b1_title",
+          "label": "1 · in grassetto"
+        },
+        {
+          "type": "textarea",
+          "id": "b1_text",
+          "label": "1 · testo"
+        },
+        {
+          "type": "text",
+          "id": "b2_title",
+          "label": "2 · in grassetto"
+        },
+        {
+          "type": "textarea",
+          "id": "b2_text",
+          "label": "2 · testo"
+        },
+        {
+          "type": "text",
+          "id": "b3_title",
+          "label": "3 · in grassetto"
+        },
+        {
+          "type": "textarea",
+          "id": "b3_text",
+          "label": "3 · testo"
+        },
+        {
+          "type": "text",
+          "id": "b4_title",
+          "label": "4 · in grassetto"
+        },
+        {
+          "type": "textarea",
+          "id": "b4_text",
+          "label": "4 · testo"
+        },
+        {
+          "type": "text",
+          "id": "b5_title",
+          "label": "5 · in grassetto"
+        },
+        {
+          "type": "textarea",
+          "id": "b5_text",
+          "label": "5 · testo"
+        },
+        {
+          "type": "text",
+          "id": "b6_title",
+          "label": "6 · in grassetto"
+        },
+        {
+          "type": "textarea",
+          "id": "b6_text",
+          "label": "6 · testo"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Pulsante"
+        },
+        {
+          "type": "text",
+          "id": "cta_note",
+          "label": "Nota sotto il pulsante"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "formula",
+      "name": "Formula",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Sottotitolo"
+        },
+        {
+          "type": "text",
+          "id": "i1_tag",
+          "label": "1 · livello"
+        },
+        {
+          "type": "text",
+          "id": "i1_dose",
+          "label": "1 · dose"
+        },
+        {
+          "type": "text",
+          "id": "i1_name",
+          "label": "1 · nome"
+        },
+        {
+          "type": "textarea",
+          "id": "i1_text",
+          "label": "1 · a cosa serve"
+        },
+        {
+          "type": "text",
+          "id": "i2_tag",
+          "label": "2 · livello"
+        },
+        {
+          "type": "text",
+          "id": "i2_dose",
+          "label": "2 · dose"
+        },
+        {
+          "type": "text",
+          "id": "i2_name",
+          "label": "2 · nome"
+        },
+        {
+          "type": "textarea",
+          "id": "i2_text",
+          "label": "2 · a cosa serve"
+        },
+        {
+          "type": "text",
+          "id": "i3_tag",
+          "label": "3 · livello"
+        },
+        {
+          "type": "text",
+          "id": "i3_dose",
+          "label": "3 · dose"
+        },
+        {
+          "type": "text",
+          "id": "i3_name",
+          "label": "3 · nome"
+        },
+        {
+          "type": "textarea",
+          "id": "i3_text",
+          "label": "3 · a cosa serve"
+        },
+        {
+          "type": "text",
+          "id": "i4_tag",
+          "label": "4 · livello"
+        },
+        {
+          "type": "text",
+          "id": "i4_dose",
+          "label": "4 · dose"
+        },
+        {
+          "type": "text",
+          "id": "i4_name",
+          "label": "4 · nome"
+        },
+        {
+          "type": "textarea",
+          "id": "i4_text",
+          "label": "4 · a cosa serve"
+        },
+        {
+          "type": "text",
+          "id": "i5_tag",
+          "label": "5 · livello"
+        },
+        {
+          "type": "text",
+          "id": "i5_dose",
+          "label": "5 · dose"
+        },
+        {
+          "type": "text",
+          "id": "i5_name",
+          "label": "5 · nome"
+        },
+        {
+          "type": "textarea",
+          "id": "i5_text",
+          "label": "5 · a cosa serve"
+        },
+        {
+          "type": "text",
+          "id": "i6_tag",
+          "label": "6 · livello"
+        },
+        {
+          "type": "text",
+          "id": "i6_dose",
+          "label": "6 · dose"
+        },
+        {
+          "type": "text",
+          "id": "i6_name",
+          "label": "6 · nome"
+        },
+        {
+          "type": "textarea",
+          "id": "i6_text",
+          "label": "6 · a cosa serve"
+        },
+        {
+          "type": "textarea",
+          "id": "footnote",
+          "label": "Nota a piè di pagina"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "name": "Tempi dei risultati",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "text",
+          "id": "s1_when",
+          "label": "1 · quando"
+        },
+        {
+          "type": "text",
+          "id": "s1_title",
+          "label": "1 · titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "s1_text",
+          "label": "1 · testo"
+        },
+        {
+          "type": "text",
+          "id": "s2_when",
+          "label": "2 · quando"
+        },
+        {
+          "type": "text",
+          "id": "s2_title",
+          "label": "2 · titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "s2_text",
+          "label": "2 · testo"
+        },
+        {
+          "type": "text",
+          "id": "s3_when",
+          "label": "3 · quando"
+        },
+        {
+          "type": "text",
+          "id": "s3_title",
+          "label": "3 · titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "s3_text",
+          "label": "3 · testo"
+        },
+        {
+          "type": "textarea",
+          "id": "note",
+          "label": "Nota finale"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "reviews",
+      "name": "Recensioni",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Valutazione (es. 4,8/5 · 1.234 recensioni)"
+        },
+        {
+          "type": "text",
+          "id": "verified_label",
+          "label": "Etichetta verificato",
+          "default": "Acquisto verificato"
+        },
+        {
+          "type": "text",
+          "id": "stat1",
+          "label": "Statistica 1 · numero"
+        },
+        {
+          "type": "text",
+          "id": "stat1_label",
+          "label": "Statistica 1 · etichetta"
+        },
+        {
+          "type": "text",
+          "id": "stat2",
+          "label": "Statistica 2 · numero"
+        },
+        {
+          "type": "text",
+          "id": "stat2_label",
+          "label": "Statistica 2 · etichetta"
+        },
+        {
+          "type": "text",
+          "id": "stat3",
+          "label": "Statistica 3 · numero"
+        },
+        {
+          "type": "text",
+          "id": "stat3_label",
+          "label": "Statistica 3 · etichetta"
+        },
+        {
+          "type": "textarea",
+          "id": "stats_note",
+          "label": "Nota statistiche"
+        },
+        {
+          "type": "text",
+          "id": "r1_title",
+          "label": "1 · titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "r1_quote",
+          "label": "1 · testo"
+        },
+        {
+          "type": "text",
+          "id": "r1_name",
+          "label": "1 · nome, età, città"
+        },
+        {
+          "type": "image_picker",
+          "id": "r1_image",
+          "label": "1 · foto"
+        },
+        {
+          "type": "text",
+          "id": "r1_image_url",
+          "label": "1 · foto (link)"
+        },
+        {
+          "type": "text",
+          "id": "r2_title",
+          "label": "2 · titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "r2_quote",
+          "label": "2 · testo"
+        },
+        {
+          "type": "text",
+          "id": "r2_name",
+          "label": "2 · nome, età, città"
+        },
+        {
+          "type": "image_picker",
+          "id": "r2_image",
+          "label": "2 · foto"
+        },
+        {
+          "type": "text",
+          "id": "r2_image_url",
+          "label": "2 · foto (link)"
+        },
+        {
+          "type": "text",
+          "id": "r3_title",
+          "label": "3 · titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "r3_quote",
+          "label": "3 · testo"
+        },
+        {
+          "type": "text",
+          "id": "r3_name",
+          "label": "3 · nome, età, città"
+        },
+        {
+          "type": "image_picker",
+          "id": "r3_image",
+          "label": "3 · foto"
+        },
+        {
+          "type": "text",
+          "id": "r3_image_url",
+          "label": "3 · foto (link)"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "compare",
+      "name": "Confronto",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "text",
+          "id": "col_a",
+          "label": "Colonna evidenziata",
+          "default": "Within"
+        },
+        {
+          "type": "text",
+          "id": "col_b",
+          "label": "Colonna 2"
+        },
+        {
+          "type": "text",
+          "id": "col_c",
+          "label": "Colonna 3"
+        },
+        {
+          "type": "text",
+          "id": "r1_label",
+          "label": "Riga 1 · voce"
+        },
+        {
+          "type": "text",
+          "id": "r1_a",
+          "label": "Riga 1 · evidenziata"
+        },
+        {
+          "type": "text",
+          "id": "r1_b",
+          "label": "Riga 1 · colonna 2"
+        },
+        {
+          "type": "text",
+          "id": "r1_c",
+          "label": "Riga 1 · colonna 3"
+        },
+        {
+          "type": "text",
+          "id": "r2_label",
+          "label": "Riga 2 · voce"
+        },
+        {
+          "type": "text",
+          "id": "r2_a",
+          "label": "Riga 2 · evidenziata"
+        },
+        {
+          "type": "text",
+          "id": "r2_b",
+          "label": "Riga 2 · colonna 2"
+        },
+        {
+          "type": "text",
+          "id": "r2_c",
+          "label": "Riga 2 · colonna 3"
+        },
+        {
+          "type": "text",
+          "id": "r3_label",
+          "label": "Riga 3 · voce"
+        },
+        {
+          "type": "text",
+          "id": "r3_a",
+          "label": "Riga 3 · evidenziata"
+        },
+        {
+          "type": "text",
+          "id": "r3_b",
+          "label": "Riga 3 · colonna 2"
+        },
+        {
+          "type": "text",
+          "id": "r3_c",
+          "label": "Riga 3 · colonna 3"
+        },
+        {
+          "type": "text",
+          "id": "r4_label",
+          "label": "Riga 4 · voce"
+        },
+        {
+          "type": "text",
+          "id": "r4_a",
+          "label": "Riga 4 · evidenziata"
+        },
+        {
+          "type": "text",
+          "id": "r4_b",
+          "label": "Riga 4 · colonna 2"
+        },
+        {
+          "type": "text",
+          "id": "r4_c",
+          "label": "Riga 4 · colonna 3"
+        },
+        {
+          "type": "text",
+          "id": "r5_label",
+          "label": "Riga 5 · voce"
+        },
+        {
+          "type": "text",
+          "id": "r5_a",
+          "label": "Riga 5 · evidenziata"
+        },
+        {
+          "type": "text",
+          "id": "r5_b",
+          "label": "Riga 5 · colonna 2"
+        },
+        {
+          "type": "text",
+          "id": "r5_c",
+          "label": "Riga 5 · colonna 3"
+        },
+        {
+          "type": "text",
+          "id": "r6_label",
+          "label": "Riga 6 · voce"
+        },
+        {
+          "type": "text",
+          "id": "r6_a",
+          "label": "Riga 6 · evidenziata"
+        },
+        {
+          "type": "text",
+          "id": "r6_b",
+          "label": "Riga 6 · colonna 2"
+        },
+        {
+          "type": "text",
+          "id": "r6_c",
+          "label": "Riga 6 · colonna 3"
+        },
+        {
+          "type": "text",
+          "id": "r7_label",
+          "label": "Riga 7 · voce"
+        },
+        {
+          "type": "text",
+          "id": "r7_a",
+          "label": "Riga 7 · evidenziata"
+        },
+        {
+          "type": "text",
+          "id": "r7_b",
+          "label": "Riga 7 · colonna 2"
+        },
+        {
+          "type": "text",
+          "id": "r7_c",
+          "label": "Riga 7 · colonna 3"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Pulsante"
+        },
+        {
+          "type": "text",
+          "id": "cta_note",
+          "label": "Nota sotto il pulsante"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "guarantee",
+      "name": "Garanzia",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Testo"
+        },
+        {
+          "type": "text",
+          "id": "seal_big",
+          "label": "Sigillo · numero",
+          "default": "90"
+        },
+        {
+          "type": "text",
+          "id": "seal_small",
+          "label": "Sigillo · sotto",
+          "default": "giorni"
+        },
+        {
+          "type": "text",
+          "id": "seal_text",
+          "label": "Sigillo · testo circolare",
+          "default": "Soddisfatta o rimborsata · Soddisfatta o rimborsata · "
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Pulsante"
+        },
+        {
+          "type": "text",
+          "id": "cta_note",
+          "label": "Nota sotto il pulsante"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "Domande frequenti",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "text",
+          "id": "q1",
+          "label": "Domanda 1"
+        },
+        {
+          "type": "textarea",
+          "id": "a1",
+          "label": "Risposta 1"
+        },
+        {
+          "type": "text",
+          "id": "q2",
+          "label": "Domanda 2"
+        },
+        {
+          "type": "textarea",
+          "id": "a2",
+          "label": "Risposta 2"
+        },
+        {
+          "type": "text",
+          "id": "q3",
+          "label": "Domanda 3"
+        },
+        {
+          "type": "textarea",
+          "id": "a3",
+          "label": "Risposta 3"
+        },
+        {
+          "type": "text",
+          "id": "q4",
+          "label": "Domanda 4"
+        },
+        {
+          "type": "textarea",
+          "id": "a4",
+          "label": "Risposta 4"
+        },
+        {
+          "type": "text",
+          "id": "q5",
+          "label": "Domanda 5"
+        },
+        {
+          "type": "textarea",
+          "id": "a5",
+          "label": "Risposta 5"
+        },
+        {
+          "type": "text",
+          "id": "q6",
+          "label": "Domanda 6"
+        },
+        {
+          "type": "textarea",
+          "id": "a6",
+          "label": "Risposta 6"
+        },
+        {
+          "type": "text",
+          "id": "q7",
+          "label": "Domanda 7"
+        },
+        {
+          "type": "textarea",
+          "id": "a7",
+          "label": "Risposta 7"
+        },
+        {
+          "type": "text",
+          "id": "q8",
+          "label": "Domanda 8"
+        },
+        {
+          "type": "textarea",
+          "id": "a8",
+          "label": "Risposta 8"
+        },
+        {
+          "type": "textarea",
+          "id": "disclaimer",
+          "label": "Disclaimer"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "final",
+      "name": "Chiusura",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Testo"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Pulsante"
+        },
+        {
+          "type": "text",
+          "id": "cta_note",
+          "label": "Nota sotto il pulsante"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine di sfondo"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Immagine (link)"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Within · Pagina prodotto",
+      "blocks": [
+        {
+          "type": "lead"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
