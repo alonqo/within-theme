@@ -437,6 +437,7 @@
         "ugc_slider_1": {
           "type": "ugc_slider",
           "settings": {
+            "verified_label": "Acquisto verificato",
             "autoscroll_ms": 4000,
             "tinted": false,
             "padding_top": 88,
@@ -448,7 +449,13 @@
             "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_e533b3b9-6806-45a1-909c-64872cb3c19b.mp4",
             "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_c34741eb-2c7a-4a59-8935-147c26753a3e.mp4",
             "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_235fea3a-e893-4439-b1dc-ed5c36f99c4a.mp4",
-            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_01c6664e-e9ba-4131-a9b9-960ddda09368.mp4"
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_01c6664e-e9ba-4131-a9b9-960ddda09368.mp4",
+            "caption_1": "Marta, 45",
+            "caption_2": "Paola, 52",
+            "caption_3": "Silvia, 47",
+            "caption_4": "Elena, 44",
+            "caption_5": "Cristina, 50",
+            "caption_6": "Valentina, 46"
           }
         },
         "value_prop_2": {
@@ -613,6 +620,7 @@
         "ugc_slider_11": {
           "type": "ugc_slider",
           "settings": {
+            "verified_label": "Acquisto verificato",
             "autoscroll_ms": 4000,
             "tinted": false,
             "padding_top": 88,
@@ -624,7 +632,13 @@
             "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_418ffb7b-eda3-484e-9c30-0b0ce3a8d0b5.mp4",
             "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_4d9a5803-4e0e-4d60-9118-ea5c7e2a9d6e.mp4",
             "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_3cef32b2-03df-4496-8c75-6668a738d18a.mp4",
-            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133044_e2606849-4d83-4afd-8108-b874d6c40fb1.mp4"
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133044_e2606849-4d83-4afd-8108-b874d6c40fb1.mp4",
+            "caption_1": "Anna, 55",
+            "caption_2": "Federica, 48",
+            "caption_3": "Roberta, 50",
+            "caption_4": "Simona, 48",
+            "caption_5": "Daniela, 53",
+            "caption_6": "Chiara, 45"
           }
         },
         "objections_12": {

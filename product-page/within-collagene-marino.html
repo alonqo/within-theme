@@ -131,7 +131,12 @@
 .wa-ugc-head{max-width:var(--wide);margin:0 auto 34px;padding:0 22px;text-align:center}
 .wa-ugc-track{display:flex;gap:12px;padding:0 20px;scroll-padding-left:20px;scroll-padding-right:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .wa-ugc-track::-webkit-scrollbar{display:none}
-.wa-ugc-slide{flex:0 0 auto;width:30%;aspect-ratio:9/16;scroll-snap-align:start;border-radius:20px;overflow:hidden;background:var(--dark)}
+.wa-ugc-item{flex:0 0 auto;width:30%;margin:0;scroll-snap-align:start}
+.wa-ugc-slide{width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:var(--dark)}
+.wa-ugc-cap{margin:10px 2px 0;font-size:.86rem;line-height:1.3;color:var(--muted);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wa-ugc-cap b{color:var(--ink);font-weight:600}
+.wa-ugc-cap span{color:#2e7d5b;font-weight:600}
+.wa-ugc-cap em{font-style:normal}
 .wa-ugc-slide img,.wa-ugc-slide video{display:block;width:100%;height:100%!important;object-fit:cover}
 /* reveal (attivo solo se JS gira) */
 .wa-js .wa-reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,.8,.26,1),transform 1s cubic-bezier(.16,.8,.26,1),filter 1s;transition-delay:var(--d,0s)}
@@ -139,6 +144,7 @@
 .wa-js .wa-reveal.wa-in{opacity:1;transform:none;filter:none}
 @media (prefers-reduced-motion:reduce){.wa-js .wa-reveal{opacity:1;transform:none;filter:none;transition:none}}
 @media (max-width:860px){
+.wa-ugc-cap{font-size:.78rem}.wa-ugc-cap em{display:none}
 .wa-sect{padding:78px 20px}
 .wa-feat{grid-template-columns:1fr}.wa-feat.wa-rev .wa-feat-media{order:0}
 .wa-feat-copy{padding:32px}
@@ -163,12 +169,12 @@
 <section class="wa-ugc">
 <div class="wa-ugc-head wa-reveal"><p class="wa-eyebrow">Un sachet. Ogni mattina.</p><h2 class="wa-h2">Il rituale che entra nella tua giornata.</h2></div>
 <div class="wa-ugc-track" data-autoscroll="4000">
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_88724a13-f607-470d-938c-d2e4fc6d8632.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Cliente Within a colazione"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_aeef790c-4bbb-4f66-b426-cbc80055018c.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within in ufficio"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_e533b3b9-6806-45a1-909c-64872cb3c19b.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within dopo la palestra"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_c34741eb-2c7a-4a59-8935-147c26753a3e.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within sul balcone"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_235fea3a-e893-4439-b1dc-ed5c36f99c4a.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within per strada"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_01c6664e-e9ba-4131-a9b9-960ddda09368.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within al bar"></video></div>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_88724a13-f607-470d-938c-d2e4fc6d8632.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Cliente Within a colazione"></video></div><figcaption class="wa-ugc-cap"><b>Marta, 45</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_aeef790c-4bbb-4f66-b426-cbc80055018c.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within in ufficio"></video></div><figcaption class="wa-ugc-cap"><b>Paola, 52</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_e533b3b9-6806-45a1-909c-64872cb3c19b.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within dopo la palestra"></video></div><figcaption class="wa-ugc-cap"><b>Silvia, 47</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_c34741eb-2c7a-4a59-8935-147c26753a3e.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within sul balcone"></video></div><figcaption class="wa-ugc-cap"><b>Elena, 44</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_235fea3a-e893-4439-b1dc-ed5c36f99c4a.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within per strada"></video></div><figcaption class="wa-ugc-cap"><b>Cristina, 50</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_01c6664e-e9ba-4131-a9b9-960ddda09368.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within al bar"></video></div><figcaption class="wa-ugc-cap"><b>Valentina, 46</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
 </div>
 </section>
 
@@ -283,12 +289,12 @@
 <section class="wa-ugc">
 <div class="wa-ugc-head wa-reveal"><h2 class="wa-h2">Altre storie, altre mattine.</h2></div>
 <div class="wa-ugc-track" data-autoscroll="4000">
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_bc9cba9e-5312-42d4-bd3d-f3fec0ee1761.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within in cucina"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_218f9802-ceea-4faf-bdef-a2bd45b04142.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within prima del lavoro"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_418ffb7b-eda3-484e-9c30-0b0ce3a8d0b5.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Unboxing Within"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_4d9a5803-4e0e-4d60-9118-ea5c7e2a9d6e.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within con le amiche"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_3cef32b2-03df-4496-8c75-6668a738d18a.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within sul divano"></video></div>
-<div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133044_e2606849-4d83-4afd-8108-b874d6c40fb1.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within dopo lo yoga"></video></div>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_bc9cba9e-5312-42d4-bd3d-f3fec0ee1761.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within in cucina"></video></div><figcaption class="wa-ugc-cap"><b>Anna, 55</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_218f9802-ceea-4faf-bdef-a2bd45b04142.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within prima del lavoro"></video></div><figcaption class="wa-ugc-cap"><b>Federica, 48</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_418ffb7b-eda3-484e-9c30-0b0ce3a8d0b5.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Unboxing Within"></video></div><figcaption class="wa-ugc-cap"><b>Roberta, 50</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_4d9a5803-4e0e-4d60-9118-ea5c7e2a9d6e.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within con le amiche"></video></div><figcaption class="wa-ugc-cap"><b>Simona, 48</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_3cef32b2-03df-4496-8c75-6668a738d18a.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within sul divano"></video></div><figcaption class="wa-ugc-cap"><b>Daniela, 53</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
+<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133044_e2606849-4d83-4afd-8108-b874d6c40fb1.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Within dopo lo yoga"></video></div><figcaption class="wa-ugc-cap"><b>Chiara, 45</b> <span>✓<em> Acquisto verificato</em></span></figcaption></figure>
 </div>
 </section>
 
@@ -380,7 +386,7 @@ var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInte
 R.querySelectorAll('[data-count]').forEach(function(e){cio.observe(e);});
 }
 var GAP=12,EDGE=20;
-function size(){var N=matchMedia('(max-width:768px)').matches?3:5;R.querySelectorAll('.wa-ugc-track').forEach(function(t){var w=t.getBoundingClientRect().width,sw=(w-EDGE*2-GAP*(N-1))/N;if(sw<=0)return;t.querySelectorAll('.wa-ugc-slide').forEach(function(s){s.style.flex='0 0 '+sw+'px';s.style.width=s.style.minWidth=s.style.maxWidth=sw+'px';});});}
+function size(){var N=matchMedia('(max-width:768px)').matches?3:5;R.querySelectorAll('.wa-ugc-track').forEach(function(t){var w=t.getBoundingClientRect().width,sw=(w-EDGE*2-GAP*(N-1))/N;if(sw<=0)return;t.querySelectorAll('.wa-ugc-item').forEach(function(s){s.style.flex='0 0 '+sw+'px';s.style.width=s.style.minWidth=s.style.maxWidth=sw+'px';});});}
 function auto(){R.querySelectorAll('.wa-ugc-track').forEach(function(t){if(t.__x)return;var d=parseInt(t.getAttribute('data-autoscroll')||'4000',10);t.__x=setInterval(function(){var m=t.scrollWidth-t.clientWidth;if(m<=2)return;if(t.scrollLeft>=m-2)t.scrollTo({left:0,behavior:'smooth'});else{var n=t.scrollLeft+t.clientWidth;if(n>m)n=m;t.scrollTo({left:n,behavior:'smooth'});}},d);});}
 size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize',size);
 })();

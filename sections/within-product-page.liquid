@@ -137,7 +137,12 @@
 #shopify-section-{{ section.id }} .wa-ugc-head{max-width:var(--wide);margin:0 auto 34px;padding:0 22px;text-align:center}
 #shopify-section-{{ section.id }} .wa-ugc-track{display:flex;gap:12px;padding:0 20px;scroll-padding-left:20px;scroll-padding-right:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 #shopify-section-{{ section.id }} .wa-ugc-track::-webkit-scrollbar{display:none}
-#shopify-section-{{ section.id }} .wa-ugc-slide{flex:0 0 auto;width:30%;aspect-ratio:9/16;scroll-snap-align:start;border-radius:20px;overflow:hidden;background:var(--dark)}
+#shopify-section-{{ section.id }} .wa-ugc-item{flex:0 0 auto;width:30%;margin:0;scroll-snap-align:start}
+#shopify-section-{{ section.id }} .wa-ugc-slide{width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:var(--dark)}
+#shopify-section-{{ section.id }} .wa-ugc-cap{margin:10px 2px 0;font-size:.86rem;line-height:1.3;color:var(--muted);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#shopify-section-{{ section.id }} .wa-ugc-cap b{color:var(--ink);font-weight:600}
+#shopify-section-{{ section.id }} .wa-ugc-cap span{color:#2e7d5b;font-weight:600}
+#shopify-section-{{ section.id }} .wa-ugc-cap em{font-style:normal}
 #shopify-section-{{ section.id }} .wa-ugc-slide img,#shopify-section-{{ section.id }} .wa-ugc-slide video{display:block;width:100%;height:100%!important;object-fit:cover}
 #shopify-section-{{ section.id }} /* reveal (attivo solo se JS gira) */
 .wa-js .wa-reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,.8,.26,1),transform 1s cubic-bezier(.16,.8,.26,1),filter 1s;transition-delay:var(--d,0s)}
@@ -147,6 +152,8 @@
 #shopify-section-{{ section.id }} .wa-js .wa-reveal{opacity:1;transform:none;filter:none;transition:none}
 }
 @media (max-width:860px){
+#shopify-section-{{ section.id }} .wa-ugc-cap{font-size:.78rem}
+#shopify-section-{{ section.id }} .wa-ugc-cap em{display:none}
 #shopify-section-{{ section.id }} .wa-sect{padding:min(var(--pt,120px),78px) 20px min(var(--pb,120px),78px)}
 #shopify-section-{{ section.id }} .wa-feat{grid-template-columns:1fr}
 #shopify-section-{{ section.id }} .wa-feat.wa-rev .wa-feat-media{order:0}
@@ -172,6 +179,7 @@
 #shopify-section-{{ section.id }} .wa-auth-panel{padding:48px 26px}
 #shopify-section-{{ section.id }} .wa-cine{min-height:64vh}
 }
+#shopify-section-{{ section.id }} .wa-ugc-item{margin:0}
 #shopify-section-{{ section.id }} .wa-ugc{padding-top:var(--pt,90px);padding-bottom:var(--pb,90px)}
 #shopify-section-{{ section.id }} .wa-ph{display:flex;align-items:center;justify-content:center;min-height:300px;background:repeating-linear-gradient(135deg,#ece6dc 0 16px,#f4efe7 16px 32px);color:#8a8278;font-size:.84rem;font-weight:600;border-radius:var(--r)}
 {% endstyle %}
@@ -188,9 +196,10 @@
   <div class="wa-ugc-track" data-autoscroll="{{ block.settings.autoscroll_ms }}">
   {%- for i in (1..8) -%}
     {%- assign vk = 'video_' | append: i -%}{%- assign uk = 'video_url_' | append: i -%}
-    {%- assign v = block.settings[vk] -%}{%- assign vu = block.settings[uk] -%}
-    {%- if v != blank -%}<div class="wa-ugc-slide">{{ v | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata' }}</div>
-    {%- elsif vu != blank -%}<div class="wa-ugc-slide"><video src="{{ vu }}" autoplay muted loop playsinline preload="metadata"></video></div>{%- endif -%}
+    {%- assign v = block.settings[vk] -%}{%- assign vu = block.settings[uk] -%}{%- assign ck = 'caption_' | append: i -%}{%- assign cap = block.settings[ck] -%}
+    {%- capture capt -%}{%- if cap != blank -%}<figcaption class="wa-ugc-cap"><b>{{ cap }}</b>{% if block.settings.verified_label != blank %} <span>✓<em> {{ block.settings.verified_label }}</em></span>{% endif %}</figcaption>{%- endif -%}{%- endcapture -%}
+    {%- if v != blank -%}<figure class="wa-ugc-item"><div class="wa-ugc-slide">{{ v | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata' }}</div>{{ capt }}</figure>
+    {%- elsif vu != blank -%}<figure class="wa-ugc-item"><div class="wa-ugc-slide"><video src="{{ vu }}" autoplay muted loop playsinline preload="metadata"></video></div>{{ capt }}</figure>{%- endif -%}
   {%- endfor -%}
   </div>
 </section>
@@ -399,7 +408,7 @@ R.querySelectorAll('[data-count]').forEach(function(e){cio.observe(e);});
 }
 var GAP=12,EDGE=20;
 R.querySelectorAll('.wa-top').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});});
-function size(){var N=matchMedia('(max-width:768px)').matches?3:5;R.querySelectorAll('.wa-ugc-track').forEach(function(t){var w=t.getBoundingClientRect().width,sw=(w-EDGE*2-GAP*(N-1))/N;if(sw<=0)return;t.querySelectorAll('.wa-ugc-slide').forEach(function(s){s.style.flex='0 0 '+sw+'px';s.style.width=s.style.minWidth=s.style.maxWidth=sw+'px';});});}
+function size(){var N=matchMedia('(max-width:768px)').matches?3:5;R.querySelectorAll('.wa-ugc-track').forEach(function(t){var w=t.getBoundingClientRect().width,sw=(w-EDGE*2-GAP*(N-1))/N;if(sw<=0)return;t.querySelectorAll('.wa-ugc-item').forEach(function(s){s.style.flex='0 0 '+sw+'px';s.style.width=s.style.minWidth=s.style.maxWidth=sw+'px';});});}
 function auto(){R.querySelectorAll('.wa-ugc-track').forEach(function(t){if(t.__x)return;var d=parseInt(t.getAttribute('data-autoscroll')||'4000',10);t.__x=setInterval(function(){var m=t.scrollWidth-t.clientWidth;if(m<=2)return;if(t.scrollLeft>=m-2)t.scrollTo({left:0,behavior:'smooth'});else{var n=t.scrollLeft+t.clientWidth;if(n>m)n=m;t.scrollTo({left:n,behavior:'smooth'});}},d);});}
 size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize',size);
 })();
@@ -521,6 +530,12 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "label": "Titolo"
         },
         {
+          "type": "text",
+          "id": "verified_label",
+          "label": "Etichetta verificato (su mobile resta solo ✓)",
+          "default": "Acquisto verificato"
+        },
+        {
           "type": "range",
           "id": "autoscroll_ms",
           "label": "Auto-scroll",
@@ -541,6 +556,11 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "label": "Video 1 (link mp4, usato se non carichi un file)"
         },
         {
+          "type": "text",
+          "id": "caption_1",
+          "label": "Video 1 · didascalia (es. Marta, 45)"
+        },
+        {
           "type": "video",
           "id": "video_2",
           "label": "Video 2 (file Shopify)"
@@ -549,6 +569,11 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "video_url_2",
           "label": "Video 2 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "text",
+          "id": "caption_2",
+          "label": "Video 2 · didascalia (es. Marta, 45)"
         },
         {
           "type": "video",
@@ -561,6 +586,11 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "label": "Video 3 (link mp4, usato se non carichi un file)"
         },
         {
+          "type": "text",
+          "id": "caption_3",
+          "label": "Video 3 · didascalia (es. Marta, 45)"
+        },
+        {
           "type": "video",
           "id": "video_4",
           "label": "Video 4 (file Shopify)"
@@ -569,6 +599,11 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "video_url_4",
           "label": "Video 4 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "text",
+          "id": "caption_4",
+          "label": "Video 4 · didascalia (es. Marta, 45)"
         },
         {
           "type": "video",
@@ -581,6 +616,11 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "label": "Video 5 (link mp4, usato se non carichi un file)"
         },
         {
+          "type": "text",
+          "id": "caption_5",
+          "label": "Video 5 · didascalia (es. Marta, 45)"
+        },
+        {
           "type": "video",
           "id": "video_6",
           "label": "Video 6 (file Shopify)"
@@ -589,6 +629,11 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "video_url_6",
           "label": "Video 6 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "text",
+          "id": "caption_6",
+          "label": "Video 6 · didascalia (es. Marta, 45)"
         },
         {
           "type": "video",
@@ -601,6 +646,11 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "label": "Video 7 (link mp4, usato se non carichi un file)"
         },
         {
+          "type": "text",
+          "id": "caption_7",
+          "label": "Video 7 · didascalia (es. Marta, 45)"
+        },
+        {
           "type": "video",
           "id": "video_8",
           "label": "Video 8 (file Shopify)"
@@ -609,6 +659,11 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "video_url_8",
           "label": "Video 8 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "text",
+          "id": "caption_8",
+          "label": "Video 8 · didascalia (es. Marta, 45)"
         },
         {
           "type": "paragraph",
@@ -2089,7 +2144,13 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
             "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_e533b3b9-6806-45a1-909c-64872cb3c19b.mp4",
             "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_c34741eb-2c7a-4a59-8935-147c26753a3e.mp4",
             "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_235fea3a-e893-4439-b1dc-ed5c36f99c4a.mp4",
-            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_01c6664e-e9ba-4131-a9b9-960ddda09368.mp4"
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_01c6664e-e9ba-4131-a9b9-960ddda09368.mp4",
+            "caption_1": "Marta, 45",
+            "caption_2": "Paola, 52",
+            "caption_3": "Silvia, 47",
+            "caption_4": "Elena, 44",
+            "caption_5": "Cristina, 50",
+            "caption_6": "Valentina, 46"
           }
         },
         {
@@ -2146,7 +2207,13 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
             "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_418ffb7b-eda3-484e-9c30-0b0ce3a8d0b5.mp4",
             "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_4d9a5803-4e0e-4d60-9118-ea5c7e2a9d6e.mp4",
             "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_3cef32b2-03df-4496-8c75-6668a738d18a.mp4",
-            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133044_e2606849-4d83-4afd-8108-b874d6c40fb1.mp4"
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133044_e2606849-4d83-4afd-8108-b874d6c40fb1.mp4",
+            "caption_1": "Anna, 55",
+            "caption_2": "Federica, 48",
+            "caption_3": "Roberta, 50",
+            "caption_4": "Simona, 48",
+            "caption_5": "Daniela, 53",
+            "caption_6": "Chiara, 45"
           }
         },
         {
