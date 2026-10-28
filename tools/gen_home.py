@@ -311,7 +311,7 @@ blocks=[
    "r6_label":"Formato","r6_a":"Sachet liquido pronto","r6_b":"Polvere o capsule","r6_c":"Vasetto",
    "r7_label":"Garanzia","r7_a":"90 giorni","r7_b":"Raramente","r7_c":"Raramente",
    "cta_label":"Provalo per 90 giorni","cta_url":P}),
- ("banner",{"eyebrow":"Dal vivo","heading":"Assaggialo con noi.","text":"Degustazioni e consulenze nelle farmacie e nei negozi partner. Trova la data più vicina e salvala nel tuo calendario.","cta_label":"Vedi gli eventi","cta_url":"/pages/eventi","image_url":B+"20261028_230609_1b82611d-26fb-4e17-89f1-95917f2c286e.png","padding_top":40,"padding_bottom":40}),
+ ("banner",{"eyebrow":"Dal vivo","heading":"Assaggialo con noi.","text":"Degustazioni e consulenze nelle farmacie e nei negozi partner. Trova la data più vicina e salvala nel tuo calendario.","cta_label":"Vedi gli eventi","cta_url":"/pages/eventi","image_url":B+"20261028_232314_16b8c81f-dc92-4970-afb7-b80afdfea592.png","padding_top":40,"padding_bottom":40}),
  ("newsletter",{"eyebrow":"La cerchia Within","heading":"Consigli per la tua pelle, una volta al mese.","text":"Novità, inviti agli eventi e offerte riservate alle iscritte.","button_label":"Iscriviti","success":"Grazie! Sei nella cerchia Within.","note":"Niente spam. Ti cancelli quando vuoi con un clic.","padding_top":80,"padding_bottom":120}),
  ("home_hero",{"eyebrow":"Inizia oggi","heading":"Il tuo primo sachet ti aspetta.","sub":"Provalo per 90 giorni. Se la tua pelle non cambia, ti restituiamo i soldi.","cta_label":"Scopri Within","cta_url":P,"link_label":"Leggi la nostra storia →","link_url":"/pages/chi-siamo","image_url":M['final'],"focus_x":75,"padding_bottom":96}),
 ]

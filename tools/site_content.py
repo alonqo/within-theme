@@ -3,7 +3,7 @@ def build(S):
     I,V,PROD=S['I'],S['V'],S['PROD']
     HOME_HERO=I('230608_aa23f9fd-8d25-4d7d-a202-f82454fd4b23')
     SEA=I('230608_220c2f4-16b4-4261-9660-c335d8933e60'.replace('220c2f4','220ca2f4'))
-    EVENT=I('230609_1b82611d-26fb-4e17-89f1-95917f2c286e')
+    EVENT=I('232314_16b8c81f-dc92-4970-afb7-b80afdfea592')
     vids1=['133042_88724a13-f607-470d-938c-d2e4fc6d8632','133042_aeef790c-4bbb-4f66-b426-cbc80055018c','133042_e533b3b9-6806-45a1-909c-64872cb3c19b','133043_c34741eb-2c7a-4a59-8935-147c26753a3e','133042_235fea3a-e893-4439-b1dc-ed5c36f99c4a','133043_01c6664e-e9ba-4131-a9b9-960ddda09368']
     caps1=['Marta, 57','Paola, 62','Silvia, 59','Elena, 56','Cristina, 64','Valentina, 61']
     ugc=dict({"eyebrow":"Ogni mattina, 25 secondi","heading":"Il gesto che si vede allo specchio."},**{"video_url_%d"%(i+1):V(v) for i,v in enumerate(vids1)},**{"caption_%d"%(i+1):c for i,c in enumerate(caps1)})
@@ -12,7 +12,7 @@ def build(S):
       ("ugc_slider",ugc),
       ("feature_row",{}),
       ("benefits",{"link_label":"Scopri la formula →","link_url":PROD}),
-      ("cinematic",{"eyebrow":"Il momento più bello","heading":"Quando ti chiedono: “Ma cosa ti sei fatta?”","image_url":I("145713_343258af-6373-4637-81d8-046328460d88"),"parallax":0.2}),
+      ("cinematic",{"eyebrow":"Il momento più bello","heading":"Quando ti chiedono: “Ma cosa ti sei fatta?”","image_url":I("232315_b4edd37c-9815-423b-8762-11bce1d2ce17"),"parallax":0.2}),
       ("how_it_works",{}),
       ("product_spot",{"product":"within-collagene-marino","eyebrow":"Il tuo percorso di 12 settimane","heading":"Within Collagene Marino","text":"Dieci sachet da 25 ml per box. Gusto mango e passion fruit, zero retrogusto di pesce. Si beve in 25 secondi, ovunque tu sia.","points":"5.000 mg di collagene marino tripeptide\n6 attivi per una pelle compatta e luminosa\nGià liquido, niente polveri da sciogliere\nGaranzia soddisfatta o rimborsata 90 giorni","cta_label":"Inizia oggi","cta_url":PROD,"image_url":I("133253_a095fd80-1e6b-4c1d-a9a9-8cc6d2128b44"),"tinted":True}),
       ("social_proof",{"cta_url":PROD,"tinted":False}),
@@ -26,7 +26,7 @@ def build(S):
         "f1_image_url":I("133253_113ae570-8806-4947-b614-a6b1a28d0c82"),"f1_title":"Trasparenza","f1_text":"Peso molecolare, dosaggi e certificati: tutto dichiarato.",
         "f2_image_url":I("133239_3c10111a-879c-49fe-8e0c-b7b2fa3ad58f"),"f2_title":"Formula seria","f2_text":"Sei attivi scelti per lavorare insieme. Zero riempitivi.",
         "f3_image_url":I("133241_26746d27-a7ec-45d7-a193-1513087a5388"),"f3_title":"Semplicità","f3_text":"Un sachet, 25 secondi. Il gesto più facile della giornata.",
-        "f4_image_url":I("145714_237bd89a-de61-49a4-8191-f497a547415b"),"f4_title":"Bellezza a ogni età","f4_text":"Non per sembrare un'altra. Per piacerti di nuovo."}),
+        "f4_image_url":I("232314_9d01a565-4696-4718-b0f2-f56842afbc13"),"f4_title":"Bellezza a ogni età","f4_text":"Non per sembrare un'altra. Per piacerti di nuovo."}),
       ("cinematic",{"eyebrow":"La nostra promessa","heading":"Niente miracoli. Solo una pelle che si vede.","image_url":I("133240_6e62d467-ccec-48a2-8db0-5be293d52d9e"),"parallax":0.2}),
       ("authority",{}),
       ("statement",{"eyebrow":"Il nostro impegno","statement":"Se in 90 giorni la tua pelle non cambia, ti restituiamo i soldi.","text":"<p>Perché crediamo in quello che facciamo. E perché tu non debba crederci sulla parola.</p>","tinted":True}),
