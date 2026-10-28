@@ -1,0 +1,125 @@
+/*
+ * Template Within — generato da gen_site.py (repo alonqo/within-theme)
+ */
+{
+  "sections": {
+    "within": {
+      "type": "within-site",
+      "blocks": {
+        "hero_1": {
+          "type": "hero",
+          "settings": {
+            "heading": "La bellezza viene da dentro. Noi l'abbiamo presa sul serio.",
+            "dark": false,
+            "padding_top": 96,
+            "padding_bottom": 56,
+            "eyebrow": "Chi siamo",
+            "sub": "Within nasce da una domanda semplice: perché così tanti collageni promettono tutto e non cambiano niente?",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_230608_220ca2f4-16b4-4261-9660-c335d8933e60.png"
+          }
+        },
+        "statement_2": {
+          "type": "statement",
+          "settings": {
+            "statement": "Il mercato è pieno di promesse. Noi volevamo un collagene che le mantenesse.",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "eyebrow": "Perché esistiamo",
+            "text": "<p>Dopo i 25 anni il corpo perde ogni anno l'1-1,5% del suo collagene. Le creme lavorano in superficie, e la maggior parte degli integratori usa molecole troppo grandi per arrivare dove servono.</p><p>Così siamo partiti da zero. Abbiamo scelto un collagene marino tripeptide sotto i 3.000 Dalton, aggiunto 1 miliardo di fermenti lattici per l'equilibrio dell'intestino e dosato ogni attivo al milligrammo.</p><p>Il risultato si chiama Within. Perché la bellezza che dura comincia da dentro.</p>"
+          }
+        },
+        "feature_row_3": {
+          "type": "feature_row",
+          "settings": {
+            "heading": "Quello in cui crediamo.",
+            "f1_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_113ae570-8806-4947-b614-a6b1a28d0c82.png",
+            "f1_title": "Trasparenza",
+            "f1_text": "Peso molecolare, dosaggi e certificati: tutto dichiarato.",
+            "f2_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133239_3c10111a-879c-49fe-8e0c-b7b2fa3ad58f.png",
+            "f2_title": "Formula seria",
+            "f2_text": "Sei attivi scelti per lavorare insieme. Zero riempitivi.",
+            "f3_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_26746d27-a7ec-45d7-a193-1513087a5388.png",
+            "f3_title": "Semplicità",
+            "f3_text": "Un sachet, 25 secondi. Il gesto più facile della giornata.",
+            "f4_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_145714_237bd89a-de61-49a4-8191-f497a547415b.png",
+            "f4_title": "Bellezza a ogni età",
+            "f4_text": "Non per sembrare un'altra. Per piacerti di nuovo.",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "cinematic_4": {
+          "type": "cinematic",
+          "settings": {
+            "eyebrow": "La nostra promessa",
+            "heading": "Niente miracoli. Solo una pelle che si vede.",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133240_6e62d467-ccec-48a2-8db0-5be293d52d9e.png",
+            "parallax": 0.2
+          }
+        },
+        "authority_5": {
+          "type": "authority",
+          "settings": {
+            "eyebrow": "Trasparenza radicale",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_113ae570-8806-4947-b614-a6b1a28d0c82.png",
+            "quote": "\"Gli altri ti chiedono di fidarti. Noi ti diamo i documenti per controllare.\"",
+            "point1": "Peso molecolare dichiarato: sotto i 3.000 Da",
+            "point2": "Certificato di analisi per ogni lotto",
+            "point3": "Test metalli pesanti, pubblicato",
+            "point4": "Ogni dose al milligrammo, niente formule segrete",
+            "point5": "Formulato per la pelle dopo i 35 anni",
+            "name": "Il team Within",
+            "role": "Ricerca e Sviluppo",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "statement_6": {
+          "type": "statement",
+          "settings": {
+            "statement": "Se in 90 giorni la tua pelle non cambia, ti restituiamo i soldi.",
+            "tinted": true,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "eyebrow": "Il nostro impegno",
+            "text": "<p>Perché crediamo in quello che facciamo. E perché tu non debba crederci sulla parola.</p>"
+          }
+        },
+        "product_spot_7": {
+          "type": "product_spot",
+          "settings": {
+            "show_price": true,
+            "cta_label": "Scopri Within",
+            "reversed": false,
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "product": "within-collagene-marino",
+            "eyebrow": "Pronta a iniziare?",
+            "heading": "Within Collagene Marino",
+            "text": "Il tuo percorso comincia con un sachet. Il resto lo vedrai allo specchio.",
+            "points": "Collagene tripeptide sotto i 3.000 Dalton\n1 miliardo di fermenti lattici\nGaranzia 90 giorni",
+            "cta_url": "/products/within-collagene-marino",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133239_332fc57d-882d-47db-8c71-ef9c0c432cf4.png"
+          }
+        }
+      },
+      "block_order": [
+        "hero_1",
+        "statement_2",
+        "feature_row_3",
+        "cinematic_4",
+        "authority_5",
+        "statement_6",
+        "product_spot_7"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "within"
+  ]
+}

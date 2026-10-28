@@ -1,0 +1,240 @@
+/*
+ * Template Within — generato da gen_site.py (repo alonqo/within-theme)
+ */
+{
+  "sections": {
+    "within": {
+      "type": "within-site",
+      "blocks": {
+        "hero_1": {
+          "type": "hero",
+          "settings": {
+            "heading": "Torna a piacerti allo specchio.",
+            "dark": false,
+            "padding_top": 96,
+            "padding_bottom": 56,
+            "eyebrow": "Within · Collagene marino",
+            "sub": "Il collagene tripeptide che arriva davvero alla pelle. Un sachet al giorno, 25 secondi, 90 giorni per vedere la differenza.",
+            "cta_label": "Scopri Within",
+            "cta_url": "/products/within-collagene-marino",
+            "link_label": "La nostra storia →",
+            "link_url": "/pages/chi-siamo",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_230608_aa23f9fd-8d25-4d7d-a202-f82454fd4b23.png"
+          }
+        },
+        "ugc_slider_2": {
+          "type": "ugc_slider",
+          "settings": {
+            "verified_label": "Acquisto verificato",
+            "autoscroll_ms": 4000,
+            "tinted": false,
+            "padding_top": 88,
+            "padding_bottom": 88,
+            "eyebrow": "Ogni mattina, 25 secondi",
+            "heading": "Il gesto che si vede allo specchio.",
+            "video_url_1": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_88724a13-f607-470d-938c-d2e4fc6d8632.mp4",
+            "video_url_2": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_aeef790c-4bbb-4f66-b426-cbc80055018c.mp4",
+            "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_e533b3b9-6806-45a1-909c-64872cb3c19b.mp4",
+            "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_c34741eb-2c7a-4a59-8935-147c26753a3e.mp4",
+            "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133042_235fea3a-e893-4439-b1dc-ed5c36f99c4a.mp4",
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133043_01c6664e-e9ba-4131-a9b9-960ddda09368.mp4",
+            "caption_1": "Marta, 57",
+            "caption_2": "Paola, 62",
+            "caption_3": "Silvia, 59",
+            "caption_4": "Elena, 56",
+            "caption_5": "Cristina, 64",
+            "caption_6": "Valentina, 61"
+          }
+        },
+        "feature_row_3": {
+          "type": "feature_row",
+          "settings": {
+            "heading": "Quello che noterai. E che noteranno gli altri.",
+            "f1_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_145714_90c3d2de-e284-485f-920e-7f2c1f1c7b5f.png",
+            "f1_title": "Pelle compatta",
+            "f1_text": "Il viso ritrova tono e smette di cedere.",
+            "f2_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_145714_237bd89a-de61-49a4-8191-f497a547415b.png",
+            "f2_title": "Rughe meno visibili",
+            "f2_text": "Contorno occhi e linee della bocca più distesi.",
+            "f3_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_145714_e942ac9f-b521-4e54-9a45-07b5d3890258.png",
+            "f3_title": "Luce senza trucco",
+            "f3_text": "Esci con il viso nudo. E ti piace.",
+            "f4_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_145715_2e2f053a-b5e5-4f0e-8dd7-33370cd1e5ed.png",
+            "f4_title": "Idratata da dentro",
+            "f4_text": "Niente più pelle che tira a metà giornata.",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "benefits_4": {
+          "type": "benefits",
+          "settings": {
+            "bignum": "5000",
+            "bignum_unit": "mg",
+            "heading": "5 grammi di collagene che la tua pelle riesce davvero a usare.",
+            "sub": "Il collagene generico è troppo grande: lo digerisci come una bistecca e alla pelle non arriva niente. Per questo non hai visto risultati. I tripeptidi di Within sono tre volte più piccoli: arrivano al derma e riaccendono la produzione di nuovo collagene. Non era colpa tua. Era il collagene.",
+            "link_label": "Scopri la formula →",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133239_3c10111a-879c-49fe-8e0c-b7b2fa3ad58f.png",
+            "reversed": false,
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "link_url": "/products/within-collagene-marino"
+          }
+        },
+        "cinematic_5": {
+          "type": "cinematic",
+          "settings": {
+            "eyebrow": "Il momento più bello",
+            "heading": "Quando ti chiedono: “Ma cosa ti sei fatta?”",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_145713_343258af-6373-4637-81d8-046328460d88.png",
+            "parallax": 0.2
+          }
+        },
+        "how_it_works_6": {
+          "type": "how_it_works",
+          "settings": {
+            "eyebrow": "Il tuo percorso",
+            "heading": "Cosa cambia, settimana dopo settimana.",
+            "step1_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_b04083cf-2797-417c-a668-1d31438e7ebf.png",
+            "step1_title": "Settimane 1-3: idratazione",
+            "step1_text": "La pelle beve. Meno secchezza, meno fondotinta per coprire, un viso più riposato.",
+            "step2_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133241_a4ddb530-ae66-412d-a16f-b29af692d74b.png",
+            "step2_title": "Settimane 4-7: luminosità",
+            "step2_text": "Il colorito si accende. Le amiche iniziano a chiederti cosa stai facendo di diverso.",
+            "step3_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133240_4ced341c-f117-401a-b5a7-d4080dacac47.png",
+            "step3_title": "Settimane 8-12: compattezza",
+            "step3_text": "Viso più tonico, rughe sottili meno visibili. Ti guardi allo specchio e ti riconosci.",
+            "dark": true,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        },
+        "product_spot_7": {
+          "type": "product_spot",
+          "settings": {
+            "show_price": true,
+            "cta_label": "Inizia oggi",
+            "reversed": false,
+            "tinted": true,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "product": "within-collagene-marino",
+            "eyebrow": "Il tuo percorso di 12 settimane",
+            "heading": "Within Collagene Marino",
+            "text": "Dieci sachet da 25 ml per box. Gusto mango e passion fruit, zero retrogusto di pesce. Si beve in 25 secondi, ovunque tu sia.",
+            "points": "5.000 mg di collagene marino tripeptide\n6 attivi per una pelle compatta e luminosa\nGià liquido, niente polveri da sciogliere\nGaranzia soddisfatta o rimborsata 90 giorni",
+            "cta_url": "/products/within-collagene-marino",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_a095fd80-1e6b-4c1d-a9a9-8cc6d2128b44.png"
+          }
+        },
+        "social_proof_8": {
+          "type": "social_proof",
+          "settings": {
+            "eyebrow": "Cosa dice la ricerca",
+            "heading": "Risultati che si misurano. E che si vedono.",
+            "stat1_prefix": "+",
+            "stat1_count": "23",
+            "stat1_suffix": "%",
+            "stat1_label": "idratazione",
+            "stat2_prefix": "−",
+            "stat2_count": "17",
+            "stat2_suffix": "%",
+            "stat2_label": "rughe contorno occhi",
+            "stat3_prefix": "+",
+            "stat3_count": "15",
+            "stat3_suffix": "%",
+            "stat3_label": "compattezza",
+            "source_note": "Risultati medi da studi clinici su peptidi di collagene, dopo 8-12 settimane di assunzione quotidiana.",
+            "verified_label": "Acquisto verificato",
+            "r1_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022310_72453d34-0f9b-4a13-84b2-0ee0f50c6841.png",
+            "r1_quote": "\"Dopo tre settimane la pelle è visibilmente più idratata. Le colleghe mi hanno chiesto cosa uso.\"",
+            "r1_name": "Laura",
+            "r1_meta": "58 · Milano",
+            "r2_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_9c358caf-86cc-4057-b42c-4a569e68826b.png",
+            "r2_quote": "\"Avevo provato tre integratori senza risultati. Con Within ho visto la differenza dopo circa sei settimane.\"",
+            "r2_name": "Francesca",
+            "r2_meta": "56 · Roma",
+            "r3_image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_c44c87da-8b75-4660-9b9d-063661e85a11.png",
+            "r3_quote": "\"Il gusto è buonissimo, sembra un succo. È l'unico integratore che non dimentico mai di prendere.\"",
+            "r3_name": "Giulia",
+            "r3_meta": "60 · Torino",
+            "big_quote": "\"Per la prima volta ho capito cosa stavo bevendo, e perché.\"",
+            "big_quote_cite": "— Francesca, 56",
+            "cta_label": "Voglio questi risultati",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "cta_url": "/products/within-collagene-marino"
+          }
+        },
+        "guarantee_9": {
+          "type": "guarantee",
+          "settings": {
+            "eyebrow": "Garanzia 90 giorni",
+            "days": "90",
+            "days_unit": "giorni",
+            "heading": "Se la tua pelle non cambia, non paghi.",
+            "sub": "Bevilo per 90 giorni. Se allo specchio non vedi una pelle più compatta e luminosa, ti restituiamo i soldi. Il rischio è tutto nostro.",
+            "path1_title": "Se non fai niente",
+            "path1_text": "Ogni anno perdi l'1-1,5% del tuo collagene. E le rughe si scavano un po' di più.",
+            "path2_title": "Se scegli un collagene qualunque",
+            "path2_text": "Spendi 30-70 € al mese per qualcosa che il corpo digerisce prima che arrivi alla pelle.",
+            "path3_title": "Se scegli Within",
+            "path3_text": "In 12 settimane ti guardi allo specchio e ti piaci di nuovo. Oppure ti rimborsiamo.",
+            "cta_label": "Inizia il tuo percorso",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_133253_a095fd80-1e6b-4c1d-a9a9-8cc6d2128b44.png",
+            "reversed": false,
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "cta_url": "/products/within-collagene-marino"
+          }
+        },
+        "faq_10": {
+          "type": "faq",
+          "settings": {
+            "heading": "Buono a sapersi.",
+            "q1": "Quanto dura una confezione?",
+            "a1": "Ogni box contiene 10 sachet: con uno al giorno dura 10 giorni. Per un mese completo servono 3 box.",
+            "q2": "Mattina o sera?",
+            "a2": "Quando preferisci. Conta la costanza quotidiana, non l'orario.",
+            "q3": "Sa di pesce?",
+            "a3": "No. Gusto mango e frutto della passione, fresco e piacevole.",
+            "q4": "Contiene lattosio o glutine?",
+            "a4": "No. Contiene però collagene di origine marina: se sei allergica al pesce, consulta il tuo medico.",
+            "q5": "Quando vedo i risultati?",
+            "a5": "Idratazione in 2-3 settimane, luminosità in 4-6, compattezza e rughe meno visibili in 8-12 settimane di uso quotidiano.",
+            "q6": "Se smetto, torna tutto come prima?",
+            "a6": "Il collagene che hai prodotto resta. Ma dopo i 25 anni il corpo ne perde l'1-1,5% l'anno: per mantenere i risultati, continua.",
+            "q7": "In cosa è diverso dagli altri collageni?",
+            "a7": "Due cose. Un collagene tre volte più piccolo, che arriva davvero alla pelle. E 1 miliardo di fermenti lattici che ne fanno assorbire di più. Risultato: la pelle cambia, e si vede.",
+            "q8": "Come funziona la garanzia?",
+            "a8": "Se entro 90 giorni dall'acquisto non sei soddisfatta, scrivici e ti rimborsiamo. Il rischio è nostro, non tuo.",
+            "disclaimer": "Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona. Garanzia soddisfatta o rimborsata di 90 giorni secondo le condizioni di vendita.",
+            "tinted": true,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        }
+      },
+      "block_order": [
+        "hero_1",
+        "ugc_slider_2",
+        "feature_row_3",
+        "benefits_4",
+        "cinematic_5",
+        "how_it_works_6",
+        "product_spot_7",
+        "social_proof_8",
+        "guarantee_9",
+        "faq_10"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "within"
+  ]
+}

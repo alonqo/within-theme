@@ -1,0 +1,89 @@
+/*
+ * Template Within — generato da gen_site.py (repo alonqo/within-theme)
+ */
+{
+  "sections": {
+    "within": {
+      "type": "within-site",
+      "blocks": {
+        "hero_1": {
+          "type": "hero",
+          "settings": {
+            "heading": "Vieni a provarlo dal vivo.",
+            "dark": false,
+            "padding_top": 96,
+            "padding_bottom": 56,
+            "eyebrow": "Eventi Within",
+            "sub": "Degustazioni e consulenze nelle farmacie e nei negozi partner. Assaggi Within, fai le tue domande e scopri il percorso giusto per te.",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_230609_1b82611d-26fb-4e17-89f1-95917f2c286e.png"
+          }
+        },
+        "events_2": {
+          "type": "events",
+          "settings": {
+            "heading": "Prossimi eventi",
+            "download_label": "Scarica il calendario",
+            "download_note": "File .ics: si apre con Apple Calendario, Google Calendar e Outlook.",
+            "empty_text": "Nuove date in arrivo. Torna a trovarci presto.",
+            "tinted": false,
+            "padding_top": 120,
+            "padding_bottom": 120,
+            "sub": "Scegli la data più vicina a te e salvala nel tuo calendario con un clic."
+          }
+        },
+        "event_3": {
+          "type": "event",
+          "settings": {
+            "title": "[ESEMPIO] Degustazione Within",
+            "link_label": "Prenota il tuo posto",
+            "date": "2026-11-21",
+            "start": "16:00",
+            "end": "19:00",
+            "place": "Farmacia [Nome]",
+            "address": "Via [Indirizzo], 1",
+            "city": "Milano",
+            "desc": "Evento di esempio: sostituiscilo con le date vere dal theme editor."
+          }
+        },
+        "event_4": {
+          "type": "event",
+          "settings": {
+            "title": "[ESEMPIO] Consulenza pelle e collagene",
+            "link_label": "Prenota il tuo posto",
+            "date": "2026-12-05",
+            "start": "10:00",
+            "end": "13:00",
+            "place": "Profumeria [Nome]",
+            "address": "Corso [Indirizzo], 10",
+            "city": "Roma",
+            "desc": "Evento di esempio: sostituiscilo con le date vere dal theme editor."
+          }
+        },
+        "hero_5": {
+          "type": "hero",
+          "settings": {
+            "heading": "Vuoi un evento Within nella tua città?",
+            "dark": true,
+            "padding_top": 96,
+            "padding_bottom": 96,
+            "eyebrow": "Per farmacie e negozi",
+            "sub": "Organizziamo degustazioni e giornate di consulenza nei punti vendita partner. Scrivici e troviamo una data insieme.",
+            "cta_label": "Contattaci",
+            "cta_url": "/pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "hero_1",
+        "events_2",
+        "event_3",
+        "event_4",
+        "hero_5"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "within"
+  ]
+}

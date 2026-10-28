@@ -1,0 +1,78 @@
+/*
+ * Template Within — generato da gen_site.py (repo alonqo/within-theme)
+ */
+{
+  "sections": {
+    "within": {
+      "type": "within-site",
+      "blocks": {
+        "hero_1": {
+          "type": "hero",
+          "settings": {
+            "heading": "Siamo qui per te.",
+            "dark": false,
+            "padding_top": 96,
+            "padding_bottom": 24,
+            "eyebrow": "Contattaci",
+            "sub": "Domande sul prodotto, sul tuo ordine o sugli eventi? Scrivici: ti risponde una persona, non un bot."
+          }
+        },
+        "contact_2": {
+          "type": "contact",
+          "settings": {
+            "heading": "Parliamone.",
+            "form_title": "Mandaci un messaggio",
+            "privacy_label": "Ho letto l'informativa privacy e acconsento al trattamento dei dati per ricevere una risposta.",
+            "button_label": "Invia messaggio",
+            "success": "Grazie! Ti rispondiamo entro 24 ore lavorative.",
+            "tinted": false,
+            "padding_top": 40,
+            "padding_bottom": 120,
+            "eyebrow": "Assistenza clienti",
+            "text": "Compila il modulo o usa i nostri contatti diretti. Rispondiamo a tutte le richieste.",
+            "email": "[EMAIL DA COMPILARE]",
+            "phone": "[TELEFONO DA COMPILARE]",
+            "address": "[RAGIONE SOCIALE]\n[INDIRIZZO SEDE]\n[CAP CITTÀ (PROVINCIA)]",
+            "hours": "Lunedì-venerdì, 9:00-18:00",
+            "note": "Entro 24 ore lavorative"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "heading": "Buono a sapersi.",
+            "q1": "Quanto dura una confezione?",
+            "a1": "Ogni box contiene 10 sachet: con uno al giorno dura 10 giorni. Per un mese completo servono 3 box.",
+            "q2": "Mattina o sera?",
+            "a2": "Quando preferisci. Conta la costanza quotidiana, non l'orario.",
+            "q3": "Sa di pesce?",
+            "a3": "No. Gusto mango e frutto della passione, fresco e piacevole.",
+            "q4": "Contiene lattosio o glutine?",
+            "a4": "No. Contiene però collagene di origine marina: se sei allergica al pesce, consulta il tuo medico.",
+            "q5": "Quando vedo i risultati?",
+            "a5": "Idratazione in 2-3 settimane, luminosità in 4-6, compattezza e rughe meno visibili in 8-12 settimane di uso quotidiano.",
+            "q6": "Se smetto, torna tutto come prima?",
+            "a6": "Il collagene che hai prodotto resta. Ma dopo i 25 anni il corpo ne perde l'1-1,5% l'anno: per mantenere i risultati, continua.",
+            "q7": "In cosa è diverso dagli altri collageni?",
+            "a7": "Due cose. Un collagene tre volte più piccolo, che arriva davvero alla pelle. E 1 miliardo di fermenti lattici che ne fanno assorbire di più. Risultato: la pelle cambia, e si vede.",
+            "q8": "Come funziona la garanzia?",
+            "a8": "Se entro 90 giorni dall'acquisto non sei soddisfatta, scrivici e ti rimborsiamo. Il rischio è nostro, non tuo.",
+            "disclaimer": "Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona. Garanzia soddisfatta o rimborsata di 90 giorni secondo le condizioni di vendita.",
+            "tinted": true,
+            "padding_top": 120,
+            "padding_bottom": 120
+          }
+        }
+      },
+      "block_order": [
+        "hero_1",
+        "contact_2",
+        "faq_3"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "within"
+  ]
+}
