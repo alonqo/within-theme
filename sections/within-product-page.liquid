@@ -1,0 +1,2168 @@
+{% comment %}
+  Within · Collagene Marino — Product Page "stile Apple" (product-page-builder, profilo Apple)
+  Sezione a blocchi da mettere sotto l'hero del template prodotto. CSS scoped, font del tema.
+  Ogni immagine/video: carica un file dal theme editor oppure lascia il link precompilato.
+{% endcomment %}
+{% style %}
+#shopify-section-{{ section.id }} .wa-root{--bg:{{ section.settings.bg_color }};--bg-2:{{ section.settings.surface2_color }};--ink:{{ section.settings.text_color }};--muted:{{ section.settings.muted_color }};--line:{{ section.settings.line_color }};--line-soft:#ebe5db;--dark:{{ section.settings.dark_color }};--on-dark:{{ section.settings.on_dark_color }};--on-dark-mut:{{ section.settings.on_dark_mut_color }};--accent:{{ section.settings.accent_color }};--btn:{{ section.settings.btn_color }};--btn-hi:{{ section.settings.btn_hover_color }};--accent-hi:{{ section.settings.accent_hi_color }};--gold:{{ section.settings.star_color }};--r:18px;--r-lg:28px;--r-pill:980px;--maxw:{{ section.settings.max_width }}px;--wide:1280px;font-family:inherit;color:var(--ink);line-height:1.45;letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+#shopify-section-{{ section.id }} .wa-root *{box-sizing:border-box}
+#shopify-section-{{ section.id }} .wa-root img{display:block;max-width:100%;height:auto}
+#shopify-section-{{ section.id }} .wa-root h1,#shopify-section-{{ section.id }} .wa-root h2,#shopify-section-{{ section.id }} .wa-root h3,#shopify-section-{{ section.id }} .wa-root p,#shopify-section-{{ section.id }} .wa-root blockquote,#shopify-section-{{ section.id }} .wa-root figure{font-family:inherit}
+#shopify-section-{{ section.id }} .wa-sect{padding:var(--pt,120px) 22px var(--pb,120px)}
+#shopify-section-{{ section.id }} .wa-inner{max-width:var(--maxw);margin:0 auto}
+#shopify-section-{{ section.id }} .wa-wide{max-width:var(--wide);margin:0 auto}
+#shopify-section-{{ section.id }} .wa-center{text-align:center}
+#shopify-section-{{ section.id }} .wa-dark{background:var(--dark);color:var(--on-dark)}
+#shopify-section-{{ section.id }} .wa-tint{background:var(--bg-2)}
+#shopify-section-{{ section.id }} .wa-eyebrow{font-size:.84rem;font-weight:600;letter-spacing:.02em;color:var(--accent);margin:0 0 14px}
+#shopify-section-{{ section.id }} .wa-dark .wa-eyebrow{color:var(--accent-hi)}
+#shopify-section-{{ section.id }} .wa-display{font-size:clamp(2.4rem,6.2vw,4.4rem);font-weight:650;line-height:1.03;letter-spacing:-.026em;margin:0 0 18px;color:inherit}
+#shopify-section-{{ section.id }} .wa-h2{font-size:clamp(1.9rem,4.4vw,3.1rem);font-weight:650;line-height:1.07;letter-spacing:-.022em;margin:0 0 16px;color:inherit}
+#shopify-section-{{ section.id }} .wa-sub{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:450;color:var(--muted);max-width:34ch;margin:0 auto}
+#shopify-section-{{ section.id }} .wa-dark .wa-sub{color:var(--on-dark-mut)}
+#shopify-section-{{ section.id }} .wa-sub.wa-left{margin:0}
+#shopify-section-{{ section.id }} .wa-narrow{max-width:40ch}
+#shopify-section-{{ section.id }} .wa-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--btn);color:#fff!important;font-size:1.05rem;font-weight:600;border:0;cursor:pointer;padding:14px 28px;border-radius:var(--r-pill);text-decoration:none;min-height:48px;transition:background .2s,transform .2s}
+#shopify-section-{{ section.id }} .wa-btn:hover{background:var(--btn-hi);transform:translateY(-1px)}
+#shopify-section-{{ section.id }} .wa-link{color:var(--accent);font-weight:600;font-size:1.05rem;text-decoration:none;cursor:pointer}
+#shopify-section-{{ section.id }} .wa-link:hover{text-decoration:underline}
+#shopify-section-{{ section.id }} .wa-btn-row{display:flex;justify-content:center;margin-top:44px}
+#shopify-section-{{ section.id }} /* opening */
+.wa-opening .wa-display{max-width:15ch;margin:0 auto 18px}
+#shopify-section-{{ section.id }} .wa-hero-img{margin-top:58px;border-radius:var(--r-lg);overflow:hidden}
+#shopify-section-{{ section.id }} /* cinematic */
+.wa-cine{position:relative;overflow:hidden;min-height:88vh;background:var(--dark)}
+#shopify-section-{{ section.id }} .wa-cine-img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover;will-change:transform}
+#shopify-section-{{ section.id }} .wa-cine-copy{position:relative;z-index:2;text-align:center;padding:9vh 22px 0}
+#shopify-section-{{ section.id }} .wa-cine-copy .wa-h2{color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.55)}
+#shopify-section-{{ section.id }} .wa-cine-copy .wa-sub{color:rgba(255,255,255,.88)}
+#shopify-section-{{ section.id }} .wa-cine-copy .wa-eyebrow{color:var(--accent-hi)}
+#shopify-section-{{ section.id }} /* feature */
+.wa-feat{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--bg);border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 18px 50px rgba(28,43,40,.07)}
+#shopify-section-{{ section.id }} .wa-feat.wa-rev .wa-feat-media{order:2}
+#shopify-section-{{ section.id }} .wa-feat-copy{padding:clamp(36px,5vw,72px);display:flex;flex-direction:column;justify-content:center}
+#shopify-section-{{ section.id }} .wa-feat-media{overflow:hidden;position:relative;min-height:480px;background:var(--bg-2)}
+#shopify-section-{{ section.id }} .wa-feat-media img{position:absolute;left:0;top:-40px;width:100%;height:calc(100% + 80px)!important;object-fit:cover;will-change:transform}
+#shopify-section-{{ section.id }} .wa-bignum{font-size:clamp(4.4rem,11vw,8.4rem);font-weight:650;letter-spacing:-.045em;line-height:.86;color:var(--accent);margin:0 0 14px}
+#shopify-section-{{ section.id }} .wa-bignum small{font-size:.32em;letter-spacing:-.01em;margin-left:6px}
+#shopify-section-{{ section.id }} /* feature row */
+.wa-frow{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+#shopify-section-{{ section.id }} .wa-fcard{text-align:center}
+#shopify-section-{{ section.id }} .wa-fcard .wa-fimg{border-radius:var(--r);overflow:hidden;margin-bottom:18px;transition:transform .5s cubic-bezier(.16,.8,.26,1)}
+#shopify-section-{{ section.id }} .wa-fcard:hover .wa-fimg{transform:translateY(-6px) scale(1.02)}
+#shopify-section-{{ section.id }} .wa-fcard h3{font-size:1.2rem;font-weight:600;margin:0 0 6px;letter-spacing:-.01em;color:var(--ink)}
+#shopify-section-{{ section.id }} .wa-fcard p{margin:0;color:var(--muted);font-size:1rem}
+#shopify-section-{{ section.id }} /* steps */
+.wa-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;text-align:left}
+#shopify-section-{{ section.id }} .wa-step img{border-radius:var(--r-lg);margin-bottom:22px;width:100%;aspect-ratio:4/5;object-fit:cover}
+#shopify-section-{{ section.id }} .wa-step .wa-n{display:block;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-hi)}
+#shopify-section-{{ section.id }} .wa-step h3{font-size:1.45rem;font-weight:600;margin:8px 0;letter-spacing:-.015em;color:#fff}
+#shopify-section-{{ section.id }} .wa-step p{margin:0;color:var(--on-dark-mut);font-size:1.05rem}
+#shopify-section-{{ section.id }} /* closeup */
+.wa-cl{position:relative;--pt:120px;--pb:120px;padding-top:var(--pt);padding-bottom:var(--pb)}
+#shopify-section-{{ section.id }} .wa-cl-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start;max-width:min(1500px,94vw);margin:0 auto}
+#shopify-section-{{ section.id }} .wa-cl-sticky{position:sticky;top:14vh;align-self:start}
+#shopify-section-{{ section.id }} .wa-cl-media{display:flex;flex-direction:column;gap:26px}
+#shopify-section-{{ section.id }} .wa-cl-media img{width:100%;border-radius:var(--r-lg)}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz{height:300vh;--pt:0px;--pb:0px}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-wide{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:0 20px;max-width:none}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-grid{display:flex;flex-direction:column;gap:20px;align-items:flex-start;max-width:100%;width:100%;margin:0}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-sticky{position:static;width:100%;max-width:100%}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz{padding-left:0!important;padding-right:0!important}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-media{flex-direction:row;flex-wrap:nowrap;gap:14px;width:max-content;will-change:transform}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-media > div{flex:0 0 auto;width:78vw;opacity:1!important;transform:none!important;filter:none!important}
+#shopify-section-{{ section.id }} .wa-cl.wa-horiz .wa-cl-media img{height:54vh!important;width:100%;object-fit:cover}
+#shopify-section-{{ section.id }} /* gallery + spec */
+.wa-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#shopify-section-{{ section.id }} .wa-gal figure{margin:0}
+#shopify-section-{{ section.id }} .wa-gal .wa-gimg{overflow:hidden;border-radius:var(--r-lg)}
+#shopify-section-{{ section.id }} .wa-gal img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .6s cubic-bezier(.16,.8,.26,1)}
+#shopify-section-{{ section.id }} .wa-gal figure:hover img{transform:scale(1.04)}
+#shopify-section-{{ section.id }} .wa-gal figcaption{margin-top:12px;color:var(--muted);font-size:.98rem;text-align:center}
+#shopify-section-{{ section.id }} .wa-spec{max-width:820px;margin:72px auto 0;border-top:1px solid var(--line)}
+#shopify-section-{{ section.id }} .wa-spec-row{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+#shopify-section-{{ section.id }} .wa-spec-tag{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+#shopify-section-{{ section.id }} .wa-spec-name{font-weight:600;font-size:1.08rem}
+#shopify-section-{{ section.id }} .wa-spec-name span{display:block;font-weight:400;color:var(--muted);font-size:.95rem;margin-top:3px}
+#shopify-section-{{ section.id }} .wa-spec-dose{font-weight:650;font-size:1.08rem;white-space:nowrap}
+#shopify-section-{{ section.id }} /* objections */
+.wa-ob{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:var(--r-lg);overflow:hidden}
+#shopify-section-{{ section.id }} .wa-ob-cell{background:var(--bg);padding:38px}
+#shopify-section-{{ section.id }} .wa-ob-q{font-weight:600;font-size:1.16rem;margin:0 0 10px;letter-spacing:-.01em}
+#shopify-section-{{ section.id }} .wa-ob-a{margin:0;color:var(--muted);font-size:1.03rem}
+#shopify-section-{{ section.id }} /* social proof */
+.wa-stats{display:flex;justify-content:center;border:1px solid var(--line);border-radius:var(--r-pill);overflow:hidden;background:var(--bg);margin:0 auto 18px;width:max-content;max-width:100%}
+#shopify-section-{{ section.id }} .wa-stats .wa-s{padding:13px 40px;text-align:center;border-right:1px solid var(--line);display:flex;align-items:baseline;gap:7px;justify-content:center}
+#shopify-section-{{ section.id }} .wa-stats .wa-s:last-child{border-right:0}
+#shopify-section-{{ section.id }} .wa-stats .wa-sn{font-size:1.12rem;font-weight:650;color:var(--ink)}
+#shopify-section-{{ section.id }} .wa-stats .wa-sl{color:var(--muted);font-size:.82rem}
+#shopify-section-{{ section.id }} .wa-src{text-align:center;color:var(--muted);font-size:.78rem;margin:0 auto 48px;max-width:60ch}
+#shopify-section-{{ section.id }} .wa-revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+#shopify-section-{{ section.id }} .wa-rev{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+#shopify-section-{{ section.id }} .wa-rev img{width:100%;aspect-ratio:4/3;object-fit:cover}
+#shopify-section-{{ section.id }} .wa-rev-b{padding:26px}
+#shopify-section-{{ section.id }} .wa-stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+#shopify-section-{{ section.id }} .wa-rev p{margin:12px 0 18px;font-size:1.06rem;line-height:1.42}
+#shopify-section-{{ section.id }} .wa-who{font-size:.92rem;color:var(--muted)}
+#shopify-section-{{ section.id }} .wa-who b{color:var(--ink);font-weight:600}
+#shopify-section-{{ section.id }} .wa-ver{display:inline-block;margin-top:6px;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2e7d5b}
+#shopify-section-{{ section.id }} .wa-quote{max-width:24ch;margin:64px auto 0;text-align:center;font-size:clamp(1.5rem,3.4vw,2.3rem);font-weight:550;line-height:1.22;letter-spacing:-.018em}
+#shopify-section-{{ section.id }} .wa-quote cite{display:block;margin-top:20px;font-size:1rem;font-weight:400;font-style:normal;color:var(--muted)}
+#shopify-section-{{ section.id }} /* authority */
+.wa-auth{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--r-lg);overflow:hidden}
+#shopify-section-{{ section.id }} .wa-auth-img{position:relative;min-height:520px}
+#shopify-section-{{ section.id }} .wa-auth-img img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover}
+#shopify-section-{{ section.id }} .wa-auth-panel{background:var(--dark);color:var(--on-dark);padding:72px 56px;display:flex;flex-direction:column;justify-content:center}
+#shopify-section-{{ section.id }} .wa-auth-panel blockquote{margin:0;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:500;line-height:1.32;letter-spacing:-.015em}
+#shopify-section-{{ section.id }} .wa-auth-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px}
+#shopify-section-{{ section.id }} .wa-auth-list li{color:var(--on-dark-mut);font-size:1rem;padding-left:26px;position:relative}
+#shopify-section-{{ section.id }} .wa-auth-list li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:2px;background:var(--accent-hi)}
+#shopify-section-{{ section.id }} .wa-sig{margin-top:26px;color:var(--on-dark-mut);font-size:1rem}
+#shopify-section-{{ section.id }} .wa-sig b{color:#fff;display:block}
+#shopify-section-{{ section.id }} /* faq */
+.wa-faq{max-width:760px;margin:44px auto 0}
+#shopify-section-{{ section.id }} .wa-faq details{border-bottom:1px solid var(--line)}
+#shopify-section-{{ section.id }} .wa-faq summary{list-style:none;cursor:pointer;padding:22px 0;font-size:1.13rem;font-weight:500;display:flex;justify-content:space-between;gap:16px;align-items:center}
+#shopify-section-{{ section.id }} .wa-faq summary::-webkit-details-marker{display:none}
+#shopify-section-{{ section.id }} .wa-pm{flex:0 0 auto;width:20px;height:20px;position:relative;transition:transform .25s}
+#shopify-section-{{ section.id }} .wa-pm::before,#shopify-section-{{ section.id }} .wa-pm::after{content:"";position:absolute;background:var(--accent)}
+#shopify-section-{{ section.id }} .wa-pm::before{top:9px;left:0;width:20px;height:2px}
+#shopify-section-{{ section.id }} .wa-pm::after{top:0;left:9px;width:2px;height:20px;transition:opacity .2s}
+#shopify-section-{{ section.id }} .wa-faq details[open] .wa-pm{transform:rotate(180deg)}
+#shopify-section-{{ section.id }} .wa-faq details[open] .wa-pm::after{opacity:0}
+#shopify-section-{{ section.id }} .wa-ans{padding:0 0 22px;color:var(--muted);font-size:1.04rem;max-width:62ch}
+#shopify-section-{{ section.id }} .wa-disc{max-width:760px;margin:48px auto 0;font-size:.8rem;color:var(--muted);line-height:1.55;border-top:1px solid var(--line);padding-top:24px}
+#shopify-section-{{ section.id }} /* UGC slider */
+.wa-ugc{padding:90px 0}
+#shopify-section-{{ section.id }} .wa-ugc-head{max-width:var(--wide);margin:0 auto 34px;padding:0 22px;text-align:center}
+#shopify-section-{{ section.id }} .wa-ugc-track{display:flex;gap:12px;padding:0 20px;scroll-padding-left:20px;scroll-padding-right:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#shopify-section-{{ section.id }} .wa-ugc-track::-webkit-scrollbar{display:none}
+#shopify-section-{{ section.id }} .wa-ugc-slide{flex:0 0 auto;width:30%;aspect-ratio:9/16;scroll-snap-align:start;border-radius:20px;overflow:hidden;background:var(--dark)}
+#shopify-section-{{ section.id }} .wa-ugc-slide img,#shopify-section-{{ section.id }} .wa-ugc-slide video{display:block;width:100%;height:100%!important;object-fit:cover}
+#shopify-section-{{ section.id }} /* reveal (attivo solo se JS gira) */
+.wa-js .wa-reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.16,.8,.26,1),transform 1s cubic-bezier(.16,.8,.26,1),filter 1s;transition-delay:var(--d,0s)}
+#shopify-section-{{ section.id }} .wa-js .wa-reveal.wa-blur{filter:blur(8px)}
+#shopify-section-{{ section.id }} .wa-js .wa-reveal.wa-in{opacity:1;transform:none;filter:none}
+@media (prefers-reduced-motion:reduce){
+#shopify-section-{{ section.id }} .wa-js .wa-reveal{opacity:1;transform:none;filter:none;transition:none}
+}
+@media (max-width:860px){
+#shopify-section-{{ section.id }} .wa-sect{padding:min(var(--pt,120px),78px) 20px min(var(--pb,120px),78px)}
+#shopify-section-{{ section.id }} .wa-feat{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-feat.wa-rev .wa-feat-media{order:0}
+#shopify-section-{{ section.id }} .wa-feat-copy{padding:32px}
+#shopify-section-{{ section.id }} .wa-feat-media{min-height:320px}
+#shopify-section-{{ section.id }} .wa-frow{grid-template-columns:1fr 1fr;gap:22px}
+#shopify-section-{{ section.id }} .wa-steps{grid-template-columns:1fr;gap:36px}
+#shopify-section-{{ section.id }} .wa-cl{--pt:78px;--pb:78px;padding-left:20px;padding-right:20px}
+#shopify-section-{{ section.id }} .wa-cl-grid{grid-template-columns:1fr;gap:26px}
+#shopify-section-{{ section.id }} .wa-cl-sticky{position:static}
+#shopify-section-{{ section.id }} .wa-gal{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-spec-row{grid-template-columns:1fr auto;gap:6px 14px}
+#shopify-section-{{ section.id }} .wa-spec-tag{grid-column:1/-1}
+#shopify-section-{{ section.id }} .wa-ob{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-ob-cell{padding:28px}
+#shopify-section-{{ section.id }} .wa-stats{width:auto}
+#shopify-section-{{ section.id }} .wa-stats .wa-s{padding:11px 14px;flex-direction:column;align-items:center;gap:2px;min-width:0}
+#shopify-section-{{ section.id }} .wa-stats .wa-sn{font-size:1.02rem}
+#shopify-section-{{ section.id }} .wa-stats .wa-sl{font-size:.72rem;white-space:nowrap}
+#shopify-section-{{ section.id }} .wa-revs{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-auth{grid-template-columns:1fr}
+#shopify-section-{{ section.id }} .wa-auth-img{min-height:320px}
+#shopify-section-{{ section.id }} .wa-auth-panel{padding:48px 26px}
+#shopify-section-{{ section.id }} .wa-cine{min-height:64vh}
+}
+#shopify-section-{{ section.id }} .wa-ugc{padding-top:var(--pt,90px);padding-bottom:var(--pb,90px)}
+#shopify-section-{{ section.id }} .wa-ph{display:flex;align-items:center;justify-content:center;min-height:300px;background:repeating-linear-gradient(135deg,#ece6dc 0 16px,#f4efe7 16px 32px);color:#8a8278;font-size:.84rem;font-weight:600;border-radius:var(--r)}
+{% endstyle %}
+
+<div class="wa-root">
+{%- for block in section.blocks -%}
+{%- case block.type -%}
+
+{%- when 'ugc_slider' -%}
+<section class="wa-ugc{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  {%- if block.settings.heading != blank or block.settings.eyebrow != blank -%}
+  <div class="wa-ugc-head wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}{% if block.settings.heading != blank %}<h2 class="wa-h2">{{ block.settings.heading }}</h2>{% endif %}</div>
+  {%- endif -%}
+  <div class="wa-ugc-track" data-autoscroll="{{ block.settings.autoscroll_ms }}">
+  {%- for i in (1..8) -%}
+    {%- assign vk = 'video_' | append: i -%}{%- assign uk = 'video_url_' | append: i -%}
+    {%- assign v = block.settings[vk] -%}{%- assign vu = block.settings[uk] -%}
+    {%- if v != blank -%}<div class="wa-ugc-slide">{{ v | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata' }}</div>
+    {%- elsif vu != blank -%}<div class="wa-ugc-slide"><video src="{{ vu }}" autoplay muted loop playsinline preload="metadata"></video></div>{%- endif -%}
+  {%- endfor -%}
+  </div>
+</section>
+
+{%- when 'value_prop' -%}
+<section class="wa-sect wa-opening wa-center{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-inner">
+    <div class="wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-display">{{ block.settings.heading }}</h2>{% if block.settings.sub != blank %}<p class="wa-sub">{{ block.settings.sub }}</p>{% endif %}
+    {% if block.settings.show_cta %}<div class="wa-btn-row"><a class="wa-btn wa-top" href="#">{{ block.settings.cta_label }}</a></div>{% endif %}</div>
+    <div class="wa-hero-img wa-reveal wa-blur">{% if block.settings.image != blank %}<img src="{{ block.settings.image | image_url: width: 1400 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">{% elsif block.settings.image_url != blank %}<img src="{{ block.settings.image_url }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}</div>
+  </div>
+</section>
+
+{%- when 'cinematic' -%}
+<section class="wa-cine" {{ block.shopify_attributes }}>
+  {%- if block.settings.image != blank -%}<img class="wa-cine-img" data-parallax="{{ block.settings.parallax }}" src="{{ block.settings.image | image_url: width: 2200 }}" alt="" loading="lazy">
+  {%- elsif block.settings.image_url != blank -%}<img class="wa-cine-img" data-parallax="{{ block.settings.parallax }}" src="{{ block.settings.image_url }}" alt="" loading="lazy">{%- endif -%}
+  <div class="wa-cine-copy wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}{% if block.settings.heading != blank %}<h2 class="wa-h2">{{ block.settings.heading }}</h2>{% endif %}{% if block.settings.sub != blank %}<p class="wa-sub">{{ block.settings.sub }}</p>{% endif %}</div>
+</section>
+
+{%- when 'benefits' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide">
+    <div class="wa-feat{% if block.settings.reversed %} wa-rev{% endif %}">
+      <div class="wa-feat-copy wa-reveal">
+        {%- if block.settings.bignum != blank -%}<p class="wa-bignum"><span data-count="{{ block.settings.bignum }}">{{ block.settings.bignum }}</span>{% if block.settings.bignum_unit != blank %}<small>{{ block.settings.bignum_unit }}</small>{% endif %}</p>{%- endif -%}
+        {% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}
+        <h2 class="wa-h2">{{ block.settings.heading }}</h2>
+        {% if block.settings.sub != blank %}<p class="wa-sub wa-left wa-narrow">{{ block.settings.sub }}</p>{% endif %}
+        {% if block.settings.link_label != blank %}<p style="margin-top:22px"><a class="wa-link wa-top" href="#">{{ block.settings.link_label }}</a></p>{% endif %}
+      </div>
+      <div class="wa-feat-media wa-reveal">{% if block.settings.image != blank %}<img data-parallax="0.08" src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">{% elsif block.settings.image_url != blank %}<img data-parallax="0.08" src="{{ block.settings.image_url }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}</div>
+    </div>
+  </div>
+</section>
+
+{%- when 'feature_row' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide wa-center">
+    {% if block.settings.heading != blank %}<h2 class="wa-h2 wa-reveal" style="margin-bottom:56px">{{ block.settings.heading }}</h2>{% endif %}
+    <div class="wa-frow">
+    {%- for i in (1..4) -%}
+      {%- assign tk = 'f' | append: i | append: '_title' -%}{%- assign t = block.settings[tk] -%}
+      {%- if t != blank -%}
+        {%- assign pk = 'f' | append: i | append: '_image' -%}{%- assign p = block.settings[pk] -%}
+        {%- assign uk = 'f' | append: i | append: '_image_url' -%}{%- assign u = block.settings[uk] -%}
+        {%- assign xk = 'f' | append: i | append: '_text' -%}{%- assign d = forloop.index0 | times: 0.08 -%}
+        <div class="wa-fcard wa-reveal" style="--d:{{ d }}s"><div class="wa-fimg">{% if p != blank %}<img src="{{ p | image_url: width: 600 }}" alt="{{ p.alt | escape }}" loading="lazy">{% elsif u != blank %}<img src="{{ u }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}</div><h3>{{ t }}</h3><p>{{ block.settings[xk] }}</p></div>
+      {%- endif -%}
+    {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- when 'how_it_works' -%}
+<section class="wa-sect{% if block.settings.dark %} wa-dark{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide wa-center">
+    {% if block.settings.eyebrow != blank %}<p class="wa-eyebrow wa-reveal">{{ block.settings.eyebrow }}</p>{% endif %}
+    <h2 class="wa-h2 wa-reveal"{% if block.settings.dark %} style="color:#fff"{% endif %}>{{ block.settings.heading }}</h2>
+    <div class="wa-steps">
+    {%- for i in (1..4) -%}
+      {%- assign tk = 'step' | append: i | append: '_title' -%}{%- assign t = block.settings[tk] -%}
+      {%- if t != blank -%}
+        {%- assign pk = 'step' | append: i | append: '_image' -%}{%- assign p = block.settings[pk] -%}
+        {%- assign uk = 'step' | append: i | append: '_image_url' -%}{%- assign u = block.settings[uk] -%}
+        {%- assign xk = 'step' | append: i | append: '_text' -%}{%- assign d = forloop.index0 | times: 0.12 -%}
+        <div class="wa-step wa-reveal" style="--d:{{ d }}s">{% if p != blank %}<img src="{{ p | image_url: width: 800 }}" alt="{{ p.alt | escape }}" loading="lazy">{% elsif u != blank %}<img src="{{ u }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}<span class="wa-n">Step {{ forloop.index }}</span><h3>{{ t }}</h3><p>{{ block.settings[xk] }}</p></div>
+      {%- endif -%}
+    {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- when 'closeup' -%}
+<section class="wa-cl{% if block.settings.tinted %} wa-tint{% endif %}" data-horizontal="{{ block.settings.mobile_horizontal }}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide">
+    <div class="wa-cl-grid">
+      <div class="wa-cl-sticky wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<h2 class="wa-h2">{{ block.settings.heading }}</h2>{% if block.settings.sub != blank %}<p class="wa-sub wa-left wa-narrow">{{ block.settings.sub }}</p>{% endif %}</div>
+      <div class="wa-cl-media">
+      {%- for i in (1..4) -%}
+        {%- assign pk = 'image_' | append: i -%}{%- assign p = block.settings[pk] -%}
+        {%- assign uk = 'image_url_' | append: i -%}{%- assign u = block.settings[uk] -%}
+        {%- if p != blank or u != blank -%}<div class="wa-reveal">{% if p != blank %}<img src="{{ p | image_url: width: 1100 }}" alt="{{ p.alt | escape }}" loading="lazy">{% elsif u != blank %}<img src="{{ u }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}</div>{%- endif -%}
+      {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- when 'whats_inside' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide">
+    {% if block.settings.eyebrow != blank %}<p class="wa-eyebrow wa-center wa-reveal" style="margin-bottom:8px">{{ block.settings.eyebrow }}</p>{% endif %}
+    {% if block.settings.heading != blank %}<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:16px">{{ block.settings.heading }}</h2>{% endif %}
+    {% if block.settings.sub != blank %}<p class="wa-sub wa-reveal" style="text-align:center;margin-bottom:56px">{{ block.settings.sub }}</p>{% endif %}
+    <div class="wa-gal">
+    {%- for i in (1..3) -%}
+      {%- assign pk = 'g' | append: i | append: '_image' -%}{%- assign p = block.settings[pk] -%}
+      {%- assign uk = 'g' | append: i | append: '_image_url' -%}{%- assign u = block.settings[uk] -%}
+      {%- assign ck = 'g' | append: i | append: '_caption' -%}{%- assign c = block.settings[ck] -%}{%- assign d = forloop.index0 | times: 0.1 -%}
+      <figure class="wa-reveal" style="--d:{{ d }}s"><div class="wa-gimg">{% if p != blank %}<img src="{{ p | image_url: width: 800 }}" alt="{{ p.alt | escape }}" loading="lazy">{% elsif u != blank %}<img src="{{ u }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}</div>{% if c != blank %}<figcaption>{{ c }}</figcaption>{% endif %}</figure>
+    {%- endfor -%}
+    </div>
+    <div class="wa-spec wa-reveal">
+    {%- for i in (1..8) -%}
+      {%- assign nk = 'ing' | append: i | append: '_name' -%}{%- assign n = block.settings[nk] -%}
+      {%- if n != blank -%}
+        {%- assign tk = 'ing' | append: i | append: '_tag' -%}{%- assign dk = 'ing' | append: i | append: '_desc' -%}{%- assign qk = 'ing' | append: i | append: '_dose' -%}
+        <div class="wa-spec-row"><span class="wa-spec-tag">{{ block.settings[tk] }}</span><span class="wa-spec-name">{{ n }}<span>{{ block.settings[dk] }}</span></span><span class="wa-spec-dose">{{ block.settings[qk] }}</span></div>
+      {%- endif -%}
+    {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- when 'objections' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-inner">
+    {% if block.settings.heading != blank %}<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:48px">{{ block.settings.heading }}</h2>{% endif %}
+    <div class="wa-ob">
+    {%- for i in (1..6) -%}
+      {%- assign qk = 'q' | append: i -%}{%- assign q = block.settings[qk] -%}
+      {%- if q != blank -%}{%- assign ak = 'a' | append: i -%}<div class="wa-ob-cell wa-reveal"><p class="wa-ob-q">{{ q }}</p><p class="wa-ob-a">{{ block.settings[ak] }}</p></div>{%- endif -%}
+    {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- when 'social_proof' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide">
+    {% if block.settings.eyebrow != blank %}<p class="wa-eyebrow wa-center wa-reveal">{{ block.settings.eyebrow }}</p>{% endif %}
+    {% if block.settings.heading != blank %}<h2 class="wa-h2 wa-center wa-reveal" style="margin-bottom:54px">{{ block.settings.heading }}</h2>{% endif %}
+    <div class="wa-stats wa-reveal">
+    {%- for i in (1..3) -%}
+      {%- assign pk = 'stat' | append: i | append: '_prefix' -%}{%- assign ck = 'stat' | append: i | append: '_count' -%}{%- assign sk = 'stat' | append: i | append: '_suffix' -%}{%- assign lk = 'stat' | append: i | append: '_label' -%}
+      <div class="wa-s"><div class="wa-sn">{{ block.settings[pk] }}<span data-count="{{ block.settings[ck] }}">{{ block.settings[ck] }}</span>{{ block.settings[sk] }}</div><div class="wa-sl">{{ block.settings[lk] }}</div></div>
+    {%- endfor -%}
+    </div>
+    {% if block.settings.source_note != blank %}<p class="wa-src wa-reveal">{{ block.settings.source_note }}</p>{% endif %}
+    <div class="wa-revs">
+    {%- for i in (1..3) -%}
+      {%- assign rk = 'r' | append: i | append: '_quote' -%}{%- assign rq = block.settings[rk] -%}
+      {%- if rq != blank -%}
+        {%- assign pk = 'r' | append: i | append: '_image' -%}{%- assign p = block.settings[pk] -%}
+        {%- assign uk = 'r' | append: i | append: '_image_url' -%}{%- assign u = block.settings[uk] -%}
+        {%- assign nk = 'r' | append: i | append: '_name' -%}{%- assign mk = 'r' | append: i | append: '_meta' -%}{%- assign d = forloop.index0 | times: 0.1 -%}
+        <div class="wa-rev wa-reveal" style="--d:{{ d }}s">{% if p != blank %}<img src="{{ p | image_url: width: 700 }}" alt="{{ p.alt | escape }}" loading="lazy">{% elsif u != blank %}<img src="{{ u }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}<div class="wa-rev-b"><div class="wa-stars">★★★★★</div><p>{{ rq }}</p><div class="wa-who"><b>{{ block.settings[nk] }}</b>, {{ block.settings[mk] }}<br><span class="wa-ver">{{ block.settings.verified_label }}</span></div></div></div>
+      {%- endif -%}
+    {%- endfor -%}
+    </div>
+    {% if block.settings.big_quote != blank %}<blockquote class="wa-quote wa-reveal">{{ block.settings.big_quote }}{% if block.settings.big_quote_cite != blank %}<cite>{{ block.settings.big_quote_cite }}</cite>{% endif %}</blockquote>{% endif %}
+    {% if block.settings.cta_label != blank %}<div class="wa-btn-row wa-reveal"><a class="wa-btn wa-top" href="#">{{ block.settings.cta_label }}</a></div>{% endif %}
+  </div>
+</section>
+
+{%- when 'authority' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-wide wa-reveal">
+    <div class="wa-auth">
+      <div class="wa-auth-img">{% if block.settings.image != blank %}<img src="{{ block.settings.image | image_url: width: 1000 }}" alt="{{ block.settings.image.alt | escape }}" loading="lazy">{% elsif block.settings.image_url != blank %}<img src="{{ block.settings.image_url }}" alt="" loading="lazy">{% else %}<div class="wa-ph">Immagine</div>{% endif %}</div>
+      <div class="wa-auth-panel">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}<blockquote>{{ block.settings.quote }}</blockquote>
+        <ul class="wa-auth-list">{%- for i in (1..5) -%}{%- assign lk = 'point' | append: i -%}{%- assign l = block.settings[lk] -%}{%- if l != blank -%}<li>{{ l }}</li>{%- endif -%}{%- endfor -%}</ul>
+        <div class="wa-sig"><b>{{ block.settings.name }}</b>{{ block.settings.role }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- when 'faq' -%}
+<section class="wa-sect{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
+  <div class="wa-inner">
+    {% if block.settings.heading != blank %}<h2 class="wa-h2 wa-center wa-reveal">{{ block.settings.heading }}</h2>{% endif %}
+    <div class="wa-faq wa-reveal">
+    {%- for i in (1..8) -%}
+      {%- assign qk = 'q' | append: i -%}{%- assign q = block.settings[qk] -%}
+      {%- if q != blank -%}{%- assign ak = 'a' | append: i -%}<details{% if forloop.first %} open{% endif %}><summary>{{ q }}<span class="wa-pm"></span></summary><div class="wa-ans">{{ block.settings[ak] }}</div></details>{%- endif -%}
+    {%- endfor -%}
+    </div>
+    {% if block.settings.disclaimer != blank %}<div class="wa-disc">{{ block.settings.disclaimer }}</div>{% endif %}
+  </div>
+</section>
+
+{%- endcase -%}
+{%- endfor -%}
+</div>
+
+<script>
+(function(){
+var S=document.getElementById('shopify-section-{{ section.id }}'); if(!S)return; var R=S.querySelector('.wa-root'); if(!R)return;
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(!reduce&&'IntersectionObserver' in window){
+R.classList.add('wa-js');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('wa-in');io.unobserve(e.target);}});},{threshold:.12});
+R.querySelectorAll('.wa-reveal').forEach(function(e){io.observe(e);});
+var px=[].slice.call(R.querySelectorAll('[data-parallax]')),tk=false;
+function par(){px.forEach(function(el){var b=el.parentElement.getBoundingClientRect(),vh=innerHeight;if(b.bottom<-100||b.top>vh+100)return;var p=(b.top+b.height/2-vh/2)/vh,a=parseFloat(el.getAttribute('data-parallax'))||.15,c=el.classList.contains('wa-cine-img');el.style.transform='translateY('+(p*a*b.height*-1).toFixed(1)+'px)'+(c?' scale(1.12)':'');});tk=false;}
+addEventListener('scroll',function(){if(!tk){requestAnimationFrame(par);tk=true;}},{passive:true});addEventListener('resize',par);par();
+var cl=R.querySelector('.wa-cl'),tr=cl?cl.querySelector('.wa-cl-media'):null,gr=tr?tr.parentElement:null,mq=matchMedia('(max-width:860px)'),ct=false;
+function mode(){if(!cl)return;if(mq.matches&&cl.getAttribute('data-horizontal')!=='false')cl.classList.add('wa-horiz');else{cl.classList.remove('wa-horiz');if(tr)tr.style.transform='';}}
+function upd(){ct=false;if(!cl||!tr||!cl.classList.contains('wa-horiz'))return;var tot=cl.offsetHeight-innerHeight,top=cl.getBoundingClientRect().top,pas=Math.min(Math.max(-top,0),tot),pr=tot>0?pas/tot:0,mx=tr.scrollWidth-gr.clientWidth;if(mx<0)mx=0;tr.style.transform='translateX('+(-pr*mx).toFixed(1)+'px)';}
+mode();upd();addEventListener('scroll',function(){if(!ct){requestAnimationFrame(upd);ct=true;}},{passive:true});addEventListener('resize',function(){mode();upd();});
+function cu(el){var t=parseInt(el.getAttribute('data-count'),10),d=1200,t0=null;function s(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/d,1);el.textContent=Math.floor((1-Math.pow(1-p,3))*t).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');if(p<1)requestAnimationFrame(s);else el.textContent=t.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');}requestAnimationFrame(s);}
+var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cu(e.target);cio.unobserve(e.target);}});},{threshold:.6});
+R.querySelectorAll('[data-count]').forEach(function(e){cio.observe(e);});
+}
+var GAP=12,EDGE=20;
+R.querySelectorAll('.wa-top').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});});
+function size(){var N=matchMedia('(max-width:768px)').matches?3:5;R.querySelectorAll('.wa-ugc-track').forEach(function(t){var w=t.getBoundingClientRect().width,sw=(w-EDGE*2-GAP*(N-1))/N;if(sw<=0)return;t.querySelectorAll('.wa-ugc-slide').forEach(function(s){s.style.flex='0 0 '+sw+'px';s.style.width=s.style.minWidth=s.style.maxWidth=sw+'px';});});}
+function auto(){R.querySelectorAll('.wa-ugc-track').forEach(function(t){if(t.__x)return;var d=parseInt(t.getAttribute('data-autoscroll')||'4000',10);t.__x=setInterval(function(){var m=t.scrollWidth-t.clientWidth;if(m<=2)return;if(t.scrollLeft>=m-2)t.scrollTo({left:0,behavior:'smooth'});else{var n=t.scrollLeft+t.clientWidth;if(n>m)n=m;t.scrollTo({left:n,behavior:'smooth'});}},d);});}
+size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize',size);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Within · Product Page",
+  "tag": "section",
+  "class": "wa-section",
+  "max_blocks": 24,
+  "settings": [
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Larghezza contenuto",
+      "min": 900,
+      "max": 1280,
+      "step": 20,
+      "unit": "px",
+      "default": 1020
+    },
+    {
+      "type": "header",
+      "content": "Colori"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Sfondo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "surface2_color",
+      "label": "Sfondo sezioni tinta",
+      "default": "#f7f3ec"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Testo",
+      "default": "#1d1d1f"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Testo secondario",
+      "default": "#6e6a64"
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Linee",
+      "default": "#ddd6cb"
+    },
+    {
+      "type": "color",
+      "id": "dark_color",
+      "label": "Sezioni scure",
+      "default": "#1C2B28"
+    },
+    {
+      "type": "color",
+      "id": "on_dark_color",
+      "label": "Testo su scuro",
+      "default": "#f7f3ec"
+    },
+    {
+      "type": "color",
+      "id": "on_dark_mut_color",
+      "label": "Testo su scuro (secondario)",
+      "default": "#b5c2bd"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accento",
+      "default": "#A8432E"
+    },
+    {
+      "type": "color",
+      "id": "accent_hi_color",
+      "label": "Accento su scuro",
+      "default": "#F2C05C"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Pulsante",
+      "default": "#CC5B3E"
+    },
+    {
+      "type": "color",
+      "id": "btn_hover_color",
+      "label": "Pulsante hover",
+      "default": "#A8432E"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Stelle",
+      "default": "#F2C05C"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ugc_slider",
+      "name": "Slider video UGC",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo"
+        },
+        {
+          "type": "range",
+          "id": "autoscroll_ms",
+          "label": "Auto-scroll",
+          "min": 2000,
+          "max": 8000,
+          "step": 500,
+          "unit": "ms",
+          "default": 4000
+        },
+        {
+          "type": "video",
+          "id": "video_1",
+          "label": "Video 1 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_1",
+          "label": "Video 1 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "video",
+          "id": "video_2",
+          "label": "Video 2 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_2",
+          "label": "Video 2 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "video",
+          "id": "video_3",
+          "label": "Video 3 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_3",
+          "label": "Video 3 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "video",
+          "id": "video_4",
+          "label": "Video 4 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_4",
+          "label": "Video 4 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "video",
+          "id": "video_5",
+          "label": "Video 5 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_5",
+          "label": "Video 5 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "video",
+          "id": "video_6",
+          "label": "Video 6 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_6",
+          "label": "Video 6 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "video",
+          "id": "video_7",
+          "label": "Video 7 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_7",
+          "label": "Video 7 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "video",
+          "id": "video_8",
+          "label": "Video 8 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_8",
+          "label": "Video 8 (link mp4, usato se non carichi un file)"
+        },
+        {
+          "type": "paragraph",
+          "content": "Autoplay, muti, in loop. 3 visibili su mobile, 5 su desktop."
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 88
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 88
+        }
+      ]
+    },
+    {
+      "type": "value_prop",
+      "name": "1 · Apertura",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo",
+          "default": "Non è solo collagene"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo grande",
+          "default": "Il collagene che arriva davvero."
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Sottotitolo",
+          "default": "Il collagene generico si ferma nello stomaco. Within è costruito per arrivare fino alla pelle."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022239_17078ffb-fe0e-47c9-ae7b-a2bbaf16428f.png"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_cta",
+          "label": "Mostra pulsante",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Testo pulsante",
+          "default": "Inizia oggi"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "cinematic",
+      "name": "Banda cinematic",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo",
+          "default": "Più piccolo. Più efficace."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Sotto i 3.000 Dalton. Dove gli altri non arrivano."
+        },
+        {
+          "type": "text",
+          "id": "sub",
+          "label": "Sottotitolo (opz.)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_8864d567-ef36-4962-ab8f-22d5fb5b5d18.png"
+        },
+        {
+          "type": "range",
+          "id": "parallax",
+          "label": "Intensità parallax",
+          "min": 0,
+          "max": 0.5,
+          "step": 0.1,
+          "default": 0.2
+        }
+      ]
+    },
+    {
+      "type": "benefits",
+      "name": "Feature highlight",
+      "settings": [
+        {
+          "type": "text",
+          "id": "bignum",
+          "label": "Numero gigante (opz.)",
+          "default": "5000"
+        },
+        {
+          "type": "text",
+          "id": "bignum_unit",
+          "label": "Unità numero (opz.)",
+          "default": "mg"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo (opz.)"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Collagene marino tripeptide. In ogni sachet."
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Sottotitolo",
+          "default": "Molecole tre volte più piccole del collagene generico (oltre 10.000 Da): passano la barriera intestinale e raggiungono i fibroblasti del derma."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link (torna su, opz.)",
+          "default": "Inizia oggi →"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022238_9b18bcf3-62e0-4f50-9640-585496f9b43d.png"
+        },
+        {
+          "type": "checkbox",
+          "id": "reversed",
+          "label": "Immagine a sinistra",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "feature_row",
+      "name": "Riga mini-feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Fatto per essere preso. Non gestito."
+        },
+        {
+          "type": "image_picker",
+          "id": "f1_image",
+          "label": "1 · immagine"
+        },
+        {
+          "type": "text",
+          "id": "f1_image_url",
+          "label": "1 · immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022237_d1eab07b-0032-4879-b973-f38b0b68be4c.png"
+        },
+        {
+          "type": "text",
+          "id": "f1_title",
+          "label": "1 · titolo",
+          "default": "Monodose"
+        },
+        {
+          "type": "text",
+          "id": "f1_text",
+          "label": "1 · testo",
+          "default": "25 ml, niente misurini."
+        },
+        {
+          "type": "image_picker",
+          "id": "f2_image",
+          "label": "2 · immagine"
+        },
+        {
+          "type": "text",
+          "id": "f2_image_url",
+          "label": "2 · immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_eab2918b-f157-4d9b-baf8-46a2c4d820a5.png"
+        },
+        {
+          "type": "text",
+          "id": "f2_title",
+          "label": "2 · titolo",
+          "default": "Mango e passion fruit"
+        },
+        {
+          "type": "text",
+          "id": "f2_text",
+          "label": "2 · testo",
+          "default": "Zero retrogusto di pesce."
+        },
+        {
+          "type": "image_picker",
+          "id": "f3_image",
+          "label": "3 · immagine"
+        },
+        {
+          "type": "text",
+          "id": "f3_image_url",
+          "label": "3 · immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_aad9a819-1ddc-426b-850e-26a8b7c3e7af.png"
+        },
+        {
+          "type": "text",
+          "id": "f3_title",
+          "label": "3 · titolo",
+          "default": "Sta in borsa"
+        },
+        {
+          "type": "text",
+          "id": "f3_text",
+          "label": "3 · testo",
+          "default": "Lo prendi ovunque tu sia."
+        },
+        {
+          "type": "image_picker",
+          "id": "f4_image",
+          "label": "4 · immagine"
+        },
+        {
+          "type": "text",
+          "id": "f4_image_url",
+          "label": "4 · immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_be849ed2-83c2-4acc-9890-ec9f079e5385.png"
+        },
+        {
+          "type": "text",
+          "id": "f4_title",
+          "label": "4 · titolo",
+          "default": "6 attivi"
+        },
+        {
+          "type": "text",
+          "id": "f4_text",
+          "label": "4 · testo",
+          "default": "Zero riempitivi."
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "how_it_works",
+      "name": "Come funziona",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo",
+          "default": "Come funziona"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Tre gesti. Nessuna complicazione."
+        },
+        {
+          "type": "image_picker",
+          "id": "step1_image",
+          "label": "Step 1 · immagine"
+        },
+        {
+          "type": "text",
+          "id": "step1_image_url",
+          "label": "Step 1 · immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_1ba91de2-16a0-4c61-aed7-623a4f288521.png"
+        },
+        {
+          "type": "text",
+          "id": "step1_title",
+          "label": "Step 1 · titolo",
+          "default": "Apri il sachet"
+        },
+        {
+          "type": "text",
+          "id": "step1_text",
+          "label": "Step 1 · testo",
+          "default": "Monodose da 25 ml, già pronto. Niente polveri da sciogliere."
+        },
+        {
+          "type": "image_picker",
+          "id": "step2_image",
+          "label": "Step 2 · immagine"
+        },
+        {
+          "type": "text",
+          "id": "step2_image_url",
+          "label": "Step 2 · immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_e85373ce-9de8-46d8-9c26-b225e1aa994d.png"
+        },
+        {
+          "type": "text",
+          "id": "step2_title",
+          "label": "Step 2 · titolo",
+          "default": "Bevi, e basta"
+        },
+        {
+          "type": "text",
+          "id": "step2_text",
+          "label": "Step 2 · testo",
+          "default": "Mango e frutto della passione. Mattina o sera, conta la costanza."
+        },
+        {
+          "type": "image_picker",
+          "id": "step3_image",
+          "label": "Step 3 · immagine"
+        },
+        {
+          "type": "text",
+          "id": "step3_image_url",
+          "label": "Step 3 · immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_134903d6-9fbd-40e2-b45d-0a80b8a95f16.png"
+        },
+        {
+          "type": "text",
+          "id": "step3_title",
+          "label": "Step 3 · titolo",
+          "default": "Lascia che lavori"
+        },
+        {
+          "type": "text",
+          "id": "step3_text",
+          "label": "Step 3 · testo",
+          "default": "Prima l'idratazione, in 2-3 settimane. La compattezza in 8-12."
+        },
+        {
+          "type": "image_picker",
+          "id": "step4_image",
+          "label": "Step 4 · immagine"
+        },
+        {
+          "type": "text",
+          "id": "step4_image_url",
+          "label": "Step 4 · immagine (link, usato se non carichi un file)"
+        },
+        {
+          "type": "text",
+          "id": "step4_title",
+          "label": "Step 4 · titolo"
+        },
+        {
+          "type": "text",
+          "id": "step4_text",
+          "label": "Step 4 · testo"
+        },
+        {
+          "type": "checkbox",
+          "id": "dark",
+          "label": "Tema scuro",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "closeup",
+      "name": "Close-up",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo",
+          "default": "Ogni dettaglio conta"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Sei attivi. Guarda da vicino."
+        },
+        {
+          "type": "textarea",
+          "id": "sub",
+          "label": "Sottotitolo",
+          "default": "Liquido, già sciolto, pronto da bere. Dieci sachet per box, dosaggi dichiarati uno per uno."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Macro 1"
+        },
+        {
+          "type": "text",
+          "id": "image_url_1",
+          "label": "Macro 1 (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022256_3723d142-71fa-4c8f-b9a8-fe7e1c5521bd.png"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Macro 2"
+        },
+        {
+          "type": "text",
+          "id": "image_url_2",
+          "label": "Macro 2 (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_8399ba65-5fed-46e2-a048-612a3e50c9b0.png"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Macro 3"
+        },
+        {
+          "type": "text",
+          "id": "image_url_3",
+          "label": "Macro 3 (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_376737c4-b03c-4428-b796-a58586c87a48.png"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Macro 4"
+        },
+        {
+          "type": "text",
+          "id": "image_url_4",
+          "label": "Macro 4 (link, usato se non carichi un file)"
+        },
+        {
+          "type": "checkbox",
+          "id": "mobile_horizontal",
+          "label": "Mobile: pin + scroll orizzontale",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "whats_inside",
+      "name": "Formula",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo",
+          "default": "La formula"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Costruisci. Proteggi. Attiva."
+        },
+        {
+          "type": "text",
+          "id": "sub",
+          "label": "Sottotitolo",
+          "default": "Un sistema a 3 livelli, non un ingrediente da solo."
+        },
+        {
+          "type": "image_picker",
+          "id": "g1_image",
+          "label": "Foto 1"
+        },
+        {
+          "type": "text",
+          "id": "g1_image_url",
+          "label": "Foto 1 (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022255_7e8ef482-d9fa-4caa-a5a9-05b302da9540.png"
+        },
+        {
+          "type": "text",
+          "id": "g1_caption",
+          "label": "Foto 1 · didascalia",
+          "default": "6 attivi, nessun riempitivo"
+        },
+        {
+          "type": "image_picker",
+          "id": "g2_image",
+          "label": "Foto 2"
+        },
+        {
+          "type": "text",
+          "id": "g2_image_url",
+          "label": "Foto 2 (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022254_4eb662ff-b9f7-4001-a858-c3a6e907c927.png"
+        },
+        {
+          "type": "text",
+          "id": "g2_caption",
+          "label": "Foto 2 · didascalia",
+          "default": "Il sistema a 3 livelli"
+        },
+        {
+          "type": "image_picker",
+          "id": "g3_image",
+          "label": "Foto 3"
+        },
+        {
+          "type": "text",
+          "id": "g3_image_url",
+          "label": "Foto 3 (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_31a77d99-ca55-46a8-b656-f774fe7ff0c5.png"
+        },
+        {
+          "type": "text",
+          "id": "g3_caption",
+          "label": "Foto 3 · didascalia",
+          "default": "10 sachet da 25 ml"
+        },
+        {
+          "type": "header",
+          "content": "Ingredienti"
+        },
+        {
+          "type": "text",
+          "id": "ing1_tag",
+          "label": "1 · livello",
+          "default": "Costruisci"
+        },
+        {
+          "type": "text",
+          "id": "ing1_name",
+          "label": "1 · nome",
+          "default": "Collagene marino tripeptide"
+        },
+        {
+          "type": "text",
+          "id": "ing1_desc",
+          "label": "1 · descrizione",
+          "default": "Sotto i 3.000 Da, stimola i fibroblasti"
+        },
+        {
+          "type": "text",
+          "id": "ing1_dose",
+          "label": "1 · dose",
+          "default": "5.000 mg"
+        },
+        {
+          "type": "text",
+          "id": "ing2_tag",
+          "label": "2 · livello",
+          "default": "Costruisci"
+        },
+        {
+          "type": "text",
+          "id": "ing2_name",
+          "label": "2 · nome",
+          "default": "Vitamina C"
+        },
+        {
+          "type": "text",
+          "id": "ing2_desc",
+          "label": "2 · descrizione",
+          "default": "Contribuisce alla normale formazione del collagene per la normale funzione della pelle*"
+        },
+        {
+          "type": "text",
+          "id": "ing2_dose",
+          "label": "2 · dose",
+          "default": "80 mg"
+        },
+        {
+          "type": "text",
+          "id": "ing3_tag",
+          "label": "3 · livello",
+          "default": "Proteggi"
+        },
+        {
+          "type": "text",
+          "id": "ing3_name",
+          "label": "3 · nome",
+          "default": "Estratto di cranberry"
+        },
+        {
+          "type": "text",
+          "id": "ing3_desc",
+          "label": "3 · descrizione",
+          "default": "Antiossidante naturale"
+        },
+        {
+          "type": "text",
+          "id": "ing3_dose",
+          "label": "3 · dose",
+          "default": "500 mg"
+        },
+        {
+          "type": "text",
+          "id": "ing4_tag",
+          "label": "4 · livello",
+          "default": "Proteggi"
+        },
+        {
+          "type": "text",
+          "id": "ing4_name",
+          "label": "4 · nome",
+          "default": "Zinco"
+        },
+        {
+          "type": "text",
+          "id": "ing4_desc",
+          "label": "4 · descrizione",
+          "default": "Contribuisce al mantenimento di pelle e capelli normali*"
+        },
+        {
+          "type": "text",
+          "id": "ing4_dose",
+          "label": "4 · dose",
+          "default": "10 mg"
+        },
+        {
+          "type": "text",
+          "id": "ing5_tag",
+          "label": "5 · livello",
+          "default": "Attiva"
+        },
+        {
+          "type": "text",
+          "id": "ing5_name",
+          "label": "5 · nome",
+          "default": "Acido ialuronico"
+        },
+        {
+          "type": "text",
+          "id": "ing5_desc",
+          "label": "5 · descrizione",
+          "default": "Idratazione dall'interno"
+        },
+        {
+          "type": "text",
+          "id": "ing5_dose",
+          "label": "5 · dose",
+          "default": "100 mg"
+        },
+        {
+          "type": "text",
+          "id": "ing6_tag",
+          "label": "6 · livello",
+          "default": "Attiva"
+        },
+        {
+          "type": "text",
+          "id": "ing6_name",
+          "label": "6 · nome",
+          "default": "Probiotici Lactobacillus"
+        },
+        {
+          "type": "text",
+          "id": "ing6_desc",
+          "label": "6 · descrizione",
+          "default": "Asse intestino-pelle"
+        },
+        {
+          "type": "text",
+          "id": "ing6_dose",
+          "label": "6 · dose",
+          "default": "1 mld CFU"
+        },
+        {
+          "type": "text",
+          "id": "ing7_tag",
+          "label": "7 · livello"
+        },
+        {
+          "type": "text",
+          "id": "ing7_name",
+          "label": "7 · nome"
+        },
+        {
+          "type": "text",
+          "id": "ing7_desc",
+          "label": "7 · descrizione"
+        },
+        {
+          "type": "text",
+          "id": "ing7_dose",
+          "label": "7 · dose"
+        },
+        {
+          "type": "text",
+          "id": "ing8_tag",
+          "label": "8 · livello"
+        },
+        {
+          "type": "text",
+          "id": "ing8_name",
+          "label": "8 · nome"
+        },
+        {
+          "type": "text",
+          "id": "ing8_desc",
+          "label": "8 · descrizione"
+        },
+        {
+          "type": "text",
+          "id": "ing8_dose",
+          "label": "8 · dose"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "objections",
+      "name": "Obiezioni",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Domande scomode. Risposte dirette."
+        },
+        {
+          "type": "text",
+          "id": "q1",
+          "label": "Dubbio 1",
+          "default": "\"Il collagene non viene semplicemente digerito?\""
+        },
+        {
+          "type": "textarea",
+          "id": "a1",
+          "label": "Risposta 1",
+          "default": "Quello generico sì. I tripeptidi sotto i 3.000 Da sono abbastanza piccoli da superare la barriera intestinale."
+        },
+        {
+          "type": "text",
+          "id": "q2",
+          "label": "Dubbio 2",
+          "default": "\"Ne ho già provati altri. Niente.\""
+        },
+        {
+          "type": "textarea",
+          "id": "a2",
+          "label": "Risposta 2",
+          "default": "Probabilmente erano collageni ad alto peso molecolare. Il problema era il prodotto, non tu."
+        },
+        {
+          "type": "text",
+          "id": "q3",
+          "label": "Dubbio 3",
+          "default": "\"Gli studi li pagano le aziende.\""
+        },
+        {
+          "type": "textarea",
+          "id": "a3",
+          "label": "Risposta 3",
+          "default": "Diffidare è giusto. Per questo dichiariamo peso molecolare e dosaggi, e usiamo solo claim approvati dall'EFSA."
+        },
+        {
+          "type": "text",
+          "id": "q4",
+          "label": "Dubbio 4",
+          "default": "\"Quanto devo aspettare?\""
+        },
+        {
+          "type": "textarea",
+          "id": "a4",
+          "label": "Risposta 4",
+          "default": "Idratazione in 2-3 settimane, compattezza in 8-12. Chi ti promette miracoli in 3 giorni ti sta mentendo."
+        },
+        {
+          "type": "text",
+          "id": "q5",
+          "label": "Dubbio 5"
+        },
+        {
+          "type": "text",
+          "id": "a5",
+          "label": "Risposta 5"
+        },
+        {
+          "type": "text",
+          "id": "q6",
+          "label": "Dubbio 6"
+        },
+        {
+          "type": "text",
+          "id": "a6",
+          "label": "Risposta 6"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "social_proof",
+      "name": "Recensioni",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo",
+          "default": "Cosa dice la ricerca"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Risultati misurabili. Non promesse."
+        },
+        {
+          "type": "header",
+          "content": "Statistiche"
+        },
+        {
+          "type": "text",
+          "id": "stat1_prefix",
+          "label": "Stat 1 · prefisso",
+          "default": "+"
+        },
+        {
+          "type": "text",
+          "id": "stat1_count",
+          "label": "Stat 1 · numero",
+          "default": "23"
+        },
+        {
+          "type": "text",
+          "id": "stat1_suffix",
+          "label": "Stat 1 · suffisso",
+          "default": "%"
+        },
+        {
+          "type": "text",
+          "id": "stat1_label",
+          "label": "Stat 1 · etichetta",
+          "default": "idratazione"
+        },
+        {
+          "type": "text",
+          "id": "stat2_prefix",
+          "label": "Stat 2 · prefisso",
+          "default": "−"
+        },
+        {
+          "type": "text",
+          "id": "stat2_count",
+          "label": "Stat 2 · numero",
+          "default": "17"
+        },
+        {
+          "type": "text",
+          "id": "stat2_suffix",
+          "label": "Stat 2 · suffisso",
+          "default": "%"
+        },
+        {
+          "type": "text",
+          "id": "stat2_label",
+          "label": "Stat 2 · etichetta",
+          "default": "rughe perioculari"
+        },
+        {
+          "type": "text",
+          "id": "stat3_prefix",
+          "label": "Stat 3 · prefisso",
+          "default": "+"
+        },
+        {
+          "type": "text",
+          "id": "stat3_count",
+          "label": "Stat 3 · numero",
+          "default": "15"
+        },
+        {
+          "type": "text",
+          "id": "stat3_suffix",
+          "label": "Stat 3 · suffisso",
+          "default": "%"
+        },
+        {
+          "type": "text",
+          "id": "stat3_label",
+          "label": "Stat 3 · etichetta",
+          "default": "compattezza"
+        },
+        {
+          "type": "textarea",
+          "id": "source_note",
+          "label": "Nota fonte",
+          "default": "Dati indicativi da studi su peptidi di collagene idrolizzato, 8-12 settimane. I risultati individuali possono variare."
+        },
+        {
+          "type": "header",
+          "content": "Recensioni"
+        },
+        {
+          "type": "text",
+          "id": "verified_label",
+          "label": "Etichetta verificato",
+          "default": "Acquisto verificato"
+        },
+        {
+          "type": "image_picker",
+          "id": "r1_image",
+          "label": "1 · foto"
+        },
+        {
+          "type": "text",
+          "id": "r1_image_url",
+          "label": "1 · foto (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022310_72453d34-0f9b-4a13-84b2-0ee0f50c6841.png"
+        },
+        {
+          "type": "textarea",
+          "id": "r1_quote",
+          "label": "1 · testo",
+          "default": "\"Dopo tre settimane la pelle è visibilmente più idratata. Le colleghe mi hanno chiesto cosa uso.\""
+        },
+        {
+          "type": "text",
+          "id": "r1_name",
+          "label": "1 · nome",
+          "default": "Laura"
+        },
+        {
+          "type": "text",
+          "id": "r1_meta",
+          "label": "1 · età · città",
+          "default": "43 · Milano"
+        },
+        {
+          "type": "image_picker",
+          "id": "r2_image",
+          "label": "2 · foto"
+        },
+        {
+          "type": "text",
+          "id": "r2_image_url",
+          "label": "2 · foto (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_9c358caf-86cc-4057-b42c-4a569e68826b.png"
+        },
+        {
+          "type": "textarea",
+          "id": "r2_quote",
+          "label": "2 · testo",
+          "default": "\"Avevo provato tre integratori senza risultati. Con Within ho visto la differenza dopo circa sei settimane.\""
+        },
+        {
+          "type": "text",
+          "id": "r2_name",
+          "label": "2 · nome",
+          "default": "Francesca"
+        },
+        {
+          "type": "text",
+          "id": "r2_meta",
+          "label": "2 · età · città",
+          "default": "51 · Roma"
+        },
+        {
+          "type": "image_picker",
+          "id": "r3_image",
+          "label": "3 · foto"
+        },
+        {
+          "type": "text",
+          "id": "r3_image_url",
+          "label": "3 · foto (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022311_c44c87da-8b75-4660-9b9d-063661e85a11.png"
+        },
+        {
+          "type": "textarea",
+          "id": "r3_quote",
+          "label": "3 · testo",
+          "default": "\"Il gusto è buonissimo, sembra un succo. È l'unico integratore che non dimentico mai di prendere.\""
+        },
+        {
+          "type": "text",
+          "id": "r3_name",
+          "label": "3 · nome",
+          "default": "Giulia"
+        },
+        {
+          "type": "text",
+          "id": "r3_meta",
+          "label": "3 · età · città",
+          "default": "38 · Torino"
+        },
+        {
+          "type": "text",
+          "id": "big_quote",
+          "label": "Citazione grande",
+          "default": "\"Per la prima volta ho capito cosa stavo bevendo, e perché.\""
+        },
+        {
+          "type": "text",
+          "id": "big_quote_cite",
+          "label": "Citazione · autore",
+          "default": "— Francesca, 51"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Pulsante (torna su)",
+          "default": "Inizia il tuo percorso"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "authority",
+      "name": "Autorità",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Sopra-titolo",
+          "default": "Trasparenza radicale"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Immagine"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Immagine (link, usato se non carichi un file)",
+          "default": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022312_e1f927c5-48a6-46e8-ad78-e5e2ff68c331.png"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Citazione",
+          "default": "\"Non ti chiediamo di fidarti. Ti diamo tutto quello che serve per verificare.\""
+        },
+        {
+          "type": "text",
+          "id": "point1",
+          "label": "Punto 1",
+          "default": "Peso molecolare dichiarato: sotto i 3.000 Da"
+        },
+        {
+          "type": "text",
+          "id": "point2",
+          "label": "Punto 2",
+          "default": "Certificato di analisi e test metalli pesanti"
+        },
+        {
+          "type": "text",
+          "id": "point3",
+          "label": "Punto 3",
+          "default": "Dosaggio dichiarato per ogni attivo"
+        },
+        {
+          "type": "text",
+          "id": "point4",
+          "label": "Punto 4",
+          "default": "Solo claim EFSA approvati"
+        },
+        {
+          "type": "text",
+          "id": "point5",
+          "label": "Punto 5 (opz.)"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Firma",
+          "default": "Il team Within"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Ruolo",
+          "default": "Ricerca e Sviluppo"
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Titolo",
+          "default": "Buono a sapersi."
+        },
+        {
+          "type": "text",
+          "id": "q1",
+          "label": "Domanda 1",
+          "default": "Quanto dura una confezione?"
+        },
+        {
+          "type": "textarea",
+          "id": "a1",
+          "label": "Risposta 1",
+          "default": "Ogni box contiene 10 sachet: con uno al giorno dura 10 giorni. Per un mese completo servono 3 box."
+        },
+        {
+          "type": "text",
+          "id": "q2",
+          "label": "Domanda 2",
+          "default": "Mattina o sera?"
+        },
+        {
+          "type": "textarea",
+          "id": "a2",
+          "label": "Risposta 2",
+          "default": "Quando preferisci. Conta la costanza quotidiana, non l'orario."
+        },
+        {
+          "type": "text",
+          "id": "q3",
+          "label": "Domanda 3",
+          "default": "Sa di pesce?"
+        },
+        {
+          "type": "textarea",
+          "id": "a3",
+          "label": "Risposta 3",
+          "default": "No. Gusto mango e frutto della passione, fresco e piacevole."
+        },
+        {
+          "type": "text",
+          "id": "q4",
+          "label": "Domanda 4",
+          "default": "Contiene lattosio o glutine?"
+        },
+        {
+          "type": "textarea",
+          "id": "a4",
+          "label": "Risposta 4",
+          "default": "No. Contiene però collagene di origine marina: se sei allergica al pesce, consulta il tuo medico."
+        },
+        {
+          "type": "text",
+          "id": "q5",
+          "label": "Domanda 5",
+          "default": "Dopo quanto vedo i risultati?"
+        },
+        {
+          "type": "textarea",
+          "id": "a5",
+          "label": "Risposta 5",
+          "default": "I primi segnali di idratazione possono arrivare in 2-3 settimane. Per compattezza e rughe gli studi indicano 8-12 settimane di uso continuativo."
+        },
+        {
+          "type": "text",
+          "id": "q6",
+          "label": "Domanda 6",
+          "default": "Se smetto, torna tutto come prima?"
+        },
+        {
+          "type": "textarea",
+          "id": "a6",
+          "label": "Risposta 6",
+          "default": "Il collagene prodotto resta, ma dopo i 25 anni il corpo ne perde circa l'1-1,5% l'anno. Per mantenere i benefici consigliamo un uso continuativo o cicli regolari."
+        },
+        {
+          "type": "text",
+          "id": "q7",
+          "label": "Domanda 7",
+          "default": "In cosa è diverso dagli altri collageni?"
+        },
+        {
+          "type": "textarea",
+          "id": "a7",
+          "label": "Risposta 7",
+          "default": "Tre cose: tripeptide sotto i 3.000 Da invece di collagene generico sopra i 10.000; probiotici per l'asse intestino-pelle; trasparenza totale su peso molecolare e dosaggi."
+        },
+        {
+          "type": "text",
+          "id": "q8",
+          "label": "Domanda 8"
+        },
+        {
+          "type": "text",
+          "id": "a8",
+          "label": "Risposta 8"
+        },
+        {
+          "type": "textarea",
+          "id": "disclaimer",
+          "label": "Disclaimer legale",
+          "default": "Within è un integratore alimentare. Gli integratori non vanno intesi come sostituti di una dieta varia ed equilibrata e di uno stile di vita sano. Non superare la dose giornaliera consigliata. Tenere fuori dalla portata dei bambini al di sotto dei 3 anni. *Claim autorizzati dall'EFSA per Vitamina C e Zinco. I risultati possono variare da persona a persona."
+        },
+        {
+          "type": "checkbox",
+          "id": "tinted",
+          "label": "Sfondo tinta",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Spazio sopra",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Spazio sotto",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 120
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Within · Product Page",
+      "blocks": [
+        {
+          "type": "ugc_slider",
+          "settings": {
+            "eyebrow": "Un sachet. Ogni mattina.",
+            "heading": "Il rituale che entra nella tua giornata.",
+            "video_url_1": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125728_3eb9f5b0-9730-4239-a6b3-743b5c80a2e4.mp4",
+            "video_url_2": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125252_4b376383-70fc-4e59-9301-5f0611678caa.mp4",
+            "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_4b32d8cb-0503-4fb1-b519-5d6783399547.mp4",
+            "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_da4a02fc-445d-44b6-a10f-474ef1872d26.mp4",
+            "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_130202_76ee1516-1445-4b2b-af00-f7e900a7f885.mp4",
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125227_78c3c96e-d30f-4ffa-8cd8-dff144d18b24.mp4"
+          }
+        },
+        {
+          "type": "value_prop"
+        },
+        {
+          "type": "cinematic"
+        },
+        {
+          "type": "benefits"
+        },
+        {
+          "type": "benefits",
+          "settings": {
+            "bignum": "",
+            "bignum_unit": "",
+            "eyebrow": "Asse intestino-pelle",
+            "heading": "La bellezza comincia dall'intestino.",
+            "sub": "1 miliardo di CFU di Lactobacillus in ogni dose. Un intestino in equilibrio assorbe meglio, e la pelle se ne accorge. È l'ingrediente che gli altri collageni non hanno.",
+            "link_label": "",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022240_83292b60-8669-45f6-8eba-48b42dbb54c7.png",
+            "reversed": true,
+            "tinted": true
+          }
+        },
+        {
+          "type": "feature_row"
+        },
+        {
+          "type": "cinematic",
+          "settings": {
+            "eyebrow": "Ogni mattina",
+            "heading": "Un sorso. 25 secondi. Il resto lo fa il tuo corpo.",
+            "image_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_022257_da85e40f-d7a7-4813-873d-01dddb7f637d.png",
+            "parallax": 0.2
+          }
+        },
+        {
+          "type": "how_it_works"
+        },
+        {
+          "type": "closeup"
+        },
+        {
+          "type": "whats_inside"
+        },
+        {
+          "type": "ugc_slider",
+          "settings": {
+            "eyebrow": "",
+            "heading": "Altre storie, altre mattine.",
+            "video_url_1": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_74fe6764-b37c-4862-828b-0d3138935d3a.mp4",
+            "video_url_2": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125227_030e76c8-7f3e-4f20-a4b0-cd5c61d09667.mp4",
+            "video_url_3": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_130201_b6cd86d8-7c7b-41f6-a1c5-c80d5758b902.mp4",
+            "video_url_4": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125251_03eb5516-d436-4dfd-b332-7f7af7ac2969.mp4",
+            "video_url_5": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125728_fb9a8c99-bf51-4f17-9fa9-c29bca390999.mp4",
+            "video_url_6": "https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_125229_82fbe1e9-6f64-4ac8-b525-65a2dbf6339c.mp4"
+          }
+        },
+        {
+          "type": "objections"
+        },
+        {
+          "type": "social_proof"
+        },
+        {
+          "type": "authority"
+        },
+        {
+          "type": "faq"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
