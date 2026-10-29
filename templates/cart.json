@@ -1,0 +1,23 @@
+/*
+ * Template carrello Within — sezione sections/within-cart.liquid (repo alonqo/within-theme)
+ */
+{
+  "sections": {
+    "within_cart": {
+      "type": "within-cart",
+      "blocks": {
+        "faq_1": { "type": "faq", "settings": { "q": "È un abbonamento?", "a": "<p>No. Paghi una volta sola le confezioni che scegli. Nessun rinnovo, nessun addebito automatico. Quando vuoi riordinare, lo decidi tu.</p>" } },
+        "faq_2": { "type": "faq", "settings": { "q": "Quante confezioni mi servono?", "a": "<p>Ogni confezione contiene 10 sachet, cioè 10 giorni. Per un mese ne servono 3. Per il percorso completo di 12 settimane, quello che consigliamo e che copre tutta la garanzia, ne servono 9.</p>" } },
+        "faq_3": { "type": "faq", "settings": { "q": "Come funziona la garanzia di 90 giorni?", "a": "<p>Se entro 90 giorni dalla consegna non sei soddisfatta, scrivici con il numero d'ordine e ti rimborsiamo. Le condizioni complete sono nella pagina <a href=\"/policies/refund-policy\">Resi e rimborsi</a>.</p>" } },
+        "faq_4": { "type": "faq", "settings": { "q": "Il pagamento è sicuro?", "a": "<p>Sì. Il pagamento avviene sul checkout protetto di Shopify, con PayPal o carta. Noi non vediamo né salviamo i dati della tua carta.</p>" } },
+        "faq_5": { "type": "faq", "settings": { "q": "Posso prenderlo se sono allergica al pesce?", "a": "<p>No. Within contiene collagene di origine marina. Se segui terapie, sei in gravidanza o allatti, chiedi prima al tuo medico.</p>" } }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
+      "settings": {
+        "path_product": "within-collagene-marino",
+        "free_ship_threshold": 0
+      }
+    }
+  },
+  "order": ["within_cart"]
+}

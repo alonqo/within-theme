@@ -1,0 +1,577 @@
+{% comment %}
+  Within · Carrello — cart page CRO (metodo Certificopy).
+  Struttura: rassicurazione in testa → barra spedizione → prodotti con prezzo al giorno →
+  "Il tuo percorso" (giorni coperti vs 12 settimane / garanzia 90 gg) → riepilogo con CTA unica →
+  garanzia con nome → cosa succede dopo il pagamento → FAQ delle obiezioni da carrello.
+  Niente timer finti, niente sconti inventati: è un brand "anti-fregatura".
+  Aggiornamenti quantità via Ajax (Section Rendering API), funziona anche senza JavaScript.
+{% endcomment %}
+{%- liquid
+  assign pp = section.settings.path_product
+  assign spb = section.settings.sachets_per_box | default: 10
+  assign path_qty = 0
+  if pp != blank
+    for it in cart.items
+      if it.product_id == pp.id
+        assign path_qty = path_qty | plus: it.quantity
+      endif
+    endfor
+  endif
+  assign path_days = path_qty | times: spb
+  assign m1 = section.settings.m1_boxes
+  assign m2 = section.settings.m2_boxes
+  assign m3 = section.settings.m3_boxes
+  assign next_m = 0
+  assign next_label = ''
+  if path_qty < m1
+    assign next_m = m1
+    assign next_label = section.settings.m1_label
+  elsif path_qty < m2
+    assign next_m = m2
+    assign next_label = section.settings.m2_label
+  elsif path_qty < m3
+    assign next_m = m3
+    assign next_label = section.settings.m3_label
+  endif
+  assign need = next_m | minus: path_qty
+  assign next_days = next_m | times: spb
+  assign pct = path_qty | times: 100 | divided_by: m3
+  if pct > 100
+    assign pct = 100
+  endif
+  assign fs = section.settings.free_ship_threshold | times: 100
+  assign fs_left = fs | minus: cart.total_price
+  assign fs_pct = 100
+  if fs > 0 and fs_left > 0
+    assign fs_pct = cart.total_price | times: 100 | divided_by: fs
+  endif
+  assign pp_variant = pp.selected_or_first_available_variant
+-%}
+{% style %}
+.wc{--bg:{{ section.settings.bg_color }};--bg-2:{{ section.settings.surface2_color }};--ink:{{ section.settings.text_color }};--muted:{{ section.settings.muted_color }};--line:{{ section.settings.line_color }};--dark:{{ section.settings.dark_color }};--on-dark:{{ section.settings.on_dark_color }};--accent:{{ section.settings.accent_color }};--mango:{{ section.settings.mango_color }};--gold:{{ section.settings.gold_color }};--btn:{{ section.settings.btn_color }};--btn-hi:{{ section.settings.btn_hover_color }};--ok:#2f7a55;--r:16px;--r-lg:24px;--pill:980px;
+  background:var(--bg);color:var(--ink);font-family:inherit;line-height:1.45;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;padding:{{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px}
+.wc *{box-sizing:border-box}
+.wc img{display:block;max-width:100%;height:auto}
+.wc a{color:inherit}
+.wc-in{max-width:{{ section.settings.max_width }}px;margin:0 auto}
+.wc-steps{display:flex;justify-content:center;gap:10px;list-style:none;margin:0 0 28px;padding:0;font-size:.8rem;font-weight:600;color:var(--muted)}
+.wc-steps li{display:flex;align-items:center;gap:8px}
+.wc-steps li+li::before{content:"";width:28px;height:1px;background:var(--line)}
+.wc-steps b{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);font-size:.72rem}
+.wc-steps .on{color:var(--ink)}.wc-steps .on b{background:var(--dark);border-color:var(--dark);color:#fff}
+.wc-head{text-align:center;margin:0 0 32px}
+.wc-h1{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:650;letter-spacing:-.025em;line-height:1.08;margin:0 0 10px;color:var(--ink)}
+.wc-head p{margin:0 auto;max-width:52ch;color:var(--muted);font-size:1.05rem}
+.wc-head p strong{color:var(--ink)}
+.wc-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,1fr);gap:32px;align-items:start}
+.wc-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:24px}
+.wc-ship{margin:0 0 16px;padding:16px 20px}
+.wc-ship p{margin:0 0 10px;font-size:.95rem}
+.wc-ship p strong{color:var(--accent)}
+.wc-bar{height:8px;border-radius:8px;background:var(--bg-2);overflow:hidden}
+.wc-bar i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,var(--mango),var(--gold));transition:width .5s}
+.wc-ship.done p{color:var(--ok);font-weight:600;margin:0}
+.wc-items{list-style:none;margin:0;padding:0}
+.wc-item{display:grid;grid-template-columns:96px 1fr auto;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.wc-item:first-child{padding-top:0}.wc-item:last-child{border-bottom:0;padding-bottom:0}
+.wc-thumb{width:96px;height:96px;border-radius:14px;background:var(--bg-2);overflow:hidden}
+.wc-thumb img{width:100%;height:100%;object-fit:cover}
+.wc-t{margin:0;font-size:1.05rem;font-weight:600;line-height:1.25}
+.wc-t a{text-decoration:none}
+.wc-meta{margin:4px 0 0;font-size:.86rem;color:var(--muted)}
+.wc-days{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:4px 10px;border-radius:var(--pill);background:var(--bg-2);font-size:.8rem;font-weight:600;color:var(--ink)}
+.wc-days::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mango)}
+.wc-ctrl{display:flex;align-items:center;gap:14px;margin-top:12px}
+.wc-qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:var(--pill);height:40px;background:#fff}
+.wc-qty button{width:38px;height:38px;border:0;background:none;font-size:1.15rem;line-height:1;cursor:pointer;color:var(--ink);border-radius:50%}
+.wc-qty button:hover{color:var(--accent)}
+.wc-qty input{width:34px;border:0;text-align:center;font:inherit;font-weight:600;font-size:.95rem;background:none;color:var(--ink);-moz-appearance:textfield}
+.wc-qty input::-webkit-inner-spin-button{-webkit-appearance:none}
+.wc-rm{border:0;background:none;padding:0;font:inherit;font-size:.8rem;color:var(--muted);text-decoration:underline;cursor:pointer}
+.wc-price{text-align:right;white-space:nowrap}
+.wc-price b{display:block;font-size:1.05rem;font-weight:650}
+.wc-price s{display:block;font-size:.84rem;color:var(--muted)}
+.wc-price small{display:block;margin-top:4px;font-size:.8rem;color:var(--muted)}
+.wc-disc{margin:6px 0 0;font-size:.8rem;color:var(--ok);font-weight:600;list-style:none;padding:0}
+.wc-path{margin-top:16px;background:var(--dark);color:var(--on-dark);border-color:var(--dark)}
+.wc-path-eb{margin:0 0 6px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.wc-path h2{margin:0 0 8px;font-size:1.35rem;font-weight:650;letter-spacing:-.015em;line-height:1.2;color:#fff}
+.wc-path h2 em{font-style:normal;color:var(--gold)}
+.wc-path>p{margin:0;color:rgba(247,243,236,.78);font-size:.95rem}
+.wc-track{position:relative;margin:30px 6px 8px;height:8px;border-radius:8px;background:rgba(255,255,255,.14)}
+.wc-track>i{position:absolute;left:0;top:0;bottom:0;border-radius:8px;background:linear-gradient(90deg,var(--mango),var(--gold));transition:width .5s}
+.wc-ms{position:absolute;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:var(--dark);border:2px solid rgba(255,255,255,.35)}
+.wc-ms.hit{background:var(--gold);border-color:var(--gold)}
+.wc-ms span{position:absolute;top:24px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.72rem;font-weight:600;color:rgba(247,243,236,.7)}
+.wc-ms.hit span{color:#fff}
+.wc-ms:last-child span{left:auto;right:-6px;transform:none}
+.wc-path-act{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:40px}
+.wc-add{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:var(--pill);border:0;background:var(--gold);color:var(--dark);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;transition:transform .2s,filter .2s}
+.wc-add:hover{filter:brightness(1.05);transform:translateY(-1px)}
+.wc-path-act small{font-size:.82rem;color:rgba(247,243,236,.7)}
+.wc-path>.wc-path-done{margin:46px 0 0;font-weight:600;color:var(--gold)}
+.wc-path>.wc-path-note{margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;color:rgba(247,243,236,.6)}
+.wc-side{position:sticky;top:96px;display:grid;gap:16px}
+.wc-sum h2{margin:0 0 16px;font-size:1.15rem;font-weight:650}
+.wc-rows{margin:0;display:grid;gap:10px}
+.wc-rows div{display:flex;justify-content:space-between;gap:12px;font-size:.95rem}
+.wc-rows dt{color:var(--muted)}.wc-rows dd{margin:0;font-weight:600;text-align:right}
+.wc-rows .wc-save dd,.wc-rows .wc-save dt{color:var(--ok)}
+.wc-rows .wc-tot{margin-top:6px;padding-top:14px;border-top:1px solid var(--line);font-size:1.15rem}
+.wc-rows .wc-tot dt{color:var(--ink);font-weight:650}.wc-rows .wc-tot dd{font-weight:700}
+.wc-tax{margin:4px 0 0;font-size:.78rem;color:var(--muted);text-align:right}
+.wc-go{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:58px;margin-top:20px;border:0;border-radius:var(--pill);background:var(--btn);color:#fff;font:inherit;font-size:1.08rem;font-weight:650;cursor:pointer;transition:background .2s,transform .2s;text-decoration:none}
+.wc .wc-go{color:#fff}
+.wc-go:hover{background:var(--btn-hi);transform:translateY(-1px)}
+.wc-go svg{width:18px;height:18px}
+.wc-under{margin:10px 0 0;text-align:center;font-size:.82rem;color:var(--muted)}
+.wc-under strong{color:var(--ink)}
+.wc-express{margin-top:14px}
+.wc-express [data-shopify-buttoncontainer]{justify-content:center}
+.wc-or{display:flex;align-items:center;gap:12px;margin:14px 0 0;font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.wc-or::before,.wc-or::after{content:"";flex:1;height:1px;background:var(--line)}
+.wc-pay{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:16px 0 0;padding:0;list-style:none}
+.wc-pay svg{width:38px;height:24px}
+.wc-code{margin:14px 0 0;font-size:.82rem;color:var(--muted);text-align:center}
+.wc-note{margin-top:16px}
+.wc-note summary{cursor:pointer;font-size:.88rem;font-weight:600}
+.wc-note textarea{width:100%;margin-top:10px;min-height:80px;padding:12px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:.92rem;background:var(--bg-2);color:var(--ink)}
+.wc-gar{display:grid;grid-template-columns:56px 1fr;gap:16px;background:var(--bg-2);border-color:transparent}
+.wc-seal{width:56px;height:56px;border-radius:50%;background:var(--dark);color:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.wc-seal b{font-size:1.15rem;font-weight:700}.wc-seal span{font-size:.55rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+.wc-gar h3{margin:0 0 6px;font-size:1.02rem;font-weight:650}
+.wc-gar p{margin:0;font-size:.9rem;color:var(--muted)}
+.wc-gar a{display:inline-block;margin-top:8px;font-size:.82rem;font-weight:600;color:var(--accent)}
+.wc-trust{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.wc-trust li{display:flex;gap:10px;align-items:center;font-size:.88rem}
+.wc-trust li::before{content:"";flex:0 0 20px;height:20px;border-radius:50%;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.6 2.6L14 7.7' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat}
+.wc-lower{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.wc-lh{margin:0 0 18px;font-size:1.35rem;font-weight:650;letter-spacing:-.015em}
+.wc-next{list-style:none;margin:0;padding:0;counter-reset:n;display:grid;gap:16px}
+.wc-next li{counter-increment:n;display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start}
+.wc-next li::before{content:counter(n);display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--bg-2);font-weight:700;color:var(--accent)}
+.wc-next b{display:block;font-size:.98rem}.wc-next span{display:block;font-size:.9rem;color:var(--muted)}
+.wc-faq details{border-bottom:1px solid var(--line)}
+.wc-faq details:first-of-type{border-top:1px solid var(--line)}
+.wc-faq summary{list-style:none;cursor:pointer;padding:16px 32px 16px 0;position:relative;font-weight:600;font-size:.98rem}
+.wc-faq summary::-webkit-details-marker{display:none}
+.wc-faq summary::after{content:"+";position:absolute;right:4px;top:12px;font-size:1.4rem;font-weight:400;color:var(--accent);transition:transform .2s}
+.wc-faq details[open] summary::after{transform:rotate(45deg)}
+.wc-faq details div{padding:0 0 16px;color:var(--muted);font-size:.93rem}
+.wc-faq details div p{margin:0 0 8px}
+.wc-empty{text-align:center;max-width:620px;margin:0 auto;padding:24px 0}
+.wc-empty .wc-thumb{width:180px;height:180px;margin:0 auto 26px;border-radius:var(--r-lg)}
+.wc-empty p{color:var(--muted);font-size:1.05rem;margin:0 auto 26px;max-width:46ch}
+.wc-empty .wc-go{width:auto;display:inline-flex;padding:0 36px}
+.wc-empty .wc-under{margin-top:14px}
+.wc-sticky{display:none}
+.wc.is-busy .wc-items,.wc.is-busy .wc-sum,.wc.is-busy .wc-path{opacity:.55;pointer-events:none;transition:opacity .2s}
+.wc-err{margin:0 0 12px;padding:12px 16px;border-radius:12px;background:#fbece8;color:var(--accent);font-size:.9rem}
+@media (max-width:900px){
+  .wc{padding-top:{{ section.settings.padding_top | times: 0.6 | round }}px}
+  .wc-grid,.wc-lower{grid-template-columns:1fr;gap:16px}
+  .wc-lower{margin-top:40px;gap:40px}
+  .wc-side{position:static}
+  .wc-card{padding:18px}
+  .wc-item{grid-template-columns:76px 1fr;gap:14px}
+  .wc-thumb{width:76px;height:76px}
+  .wc-price{grid-column:2;text-align:left;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+  .wc-price b,.wc-price s,.wc-price small{display:inline}
+  .wc-price small{margin:0}
+  .wc-steps{font-size:.72rem;gap:6px}.wc-steps li+li::before{width:14px}
+  .wc-head{margin-bottom:22px}
+  .wc-ms span{font-size:.64rem}
+  .wc-track{margin-left:4px;margin-right:4px}
+  .wc-sticky{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;align-items:center;gap:14px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s}
+  .wc-sticky.show{transform:none}
+  .wc-sticky div{flex:0 0 auto;line-height:1.15}
+  .wc-sticky small{display:block;font-size:.72rem;color:var(--muted)}
+  .wc-sticky b{font-size:1.1rem}
+  .wc-sticky .wc-go{margin:0;min-height:50px;font-size:1rem}
+}
+{% endstyle %}
+
+<div class="wc" data-wc data-section="{{ section.id }}">
+<div class="wc-in" data-wc-inner>
+{%- if section.settings.show_steps -%}
+  <ol class="wc-steps" aria-label="Passaggi dell'ordine">
+    <li class="on"><b>1</b>{{ section.settings.step_1 }}</li>
+    <li><b>2</b>{{ section.settings.step_2 }}</li>
+    <li><b>3</b>{{ section.settings.step_3 }}</li>
+  </ol>
+{%- endif -%}
+
+{%- if cart.item_count == 0 -%}
+  {%- comment -%} ===== CARRELLO VUOTO ===== {%- endcomment -%}
+  <div class="wc-empty">
+    {%- if pp != blank and pp.featured_image != blank -%}<div class="wc-thumb"><img src="{{ pp.featured_image | image_url: width: 400 }}" alt="{{ pp.title | escape }}" width="180" height="180"></div>{%- endif -%}
+    <h1 class="wc-h1">{{ section.settings.empty_title }}</h1>
+    <p>{{ section.settings.empty_text }}</p>
+    <a class="wc-go" href="{% if section.settings.empty_url != blank %}{{ section.settings.empty_url }}{% elsif pp != blank %}{{ pp.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">{{ section.settings.empty_cta }}</a>
+    {% if section.settings.empty_note != blank %}<p class="wc-under">{{ section.settings.empty_note }}</p>{% endif %}
+  </div>
+{%- else -%}
+  <div class="wc-head">
+    <h1 class="wc-h1">{{ section.settings.heading }}</h1>
+    {% if section.settings.sub != blank %}<p>{{ section.settings.sub }}</p>{% endif %}
+  </div>
+
+  <form action="{{ routes.cart_url }}" method="post" id="wc-form-{{ section.id }}" class="wc-grid" novalidate>
+    <div class="wc-main">
+      <div data-wc-err></div>
+      {%- if fs > 0 -%}
+        {%- if fs_left > 0 -%}
+        <div class="wc-card wc-ship">
+          {%- assign fs_money = fs_left | money -%}{%- assign fs_html = '<strong>' | append: fs_money | append: '</strong>' -%}
+          <p>{{ section.settings.free_ship_text | replace: '[importo]', fs_html }}</p>
+          <div class="wc-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ fs_pct }}"><i style="width:{{ fs_pct }}%"></i></div>
+        </div>
+        {%- else -%}
+        <div class="wc-card wc-ship done"><p>{{ section.settings.free_ship_done }}</p></div>
+        {%- endif -%}
+      {%- endif -%}
+
+      <div class="wc-card">
+        <ul class="wc-items">
+        {%- for item in cart.items -%}
+          {%- liquid
+            assign is_path = false
+            if pp != blank and item.product_id == pp.id
+              assign is_path = true
+            endif
+            assign item_days = item.quantity | times: spb
+          -%}
+          <li class="wc-item">
+            <a class="wc-thumb" href="{{ item.url }}" tabindex="-1" aria-hidden="true">{%- if item.image != blank -%}<img src="{{ item.image | image_url: width: 240 }}" alt="" width="96" height="96" loading="lazy">{%- endif -%}</a>
+            <div>
+              <h2 class="wc-t"><a href="{{ item.url }}">{{ item.product.title }}</a></h2>
+              {%- unless item.product.has_only_default_variant -%}<p class="wc-meta">{{ item.variant.title }}</p>{%- endunless -%}
+              {%- for p in item.properties -%}{%- assign f = p.first | slice: 0 -%}{%- if p.last != blank and f != '_' -%}<p class="wc-meta">{{ p.first }}: {{ p.last }}</p>{%- endif -%}{%- endfor -%}
+              {%- if item.selling_plan_allocation -%}<p class="wc-meta">{{ item.selling_plan_allocation.selling_plan.name }}</p>{%- endif -%}
+              {%- if is_path -%}<span class="wc-days">{{ section.settings.days_label | replace: '[sachet]', item_days | replace: '[giorni]', item_days }}</span>{%- endif -%}
+              {%- if item.line_level_discount_allocations.size > 0 -%}<ul class="wc-disc">{%- for d in item.line_level_discount_allocations -%}<li>{{ d.discount_application.title }} (−{{ d.amount | money }})</li>{%- endfor -%}</ul>{%- endif -%}
+              <div class="wc-ctrl">
+                <div class="wc-qty">
+                  <button type="button" data-wc-step="-1" data-line="{{ forloop.index }}" aria-label="Togli una confezione">&minus;</button>
+                  <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" inputmode="numeric" data-wc-qty data-line="{{ forloop.index }}" aria-label="Quantità {{ item.product.title | escape }}">
+                  <button type="button" data-wc-step="1" data-line="{{ forloop.index }}" aria-label="Aggiungi una confezione">+</button>
+                </div>
+                <button type="button" class="wc-rm" data-wc-remove data-line="{{ forloop.index }}">{{ section.settings.remove_label }}</button>
+              </div>
+            </div>
+            <div class="wc-price">
+              {%- if item.original_line_price > item.final_line_price -%}<s>{{ item.original_line_price | money }}</s>{%- elsif item.variant.compare_at_price > item.variant.price -%}<s>{{ item.variant.compare_at_price | times: item.quantity | money }}</s>{%- endif -%}
+              <b>{{ item.final_line_price | money }}</b>
+              {%- if is_path and section.settings.show_per_day and item_days > 0 and item.final_line_price > 0 -%}<small>{{ item.final_line_price | divided_by: item_days | money }} {{ section.settings.per_day_label }}</small>{%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+        </ul>
+        <noscript><button type="submit" name="update" class="wc-rm" style="margin-top:14px">Aggiorna carrello</button></noscript>
+      </div>
+
+      {%- if section.settings.path_enabled and pp != blank and path_qty > 0 -%}
+      <div class="wc-card wc-path">
+        <p class="wc-path-eb">{{ section.settings.path_eyebrow }}</p>
+        <h2>{{ section.settings.path_title | replace: '[giorni]', path_days | replace: '[box]', path_qty | replace: '[[', '<em>' | replace: ']]', '</em>' }}</h2>
+        <p>{{ section.settings.path_text }}</p>
+        <div class="wc-track" aria-hidden="true">
+          <i style="width:{{ pct }}%"></i>
+          {%- assign p1 = m1 | times: 100 | divided_by: m3 -%}{%- assign p2 = m2 | times: 100 | divided_by: m3 -%}
+          <span class="wc-ms{% if path_qty >= m1 %} hit{% endif %}" style="left:{{ p1 }}%"><span>{{ section.settings.m1_label }}</span></span>
+          <span class="wc-ms{% if path_qty >= m2 %} hit{% endif %}" style="left:{{ p2 }}%"><span>{{ section.settings.m2_label }}</span></span>
+          <span class="wc-ms{% if path_qty >= m3 %} hit{% endif %}" style="left:100%"><span>{{ section.settings.m3_label }}</span></span>
+        </div>
+        {%- if next_m > 0 and pp_variant.available -%}
+        <div class="wc-path-act">
+          <button type="button" class="wc-add" data-wc-add="{{ pp_variant.id }}" data-qty="{{ need }}">{{ section.settings.path_cta | replace: '[n]', need | replace: '[giorni]', next_days | replace: '[traguardo]', next_label }}</button>
+          {%- if pp_variant.price > 0 -%}<small>+ {{ pp_variant.price | times: need | money }}</small>{%- endif -%}
+        </div>
+        {%- else -%}
+        <p class="wc-path-done">{{ section.settings.path_done }}</p>
+        {%- endif -%}
+        {% if section.settings.path_note != blank %}<p class="wc-path-note">{{ section.settings.path_note }}</p>{% endif %}
+      </div>
+      {%- endif -%}
+    </div>
+
+    <aside class="wc-side">
+      <div class="wc-card wc-sum">
+        <h2>{{ section.settings.summary_title }}</h2>
+        <dl class="wc-rows">
+          {%- assign full = 0 -%}
+          {%- for item in cart.items -%}{%- if item.variant.compare_at_price > item.variant.price -%}{%- assign full = item.variant.compare_at_price | times: item.quantity | plus: full -%}{%- else -%}{%- assign full = item.original_line_price | plus: full -%}{%- endif -%}{%- endfor -%}
+          <div><dt>{{ section.settings.subtotal_label }} ({{ cart.item_count }} {% if cart.item_count == 1 %}articolo{% else %}articoli{% endif %})</dt><dd>{{ cart.items_subtotal_price | money }}</dd></div>
+          {%- for d in cart.cart_level_discount_applications -%}<div class="wc-save"><dt>{{ d.title }}</dt><dd>−{{ d.total_allocated_amount | money }}</dd></div>{%- endfor -%}
+          <div><dt>{{ section.settings.shipping_label }}</dt><dd>{% if fs > 0 and fs_left <= 0 %}{{ section.settings.shipping_free }}{% else %}{{ section.settings.shipping_value }}{% endif %}</dd></div>
+          {%- assign saved = full | minus: cart.total_price -%}
+          {%- if saved > 0 -%}<div class="wc-save"><dt>{{ section.settings.saved_label }}</dt><dd>{{ saved | money }}</dd></div>{%- endif -%}
+          <div class="wc-tot"><dt>{{ section.settings.total_label }}</dt><dd>{{ cart.total_price | money }}</dd></div>
+        </dl>
+        {% if section.settings.tax_note != blank %}<p class="wc-tax">{{ section.settings.tax_note }}</p>{% endif %}
+
+        {%- if section.settings.show_note -%}
+        <details class="wc-note"><summary>{{ section.settings.note_label }}</summary><textarea name="note" form="wc-form-{{ section.id }}" data-wc-note aria-label="{{ section.settings.note_label | escape }}">{{ cart.note }}</textarea></details>
+        {%- endif -%}
+
+        <button type="submit" name="checkout" class="wc-go" form="wc-form-{{ section.id }}" data-wc-checkout>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="9" width="12" height="8.5" rx="2" fill="currentColor"/><path d="M6.8 9V6.6a3.2 3.2 0 016.4 0V9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          {{ section.settings.checkout_label }}
+        </button>
+        {% if section.settings.checkout_note != blank %}<p class="wc-under">{{ section.settings.checkout_note }}</p>{% endif %}
+
+        {%- if section.settings.show_express and additional_checkout_buttons -%}
+        <p class="wc-or">{{ section.settings.express_label }}</p>
+        <div class="wc-express">{{ content_for_additional_checkout_buttons }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.show_payment_icons -%}
+        <ul class="wc-pay" aria-label="Metodi di pagamento">{%- for type in shop.enabled_payment_types -%}<li>{{ type | payment_type_svg_tag }}</li>{%- endfor -%}</ul>
+        {%- endif -%}
+        {% if section.settings.code_note != blank %}<p class="wc-code">{{ section.settings.code_note }}</p>{% endif %}
+      </div>
+
+      {%- if section.settings.g_title != blank -%}
+      <div class="wc-card wc-gar">
+        <div class="wc-seal" aria-hidden="true"><b>{{ section.settings.g_days }}</b><span>giorni</span></div>
+        <div>
+          <h3>{{ section.settings.g_title }}</h3>
+          <p>{{ section.settings.g_text }}</p>
+          {% if section.settings.g_link_label != blank %}<a href="{{ section.settings.g_link_url | default: '/policies/refund-policy' }}">{{ section.settings.g_link_label }}</a>{% endif %}
+        </div>
+      </div>
+      {%- endif -%}
+
+      {%- if section.settings.trust_1 != blank or section.settings.trust_2 != blank or section.settings.trust_3 != blank -%}
+      <div class="wc-card">
+        <ul class="wc-trust">
+          {% if section.settings.trust_1 != blank %}<li>{{ section.settings.trust_1 }}</li>{% endif %}
+          {% if section.settings.trust_2 != blank %}<li>{{ section.settings.trust_2 }}</li>{% endif %}
+          {% if section.settings.trust_3 != blank %}<li>{{ section.settings.trust_3 }}</li>{% endif %}
+        </ul>
+      </div>
+      {%- endif -%}
+    </aside>
+  </form>
+
+  {%- assign faqs = section.blocks | where: 'type', 'faq' -%}
+  {%- if section.settings.next_title != blank or faqs.size > 0 -%}
+  <div class="wc-lower">
+    {%- if section.settings.next_title != blank -%}
+    <div>
+      <h2 class="wc-lh">{{ section.settings.next_title }}</h2>
+      <ol class="wc-next">
+        {%- for i in (1..4) -%}{%- assign tk = 'next_' | append: i | append: '_title' -%}{%- assign xk = 'next_' | append: i | append: '_text' -%}
+        {%- if section.settings[tk] != blank -%}<li><div><b>{{ section.settings[tk] }}</b><span>{{ section.settings[xk] }}</span></div></li>{%- endif -%}
+        {%- endfor -%}
+      </ol>
+    </div>
+    {%- endif -%}
+    {%- if faqs.size > 0 -%}
+    <div class="wc-faq">
+      {% if section.settings.faq_title != blank %}<h2 class="wc-lh">{{ section.settings.faq_title }}</h2>{% endif %}
+      {%- for block in faqs -%}
+      <details {{ block.shopify_attributes }}><summary>{{ block.settings.q }}</summary><div>{{ block.settings.a }}</div></details>
+      {%- endfor -%}
+    </div>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+
+  <div class="wc-sticky" data-wc-sticky>
+    <div><small>{{ section.settings.total_label }}</small><b>{{ cart.total_price | money }}</b></div>
+    <button type="submit" name="checkout" class="wc-go" form="wc-form-{{ section.id }}">{{ section.settings.sticky_label }}</button>
+  </div>
+{%- endif -%}
+</div>
+</div>
+
+<script>
+(function(){
+  if (window.__wcInit) return; window.__wcInit = true;
+  var ROOT = '{{ routes.root_url }}'.replace(/\/$/, '');
+  function root(){ return document.querySelector('[data-wc]'); }
+  function rerender(cart){
+    var r = root(); if(!r) return Promise.resolve();
+    return fetch(window.location.pathname + '?section_id=' + encodeURIComponent(r.getAttribute('data-section')))
+      .then(function(res){ return res.text(); })
+      .then(function(html){
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var fresh = doc.querySelector('[data-wc-inner]');
+        if (fresh) r.querySelector('[data-wc-inner]').replaceWith(fresh);
+        r.classList.remove('is-busy'); sticky();
+        if (cart) {
+          document.querySelectorAll('.cart-count-bubble span, [data-cart-count]').forEach(function(el){ el.textContent = cart.item_count; });
+          document.dispatchEvent(new CustomEvent('cart:update', { bubbles: true, detail: { resource: cart, sourceId: 'within-cart', data: { itemCount: cart.item_count, source: 'within-cart' } } }));
+        }
+      });
+  }
+  function call(url, body){
+    var r = root(); r.classList.add('is-busy');
+    return fetch(ROOT + url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(body) })
+      .then(function(res){ return res.json().then(function(j){ if(!res.ok) throw j; return j; }); })
+      .then(function(){ return fetch(ROOT + '/cart.js').then(function(x){ return x.json(); }); })
+      .then(rerender)
+      .catch(function(e){
+        rerender().then(function(){
+          var box = root().querySelector('[data-wc-err]');
+          if (box) box.innerHTML = '<p class="wc-err" role="alert">' + String((e && (e.description || e.message)) || 'Qualcosa è andato storto. Riprova.').replace(/</g,'&lt;') + '</p>';
+        });
+      });
+  }
+  function change(line, qty){ return call('/cart/change.js', { line: +line, quantity: Math.max(0, qty|0) }); }
+  document.addEventListener('click', function(e){
+    var t;
+    if ((t = e.target.closest('[data-wc] [data-wc-step]'))) {
+      var input = t.parentNode.querySelector('[data-wc-qty]');
+      change(t.getAttribute('data-line'), (+input.value || 0) + (+t.getAttribute('data-wc-step')));
+    } else if ((t = e.target.closest('[data-wc] [data-wc-remove]'))) {
+      change(t.getAttribute('data-line'), 0);
+    } else if ((t = e.target.closest('[data-wc] [data-wc-add]'))) {
+      call('/cart/add.js', { items: [{ id: +t.getAttribute('data-wc-add'), quantity: +t.getAttribute('data-qty') }] });
+    }
+  });
+  document.addEventListener('change', function(e){
+    var t = e.target;
+    if (t.matches && t.matches('[data-wc] [data-wc-qty]')) change(t.getAttribute('data-line'), +t.value);
+    if (t.matches && t.matches('[data-wc] [data-wc-note]')) fetch(ROOT + '/cart/update.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ note: t.value }) });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' && e.target.matches && e.target.matches('[data-wc] [data-wc-qty]')) { e.preventDefault(); e.target.blur(); }
+  });
+  var io;
+  function sticky(){
+    var bar = document.querySelector('[data-wc-sticky]'), btn = document.querySelector('[data-wc-checkout]');
+    if (io) io.disconnect();
+    if (!bar || !btn || !('IntersectionObserver' in window)) return;
+    io = new IntersectionObserver(function(en){ bar.classList.toggle('show', !en[0].isIntersecting && en[0].boundingClientRect.top > 0); });
+    io.observe(btn);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', sticky); else sticky();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Within · Carrello",
+  "tag": "section",
+  "class": "within-cart",
+  "max_blocks": 10,
+  "settings": [
+    { "type": "header", "content": "Testata" },
+    { "type": "checkbox", "id": "show_steps", "label": "Mostra i passaggi (Carrello → Dati → Pagamento)", "default": true },
+    { "type": "text", "id": "step_1", "label": "Passaggio 1", "default": "Carrello" },
+    { "type": "text", "id": "step_2", "label": "Passaggio 2", "default": "Spedizione" },
+    { "type": "text", "id": "step_3", "label": "Passaggio 3", "default": "Pagamento" },
+    { "type": "text", "id": "heading", "label": "Titolo", "default": "Il tuo carrello" },
+    { "type": "textarea", "id": "sub", "label": "Sottotitolo", "default": "Ancora un passo. E da qui in poi il rischio è nostro: hai 90 giorni per decidere se Within fa per te." },
+
+    { "type": "header", "content": "Spedizione gratuita" },
+    { "type": "number", "id": "free_ship_threshold", "label": "Soglia spedizione gratuita (€, 0 = nascondi la barra)", "default": 0 },
+    { "type": "text", "id": "free_ship_text", "label": "Testo sotto soglia ([importo] = quanto manca)", "default": "Ti mancano [importo] per la spedizione gratuita." },
+    { "type": "text", "id": "free_ship_done", "label": "Testo soglia raggiunta", "default": "La spedizione è gratuita. Te la offriamo noi." },
+
+    { "type": "header", "content": "Il tuo percorso (giorni coperti)" },
+    { "type": "paragraph", "content": "Conta quante confezioni del prodotto scelto ci sono nel carrello e mostra quanti giorni copre, con i traguardi del percorso e un pulsante per raggiungere il prossimo." },
+    { "type": "checkbox", "id": "path_enabled", "label": "Mostra il percorso", "default": true },
+    { "type": "product", "id": "path_product", "label": "Prodotto" },
+    { "type": "number", "id": "sachets_per_box", "label": "Sachet (giorni) per confezione", "default": 10 },
+    { "type": "text", "id": "days_label", "label": "Etichetta sul prodotto ([giorni])", "default": "[giorni] sachet · [giorni] giorni" },
+    { "type": "checkbox", "id": "show_per_day", "label": "Mostra il prezzo al giorno", "default": true },
+    { "type": "text", "id": "per_day_label", "label": "Testo prezzo al giorno", "default": "al giorno" },
+    { "type": "text", "id": "path_eyebrow", "label": "Sopra-titolo", "default": "Il tuo percorso" },
+    { "type": "text", "id": "path_title", "label": "Titolo ([giorni], [box]; [[testo]] = evidenziato)", "default": "Il tuo carrello copre [[[giorni] giorni]] su 90." },
+    { "type": "textarea", "id": "path_text", "label": "Testo", "default": "Un sachet al giorno, una confezione ogni 10 giorni. La garanzia dura 90 giorni: con meno confezioni ti fermi prima di poterla usare davvero." },
+    { "type": "number", "id": "m1_boxes", "label": "Traguardo 1 · confezioni", "default": 3 },
+    { "type": "text", "id": "m1_label", "label": "Traguardo 1 · nome", "default": "1 mese" },
+    { "type": "number", "id": "m2_boxes", "label": "Traguardo 2 · confezioni", "default": 6 },
+    { "type": "text", "id": "m2_label", "label": "Traguardo 2 · nome", "default": "2 mesi" },
+    { "type": "number", "id": "m3_boxes", "label": "Traguardo 3 · confezioni (fine barra)", "default": 9 },
+    { "type": "text", "id": "m3_label", "label": "Traguardo 3 · nome", "default": "12 settimane" },
+    { "type": "text", "id": "path_cta", "label": "Pulsante ([n] confezioni, [giorni], [traguardo])", "default": "Aggiungi [n] box: arrivi a [giorni] giorni" },
+    { "type": "text", "id": "path_done", "label": "Testo a percorso completo", "default": "Percorso completo: 12 settimane, quanto dura la garanzia." },
+    { "type": "textarea", "id": "path_note", "label": "Nota", "default": "Perché 12 settimane? Gli studi sui peptidi di collagene misurano i risultati dopo 8-12 settimane di assunzione quotidiana." },
+
+    { "type": "header", "content": "Riepilogo e pagamento" },
+    { "type": "text", "id": "summary_title", "label": "Titolo riepilogo", "default": "Riepilogo" },
+    { "type": "text", "id": "subtotal_label", "label": "Subtotale", "default": "Subtotale" },
+    { "type": "text", "id": "shipping_label", "label": "Spedizione", "default": "Spedizione" },
+    { "type": "text", "id": "shipping_value", "label": "Spedizione · valore", "default": "Calcolata al passo successivo" },
+    { "type": "text", "id": "shipping_free", "label": "Spedizione · gratuita", "default": "Gratis" },
+    { "type": "text", "id": "saved_label", "label": "Risparmio", "default": "Risparmi" },
+    { "type": "text", "id": "total_label", "label": "Totale", "default": "Totale" },
+    { "type": "text", "id": "tax_note", "label": "Nota IVA", "default": "IVA inclusa" },
+    { "type": "text", "id": "checkout_label", "label": "Pulsante pagamento", "default": "Vai al pagamento sicuro" },
+    { "type": "text", "id": "checkout_note", "label": "Sotto il pulsante", "default": "Non è un abbonamento: paghi una volta sola, nessun addebito automatico." },
+    { "type": "checkbox", "id": "show_express", "label": "Mostra pagamento rapido (PayPal, Apple Pay…)", "default": true },
+    { "type": "text", "id": "express_label", "label": "Divisore pagamento rapido", "default": "oppure paga in un clic" },
+    { "type": "checkbox", "id": "show_payment_icons", "label": "Mostra icone dei pagamenti", "default": true },
+    { "type": "text", "id": "code_note", "label": "Nota codice sconto", "default": "Hai un codice sconto? Lo inserisci al passo successivo." },
+    { "type": "checkbox", "id": "show_note", "label": "Mostra note per l'ordine", "default": false },
+    { "type": "text", "id": "note_label", "label": "Note · titolo", "default": "Aggiungi una nota all'ordine" },
+    { "type": "text", "id": "remove_label", "label": "Testo rimuovi", "default": "Rimuovi" },
+    { "type": "text", "id": "sticky_label", "label": "Barra mobile · pulsante", "default": "Vai al pagamento" },
+
+    { "type": "header", "content": "Garanzia" },
+    { "type": "text", "id": "g_days", "label": "Giorni (sigillo)", "default": "90" },
+    { "type": "text", "id": "g_title", "label": "Nome garanzia (vuoto = nascondi)", "default": "Garanzia Specchio · 90 giorni" },
+    { "type": "textarea", "id": "g_text", "label": "Testo", "default": "Bevi Within ogni giorno. Se entro 90 giorni dalla consegna allo specchio non ti piaci di più, scrivici con il numero d'ordine: ti rimborsiamo. Il rischio è tutto nostro." },
+    { "type": "text", "id": "g_link_label", "label": "Link condizioni · testo", "default": "Leggi le condizioni" },
+    { "type": "url", "id": "g_link_url", "label": "Link condizioni" },
+
+    { "type": "header", "content": "Rassicurazioni" },
+    { "type": "text", "id": "trust_1", "label": "Punto 1", "default": "Pagamento protetto con PayPal e carta" },
+    { "type": "text", "id": "trust_2", "label": "Punto 2", "default": "Spedizione tracciata: ricevi il codice via email" },
+    { "type": "text", "id": "trust_3", "label": "Punto 3", "default": "Ti risponde una persona, non un bot" },
+
+    { "type": "header", "content": "Cosa succede dopo" },
+    { "type": "text", "id": "next_title", "label": "Titolo (vuoto = nascondi)", "default": "Cosa succede dopo il pagamento" },
+    { "type": "text", "id": "next_1_title", "label": "Passo 1 · titolo", "default": "Ricevi la conferma" },
+    { "type": "text", "id": "next_1_text", "label": "Passo 1 · testo", "default": "Un'email con il riepilogo dell'ordine, subito." },
+    { "type": "text", "id": "next_2_title", "label": "Passo 2 · titolo", "default": "Prepariamo il pacco" },
+    { "type": "text", "id": "next_2_text", "label": "Passo 2 · testo", "default": "Parte con corriere tracciato. Il codice arriva per email." },
+    { "type": "text", "id": "next_3_title", "label": "Passo 3 · titolo", "default": "Un sachet al giorno" },
+    { "type": "text", "id": "next_3_text", "label": "Passo 3 · testo", "default": "Già liquido, sa di mango. Lo bevi in 25 secondi, dove vuoi." },
+    { "type": "text", "id": "next_4_title", "label": "Passo 4 · titolo", "default": "Hai 90 giorni per decidere" },
+    { "type": "text", "id": "next_4_text", "label": "Passo 4 · testo", "default": "Se non ti convince, una email e ti rimborsiamo." },
+    { "type": "text", "id": "faq_title", "label": "Titolo domande", "default": "Prima di pagare" },
+
+    { "type": "header", "content": "Carrello vuoto" },
+    { "type": "text", "id": "empty_title", "label": "Titolo", "default": "Il tuo carrello è vuoto." },
+    { "type": "textarea", "id": "empty_text", "label": "Testo", "default": "Dopo i 25 anni il corpo perde ogni anno l'1-1,5% del suo collagene. Ogni mese che aspetti è un mese in meno nel tuo percorso." },
+    { "type": "text", "id": "empty_cta", "label": "Pulsante", "default": "Scopri Within" },
+    { "type": "url", "id": "empty_url", "label": "Link pulsante (vuoto = prodotto del percorso)" },
+    { "type": "text", "id": "empty_note", "label": "Sotto il pulsante", "default": "Garanzia 90 giorni · Non è un abbonamento" },
+
+    { "type": "header", "content": "Layout e colori" },
+    { "type": "range", "id": "max_width", "label": "Larghezza massima", "min": 900, "max": 1400, "step": 20, "unit": "px", "default": 1180 },
+    { "type": "range", "id": "padding_top", "label": "Spazio sopra", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "Spazio sotto", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 96 },
+    { "type": "color", "id": "bg_color", "label": "Sfondo", "default": "#FAF7F2" },
+    { "type": "color", "id": "surface2_color", "label": "Superficie tinta", "default": "#F0E8DA" },
+    { "type": "color", "id": "text_color", "label": "Testo", "default": "#1d1d1f" },
+    { "type": "color", "id": "muted_color", "label": "Testo secondario", "default": "#6B6358" },
+    { "type": "color", "id": "line_color", "label": "Linee e bordi", "default": "#E0D8CA" },
+    { "type": "color", "id": "dark_color", "label": "Scuro (box percorso)", "default": "#1C2B28" },
+    { "type": "color", "id": "on_dark_color", "label": "Testo su scuro", "default": "#F7F3EC" },
+    { "type": "color", "id": "accent_color", "label": "Accento", "default": "#A8432E" },
+    { "type": "color", "id": "mango_color", "label": "Mango", "default": "#E07D3A" },
+    { "type": "color", "id": "gold_color", "label": "Passion fruit", "default": "#F2C05C" },
+    { "type": "color", "id": "btn_color", "label": "Pulsante", "default": "#CC5B3E" },
+    { "type": "color", "id": "btn_hover_color", "label": "Pulsante hover", "default": "#A8432E" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Domanda",
+      "settings": [
+        { "type": "text", "id": "q", "label": "Domanda", "default": "Domanda" },
+        { "type": "richtext", "id": "a", "label": "Risposta", "default": "<p>Risposta</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Within · Carrello", "blocks": [{ "type": "faq" }] }
+  ]
+}
+{% endschema %}
