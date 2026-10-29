@@ -379,7 +379,7 @@
 <section class="wa-ugc{% if block.settings.tinted %} wa-tint{% endif %}" {{ block.shopify_attributes }} style="--pt:{{ block.settings.padding_top }}px;--pb:{{ block.settings.padding_bottom }}px;">
   {%- if block.settings.heading != blank or block.settings.eyebrow != blank -%}<div class="wa-ugc-head wa-reveal">{% if block.settings.eyebrow != blank %}<p class="wa-eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}{% if block.settings.heading != blank %}<h2 class="wa-h2">{{ block.settings.heading }}</h2>{% endif %}</div>{%- endif -%}
   <div class="wa-ugc-track" data-autoscroll="{{ block.settings.autoscroll_ms }}">
-  {%- for i in (1..8) -%}
+  {%- for i in (1..12) -%}
     {%- assign vk = 'video_' | append: i -%}{%- assign uk = 'video_url_' | append: i -%}{%- assign ck = 'caption_' | append: i -%}
     {%- assign v = block.settings[vk] -%}{%- assign vu = block.settings[uk] -%}{%- assign cap = block.settings[ck] -%}
     {%- capture capt -%}{%- if cap != blank -%}<figcaption class="wa-ugc-cap"><b>{{ cap }}</b>{% if block.settings.verified_label != blank %}<span class="wa-ugc-ver"><i></i>{{ block.settings.verified_label }}</span>{% endif %}</figcaption>{%- endif -%}{%- endcapture -%}
@@ -901,6 +901,66 @@ size();if(!reduce)auto();addEventListener('load',size);addEventListener('resize'
           "type": "text",
           "id": "caption_8",
           "label": "Video 8 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_9",
+          "label": "Video 9 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_9",
+          "label": "Video 9 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_9",
+          "label": "Video 9 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_10",
+          "label": "Video 10 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_10",
+          "label": "Video 10 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_10",
+          "label": "Video 10 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_11",
+          "label": "Video 11 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_11",
+          "label": "Video 11 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_11",
+          "label": "Video 11 · didascalia"
+        },
+        {
+          "type": "video",
+          "id": "video_12",
+          "label": "Video 12 (file Shopify)"
+        },
+        {
+          "type": "text",
+          "id": "video_url_12",
+          "label": "Video 12 (link mp4)"
+        },
+        {
+          "type": "text",
+          "id": "caption_12",
+          "label": "Video 12 · didascalia"
         },
         {
           "type": "checkbox",

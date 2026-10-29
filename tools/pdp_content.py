@@ -3,7 +3,7 @@ import json, os
 SP=os.path.dirname(os.path.abspath(__file__))
 def build(I,V):
     M=json.load(open(os.path.join(SP,'pdp_media.json')))
-    vids=[('133042_bc9cba9e-5312-42d4-bd3d-f3fec0ee1761','Anna, 63'),('133042_88724a13-f607-470d-938c-d2e4fc6d8632','Marta, 57'),('133042_aeef790c-4bbb-4f66-b426-cbc80055018c','Paola, 62'),('133043_418ffb7b-eda3-484e-9c30-0b0ce3a8d0b5','Roberta, 60'),('133043_c34741eb-2c7a-4a59-8935-147c26753a3e','Elena, 56'),('133042_3cef32b2-03df-4496-8c75-6668a738d18a','Daniela, 55'),('133042_235fea3a-e893-4439-b1dc-ed5c36f99c4a','Cristina, 64'),('133044_e2606849-4d83-4afd-8108-b874d6c40fb1','Chiara, 65')]
+    vids=[('20261029_162958_e33d3bc0-7cc9-4d8b-a63a-454833cf3c32', 'Anna, 63'), ('20261029_162957_67929af9-5044-4694-bd3b-3158787f8fa3', 'Marta, 57'), ('20261029_162958_0a2a1a5f-a41a-4ac1-9cdb-ae2ae3dec5d9', 'Paola, 62'), ('20261029_162958_ecec0ed3-550b-4a03-8392-383a22d18e25', 'Roberta, 60'), ('20261029_162958_425d94de-bf42-4171-89f7-aa8e509df7c5', 'Elena, 56'), ('20261029_162958_557f0db3-854d-419e-8dba-5e36eeb450d2', 'Silvia, 59'), ('20261029_162959_8eb5530f-4668-4966-8b3f-61b7774c8ccb', 'Daniela, 55'), ('20261029_162958_6d28888d-efba-469a-88fd-4157387ba977', 'Cristina, 64'), ('20261029_162957_2373b46b-6bf0-4d52-b0fb-a496d1a9e7ce', 'Federica, 58'), ('20261029_163000_a3bdd993-cc15-4fce-bc67-ed41c4e3ce08', 'Valentina, 61'), ('20261029_162959_c926b63b-dd4a-4cf8-9854-25d5e04067df', 'Simona, 61'), ('20261029_163000_48a59fe6-8b6f-4dec-a7bf-d55e7223754f', 'Chiara, 65')]
     ugc={"eyebrow":"Il loro gesto di ogni mattina","heading":"25 secondi. Ogni giorno. Si vede."}
     for i,(v,c) in enumerate(vids,1): ugc["video_url_%d"%i]=V(v); ugc["caption_%d"%i]=c
     return [

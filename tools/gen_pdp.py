@@ -45,7 +45,7 @@ body='''
 <section class="wa-ugc'''+TINT+'''" {{ block.shopify_attributes }}'''+PAD+'''>
   {%- if block.settings.heading != blank or block.settings.eyebrow != blank -%}<div class="wa-ugc-head wa-reveal">'''+EB+'''{% if block.settings.heading != blank %}<h2 class="wa-h2">{{ block.settings.heading }}</h2>{% endif %}</div>{%- endif -%}
   <div class="wa-ugc-track" data-autoscroll="{{ block.settings.autoscroll_ms }}">
-  {%- for i in (1..8) -%}
+  {%- for i in (1..12) -%}
     {%- assign vk = 'video_' | append: i -%}{%- assign uk = 'video_url_' | append: i -%}{%- assign ck = 'caption_' | append: i -%}
     {%- assign v = block.settings[vk] -%}{%- assign vu = block.settings[uk] -%}{%- assign cap = block.settings[ck] -%}
     {%- capture capt -%}{%- if cap != blank -%}<figcaption class="wa-ugc-cap"><b>{{ cap }}</b>{% if block.settings.verified_label != blank %}<span class="wa-ugc-ver"><i></i>{{ block.settings.verified_label }}</span>{% endif %}</figcaption>{%- endif -%}{%- endcapture -%}
@@ -380,7 +380,7 @@ js2=js.replace("var GAP=12,EDGE=20;", STICKY_JS+"\nvar GAP=12,EDGE=20;",1)
 assert STICKY_JS in js2
 
 ug=[T("eyebrow","Sopra-titolo",""),T("heading","Titolo",""),T("verified_label","Etichetta verificato","Acquisto verificato"),R("autoscroll_ms","Auto-scroll",2000,8000,500,4000,"ms")]
-for i in range(1,9):
+for i in range(1,13):
     ug+=[{"type":"video","id":"video_%d"%i,"label":"Video %d (file Shopify)"%i},T("video_url_%d"%i,"Video %d (link mp4)"%i,""),T("caption_%d"%i,"Video %d · didascalia"%i,"")]
 ug+=[CB("tinted","Sfondo tinta",False)]+PADS(88,88)
 RT=lambda x:{"type":"richtext","id":x[0],"label":x[1]}

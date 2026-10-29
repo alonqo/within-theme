@@ -1,7 +1,7 @@
 import json,re
 B="https://d8j0ntlcm91z4.cloudfront.net/user_3CoHflE6XwKC5XeJge3JDzQw5PH/hf_20261028_"
 I=lambda x:B+x+'.png'
-V=lambda x:B+x+'.mp4'
+V=lambda x:(B[:-9]+x if x.startswith('2026') else B+x)+'.mp4'
 html=open('/home/claude/within-apple-product.html').read()
 css=re.search(r'<style>(.*?)</style>',html,re.S).group(1)
 # scope css under section id
@@ -288,8 +288,8 @@ def PADS(t=120,b=120): return [{"type":"range","id":"padding_top","label":"Spazi
 
 CAPS1=[('Marta', 57), ('Paola', 62), ('Silvia', 59), ('Elena', 56), ('Cristina', 64), ('Valentina', 61)]
 CAPS2=[('Anna', 63), ('Federica', 58), ('Roberta', 60), ('Simona', 61), ('Daniela', 55), ('Chiara', 65)]
-vids1=['133042_88724a13-f607-470d-938c-d2e4fc6d8632','133042_aeef790c-4bbb-4f66-b426-cbc80055018c','133042_e533b3b9-6806-45a1-909c-64872cb3c19b','133043_c34741eb-2c7a-4a59-8935-147c26753a3e','133042_235fea3a-e893-4439-b1dc-ed5c36f99c4a','133043_01c6664e-e9ba-4131-a9b9-960ddda09368']
-vids2=['133042_bc9cba9e-5312-42d4-bd3d-f3fec0ee1761','133042_218f9802-ceea-4faf-bdef-a2bd45b04142','133043_418ffb7b-eda3-484e-9c30-0b0ce3a8d0b5','133042_4d9a5803-4e0e-4d60-9118-ea5c7e2a9d6e','133042_3cef32b2-03df-4496-8c75-6668a738d18a','133044_e2606849-4d83-4afd-8108-b874d6c40fb1']
+vids1=['20261029_162957_67929af9-5044-4694-bd3b-3158787f8fa3', '20261029_162958_0a2a1a5f-a41a-4ac1-9cdb-ae2ae3dec5d9', '20261029_162958_557f0db3-854d-419e-8dba-5e36eeb450d2', '20261029_162958_425d94de-bf42-4171-89f7-aa8e509df7c5', '20261029_162958_6d28888d-efba-469a-88fd-4157387ba977', '20261029_163000_a3bdd993-cc15-4fce-bc67-ed41c4e3ce08']
+vids2=['20261029_162958_e33d3bc0-7cc9-4d8b-a63a-454833cf3c32', '20261029_162957_2373b46b-6bf0-4d52-b0fb-a496d1a9e7ce', '20261029_162958_ecec0ed3-550b-4a03-8392-383a22d18e25', '20261029_162959_c926b63b-dd4a-4cf8-9854-25d5e04067df', '20261029_162959_8eb5530f-4668-4966-8b3f-61b7774c8ccb', '20261029_163000_48a59fe6-8b6f-4dec-a7bf-d55e7223754f']
 ugc_set=[T("eyebrow","Sopra-titolo",""),T("heading","Titolo",""),T("verified_label","Etichetta verificato","Acquisto verificato"),{"type":"range","id":"autoscroll_ms","label":"Auto-scroll","min":2000,"max":8000,"step":500,"unit":"ms","default":4000}]
 for i in range(1,9):
     ugc_set+= [{"type":"video","id":"video_%d"%i,"label":"Video %d (file Shopify)"%i}, T("video_url_%d"%i,"Video %d (link mp4, usato se non carichi un file)"%i, ""), T("caption_%d"%i,"Video %d · didascalia (es. Marta, 45)"%i,"")]
