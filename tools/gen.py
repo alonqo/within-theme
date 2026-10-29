@@ -288,8 +288,8 @@ def PADS(t=120,b=120): return [{"type":"range","id":"padding_top","label":"Spazi
 
 CAPS1=[('Marta', 57), ('Paola', 62), ('Silvia', 59), ('Elena', 56), ('Cristina', 64), ('Valentina', 61)]
 CAPS2=[('Anna', 63), ('Federica', 58), ('Roberta', 60), ('Simona', 61), ('Daniela', 55), ('Chiara', 65)]
-vids1=['20261029_184341_e68f8b61-6bc7-457b-810d-a44e3c73d407', '20261029_184342_64f3d0ad-d01a-4980-a471-7b242893ff48', '20261029_184342_abd90abb-51b9-4161-b9c3-a6da8edb15b3', '20261029_184341_7aaed507-54ee-468b-b442-ddaf36fa6ff1', '20261029_184342_104cddd0-62dc-41cf-a271-44c2ead6a075', '20261029_184434_8bc687d3-8f91-4143-8a5d-d28fd8086a20']
-vids2=['20261029_184341_29598c0b-fc61-4c8a-a7ee-07eba51bbcb6', '20261029_184435_faa23e77-2ae0-4bde-8a57-685582bef192', '20261029_184606_7a623b5d-5f89-4a64-941a-ab975c1dd333', '20261029_184434_d07edb6f-ad59-4fe4-9625-ea4f802d90bb', '20261029_184434_9af3f471-8a98-43fa-ae54-6fa542ea8359', '20261029_184435_8e025d44-915c-40b8-93b4-7c9632ee8997']
+vids1=['20261029_185803_5a30d8f7-66d3-4327-abd6-de3e4a76a603', '20261029_185802_1d2203af-86c0-4f85-b0b3-12e791c0160d', '20261029_185802_184b14f2-9923-4ba0-82ca-2d569859abe4', '20261029_185802_12dec013-9f04-4b79-ad54-bdd14299b93b', '20261029_185803_b03e8111-2752-47c6-b0d3-6adc7da3f9cb', '20261029_185803_edb1c553-7387-48de-82bf-132bce948ba6']
+vids2=['20261029_185833_aa2e9550-8c95-464a-90e4-c2a60d956d3a', '20261029_185833_d6d68ed9-f8cc-4c9c-b3ea-6841bd2d9428', '20261029_185833_cb9131c0-b507-49ef-ae16-47db9a23a7e0', '20261029_185833_8468c47d-2946-42ef-87e8-4c679c116969', '20261029_185834_f25f77d3-1cbd-4de1-a803-28d1d6e78f0e', '20261029_185833_68e6a927-0c37-4600-aa46-de437cd226a3']
 ugc_set=[T("eyebrow","Sopra-titolo",""),T("heading","Titolo",""),T("verified_label","Etichetta verificato","Acquisto verificato"),{"type":"range","id":"autoscroll_ms","label":"Auto-scroll","min":2000,"max":8000,"step":500,"unit":"ms","default":4000}]
 for i in range(1,9):
     ugc_set+= [{"type":"video","id":"video_%d"%i,"label":"Video %d (file Shopify)"%i}, T("video_url_%d"%i,"Video %d (link mp4, usato se non carichi un file)"%i, ""), T("caption_%d"%i,"Video %d · didascalia (es. Marta, 45)"%i,"")]

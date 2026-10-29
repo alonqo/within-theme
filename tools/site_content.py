@@ -4,7 +4,7 @@ def build(S):
     HOME_HERO=I('230608_aa23f9fd-8d25-4d7d-a202-f82454fd4b23')
     SEA=I('230608_220c2f4-16b4-4261-9660-c335d8933e60'.replace('220c2f4','220ca2f4'))
     EVENT=I('232314_16b8c81f-dc92-4970-afb7-b80afdfea592')
-    vids1=['20261029_184341_e68f8b61-6bc7-457b-810d-a44e3c73d407', '20261029_184342_64f3d0ad-d01a-4980-a471-7b242893ff48', '20261029_184342_abd90abb-51b9-4161-b9c3-a6da8edb15b3', '20261029_184341_7aaed507-54ee-468b-b442-ddaf36fa6ff1', '20261029_184342_104cddd0-62dc-41cf-a271-44c2ead6a075', '20261029_184434_8bc687d3-8f91-4143-8a5d-d28fd8086a20']
+    vids1=['20261029_185803_5a30d8f7-66d3-4327-abd6-de3e4a76a603', '20261029_185802_1d2203af-86c0-4f85-b0b3-12e791c0160d', '20261029_185802_184b14f2-9923-4ba0-82ca-2d569859abe4', '20261029_185802_12dec013-9f04-4b79-ad54-bdd14299b93b', '20261029_185803_b03e8111-2752-47c6-b0d3-6adc7da3f9cb', '20261029_185803_edb1c553-7387-48de-82bf-132bce948ba6']
     caps1=['Marta, 57','Paola, 62','Silvia, 59','Elena, 56','Cristina, 64','Valentina, 61']
     ugc=dict({"eyebrow":"Ogni mattina, 25 secondi","heading":"Il gesto che si vede allo specchio."},**{"video_url_%d"%(i+1):V(v) for i,v in enumerate(vids1)},**{"caption_%d"%(i+1):c for i,c in enumerate(caps1)})
     home=[
